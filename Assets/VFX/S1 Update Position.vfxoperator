@@ -185,7 +185,7 @@ MonoBehaviour:
   m_ImportDependencies: []
   m_GraphVersion: 6
   m_ResourceVersion: 1
-  m_saved: 0
+  m_saved: 1
   m_SubgraphDependencies:
   - {fileID: 5371698745253816930, guid: 67ad690e6d8a0324d9b16c0d0985ed83, type: 3}
   - {fileID: 5371698745253816930, guid: 393e850e19dab634b9492fda993470ec, type: 3}
@@ -3296,7 +3296,7 @@ MonoBehaviour:
   - {fileID: 114350483966675067}
   m_ExposedName: New AnimationCurve
   m_Exposed: 1
-  m_Order: 7
+  m_Order: 8
   m_Category: 
   m_Min:
     m_Type:
