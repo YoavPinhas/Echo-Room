@@ -13,7 +13,6 @@ public class ReleaseControlAnimation : MonoBehaviour
         public AnimationCurve curveX;
         public AnimationCurve curveY;
         public AnimationCurve curveZ;
-
     }
 
     #endregion
@@ -41,6 +40,7 @@ public class ReleaseControlAnimation : MonoBehaviour
     private float sizeBetweenElements;
     private float time;
     #endregion
+
     #region State Machine parameters
     private enum State { Idle, Moving, StopMoving };
     private State state = State.Moving;
@@ -95,19 +95,20 @@ public class ReleaseControlAnimation : MonoBehaviour
     private Vector3 GetPosB(int elementType, int elementIndex)
     {
         int index = GetElementIndex(elementType, elementIndex);
+        float myTime = (time%1f + (1f / (3 * elementsInRow)) * ((index / rows) % (3 * elementsInRow))) % 1f;
         Vector3 result = new Vector3(
             GetPosBX(elementType, index),
-            GetPosBY(index),
+            GetPosBY(elementType, index),
             GetPosBZ(elementType, index)
         );
-        return result;
+        return result + shapeCurveOffsets[elementType];
     }
     private float GetPosBX(int elementType, int index)
     {
         float angleOffset = (2 * Mathf.PI / (3 * elementsInRow)) * ((index / rows) % (3*elementsInRow));
         return radius * Mathf.Cos(time * 2 * Mathf.PI + angleOffset);
     }
-    private float GetPosBY(int index)
+    private float GetPosBY(int elementType, int index)
     {
         return (index % rows) * sizeBetweenRows;
     }
@@ -152,7 +153,7 @@ public class ReleaseControlAnimation : MonoBehaviour
             }
         }
     }
-    private void InitSapeCurveOffsets()
+    private void InitShapeCurveOffsets()
     {
         shapeCurveOffsets = new Vector3[shapes.Length];
         for (int i = 0; i < shapes.Length; i++)
@@ -213,11 +214,10 @@ public class ReleaseControlAnimation : MonoBehaviour
     {
         InitSizes();
         InitShapes();
-        InitSapeCurveOffsets();
+        InitShapeCurveOffsets();
         InitPositionA();
         InitStateMachine();
     }
-
     private void UpdatePositions()
     {
         state = Run[state].Invoke();
@@ -231,19 +231,24 @@ public class ReleaseControlAnimation : MonoBehaviour
             shapeCurveOffsets[i].z = prefabShapes[i].curveZ.Evaluate(time);
         }
     }
-
     private void UpdateTime(float dt)
     {
-        time = (time + dt / secondsForCycle) % 1.0f;
+        time = (time + dt / secondsForCycle) % 120.0f;
     }
-
     private void FixedUpdate()
     {
         UpdateCurveOffsets();
         UpdatePositions();
         UpdateTime(Time.fixedDeltaTime);
     }
-
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.RightArrow))
+            screamLoudness += Time.deltaTime;
+        if (Input.GetKey(KeyCode.LeftArrow))
+            screamLoudness -= Time.deltaTime;
+        screamLoudness = Mathf.Clamp01(screamLoudness);
+    }
     private void OnDrawGizmosSelected()
     {
         if (prefabShapes == null || prefabShapes.Length == 0 || !debugDrawing)
@@ -258,5 +263,10 @@ public class ReleaseControlAnimation : MonoBehaviour
                 Gizmos.DrawMesh(mf.sharedMesh, transform.position + CalculatePointAAt(i, j));
             }
         }
+    }
+
+    public void OnMicrophonChangedLevel(float level)
+    {
+        screamLoudness = Mathf.Lerp(screamLoudness, level, Time.deltaTime);
     }
 }

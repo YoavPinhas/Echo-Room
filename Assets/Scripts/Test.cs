@@ -2,12 +2,11 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Lasp;
 using UnityEngine.VFX.Utility;
 
 public class Test : MonoBehaviour
 {
-    [SerializeField] private GameObject[] shapes;
+   /* [SerializeField] private GameObject[] shapes;
     [SerializeField] private float width = 10;
     [SerializeField] private float height = 5;
     [SerializeField] private int rows = 6;
@@ -145,5 +144,5 @@ public class Test : MonoBehaviour
     public Vector3 CalculateMove(int i)
     {
         return Vector3.Lerp(PosOnGrid(i), MovingPos(i), screamLoudness);
-    }
+    }*/
 }
