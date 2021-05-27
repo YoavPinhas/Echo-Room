@@ -101,7 +101,7 @@ Material:
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
-    - _Animation_speed: 0.09
+    - _Animation_speed: 0.1
     - _BackFace_Intensity: 1
     - _BlendMode: 1
     - _BumpScale: 1
@@ -111,8 +111,8 @@ Material:
     - _CullModeForward: 2
     - _Cutoff: 0.5
     - _Debug_Mask: 0
-    - _DefaultOutlineOpacity: 0
-    - _DefaultShrink: 0.037
+    - _DefaultOutlineOpacity: 0.2
+    - _DefaultShrink: 0.122
     - _DetailNormalMapScale: 1
     - _DirectionChange: 1
     - _DoubleSidedEnable: 0
@@ -127,7 +127,7 @@ Material:
     - _InfluenceRadius: 0.5
     - _Metallic: 0
     - _Mode: 0
-    - _NormalPush: 0.14
+    - _NormalPush: 2.5
     - _OcclusionStrength: 1
     - _Outline_Opacity: 20
     - _PannerX: 0.8
@@ -137,7 +137,7 @@ Material:
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
     - _ShadowMatteFilter: 2.006836
-    - _Shrink_Faces_Amplitude: 0.26
+    - _Shrink_Faces_Amplitude: 1.43
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -154,8 +154,8 @@ Material:
     - _Stretching: 1
     - _SurfaceType: 0
     - _TargetMode: 0
-    - _TileX: 0.47
-    - _TileY: 0.42
+    - _TileX: 0.91
+    - _TileY: 0.86
     - _Transition_Factor: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2

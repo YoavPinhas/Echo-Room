@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-[System.Serializable]
+#region Microphon Event for the Inspector
 public class MicrophonLevelEvent : UnityEngine.Events.UnityEvent<float> { }
+#endregion
 public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
 {
     #region InspectorParameters
@@ -24,6 +25,7 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     private float maxLevel = 0;
     #endregion
 
+    #region Microphon Methods
     private void InitMicrophone()
     {
         if (device == null)
@@ -37,7 +39,19 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     {
         Microphone.End(device);
     }
+    private float CalculateMaxLevel()
+    {
+        int pos = Microphone.GetPosition(device) - (sampleScope - 1);
+        if (pos < 0)
+            return 0;
+        float[] waveData = new float[sampleScope];
+        recordedClip.GetData(waveData, pos);
+        float max = waveData.Max();
+        return max * max;
+    }
+    #endregion
 
+    #region MonoBehavior
     private void OnEnable()
     {
         InitMicrophone();
@@ -57,18 +71,6 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
         else
             StopMicrophone();
     }
-
-    private float CalculateMaxLevel()
-    {
-        int pos = Microphone.GetPosition(device) - (sampleScope - 1);
-        if (pos < 0)
-            return 0;
-        float[] waveData = new float[sampleScope];
-        recordedClip.GetData(waveData, pos);
-        float max = waveData.Max();
-        return max * max;
-    }
-
     void Update()
     {
         float max = CalculateMaxLevel();
@@ -84,4 +86,5 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
         if (debug)
             Debug.Log(maxLevel);
     }
+    #endregion
 }
