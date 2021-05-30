@@ -31,6 +31,9 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     {
         if (device == null)
             device = Microphone.devices[0];
+        if (device == null && debug)
+            Debug.LogError("Can't fine a connected microphone :(");
+
     }
     private void StartMicrophone()
     {
