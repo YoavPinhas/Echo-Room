@@ -248,7 +248,8 @@ public class ReleaseControlAnimation : MonoBehaviour
             for (int j = 0; j < shapes[i].Length; j++)
             {
                 shapes[i][j].transform.localPosition = func.Invoke(i, j) + GetPointOnCurve(i, j);
-                shapes[i][j].transform.localScale = prefabShapes[i].scaleMultiplier * prefabShapes[i].scaleCurve.Evaluate(time) * Vector3.one;
+                float dt = prefabShapes[i].scaleMultiplier * prefabShapes[i].scaleCurve.Evaluate(time);
+                shapes[i][j].transform.localScale =  Vector3.one * ((1-screamLoudness) + dt*screamLoudness);
             }
         }
     }
