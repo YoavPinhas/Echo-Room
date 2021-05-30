@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 #region Microphon Event for the Inspector
+[System.Serializable]
 public class MicrophonLevelEvent : UnityEngine.Events.UnityEvent<float> { }
 #endregion
 public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>

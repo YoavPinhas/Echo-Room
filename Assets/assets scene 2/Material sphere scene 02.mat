@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_Hi_Sphere_06
+  m_Name: Material sphere scene 02
   m_Shader: {fileID: 4800000, guid: 22dc785c1bdd83f4abc47c99629605db, type: 3}
   m_ShaderKeywords: _DIRECTIONCHANGE_ON _EMISSION _EXTRUDEUPFACES_ON _STRETCHING_ON
   m_LightmapFlags: 5
@@ -101,7 +101,7 @@ Material:
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
-    - _Animation_speed: 0.2
+    - _Animation_speed: 0.09
     - _BackFace_Intensity: 1
     - _BlendMode: 1
     - _BumpScale: 1
@@ -111,7 +111,7 @@ Material:
     - _CullModeForward: 2
     - _Cutoff: 0.5
     - _Debug_Mask: 0
-    - _DefaultOutlineOpacity: 0.2
+    - _DefaultOutlineOpacity: 0
     - _DefaultShrink: 0.122
     - _DetailNormalMapScale: 1
     - _DirectionChange: 1
@@ -127,9 +127,9 @@ Material:
     - _InfluenceRadius: 0.5
     - _Metallic: 0
     - _Mode: 0
-    - _NormalPush: 0.44
+    - _NormalPush: 0.08
     - _OcclusionStrength: 1
-    - _Outline_Opacity: 20
+    - _Outline_Opacity: 22
     - _PannerX: 0.8
     - _PannerY: 0.82
     - _Parallax: 0.02
@@ -154,8 +154,8 @@ Material:
     - _Stretching: 1
     - _SurfaceType: 0
     - _TargetMode: 0
-    - _TileX: 0.5
-    - _TileY: 0.5
+    - _TileX: 0.2
+    - _TileY: 0.2
     - _Transition_Factor: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
