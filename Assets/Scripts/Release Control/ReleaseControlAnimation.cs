@@ -15,6 +15,7 @@ public class ReleaseControlAnimation : MonoBehaviour
         public AnimationCurve curveY;
         public AnimationCurve curveZ;
         public AnimationCurve scaleCurve;
+        public float scaleMultiplier;
         public float minOffsetRadius;
         public float maxOffsetRadius;
     }
@@ -247,7 +248,7 @@ public class ReleaseControlAnimation : MonoBehaviour
             for (int j = 0; j < shapes[i].Length; j++)
             {
                 shapes[i][j].transform.localPosition = func.Invoke(i, j) + GetPointOnCurve(i, j);
-                shapes[i][j].transform.localScale = prefabShapes[i].scaleCurve.Evaluate(time) * Vector3.one;
+                shapes[i][j].transform.localScale = prefabShapes[i].scaleMultiplier * prefabShapes[i].scaleCurve.Evaluate(time) * Vector3.one;
             }
         }
     }
