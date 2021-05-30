@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class ReleaseControlAnimation : MonoBehaviour
 {
@@ -113,26 +114,27 @@ public class ReleaseControlAnimation : MonoBehaviour
     private Vector3 CalculatePointBAt(int elementType, int elementIndex)
     {
         int index = GetElementIndex(elementType, elementIndex);
+        var rad = radius + Random.Range(prefabShapes[elementType].minOffsetRadius, prefabShapes[elementType].maxOffsetRadius);
         return new Vector3(
-            GetPosBX(elementType, index),
+            GetPosBX(elementType, index, rad),
             GetPosBY(elementType, index),
-            GetPosBZ(elementType, index)
+            GetPosBZ(elementType, index, rad)
         );
     }
     private Vector3 GetPosB(int elementType, int elementIndex)
     {
         return posBVectors[elementType][elementIndex];
     }
-    private float GetPosBX(int elementType, int index)
+    private float GetPosBX(int elementType, int index, float radius)
     {
         float angleOffset = (2 * Mathf.PI / (3 * elementsInRow)) * ((index / rows) % (3 * elementsInRow)) + RIGHT_ANGLE;
-        return radius * Mathf.Cos(-angleOffset);
+        return (radius * Mathf.Cos(-angleOffset));
     }
     private float GetPosBY(int elementType, int index)
     {
         return (index % rows) * sizeBetweenRows;
     }
-    private float GetPosBZ(int elementType, int index)
+    private float GetPosBZ(int elementType, int index, float radius)
     {
         float angleOffset = (2 * Mathf.PI / (3 * elementsInRow)) * ((index / rows) % (3 * elementsInRow)) + RIGHT_ANGLE;
         return radius * Mathf.Sin(-angleOffset);
@@ -244,7 +246,8 @@ public class ReleaseControlAnimation : MonoBehaviour
         {
             for (int j = 0; j < shapes[i].Length; j++)
             {
-                shapes[i][j].transform.localPosition = func.Invoke(i, j) + GetPointOnCurve(i, j); ;
+                shapes[i][j].transform.localPosition = func.Invoke(i, j) + GetPointOnCurve(i, j);
+                shapes[i][j].transform.localScale = prefabShapes[i].scaleCurve.Evaluate(time) * Vector3.one;
             }
         }
     }
