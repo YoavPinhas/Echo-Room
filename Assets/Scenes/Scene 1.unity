@@ -932,10 +932,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9963b681796430b4bb727c75b9a73d6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debug: 0
+  debug: 1
   sampleRate: 44100
   threshold: 0.256
-  sensitivity: 0.341
+  sensitivity: 1
   slowingSpeed: 1.03
   OnMicrophoneLevelCalculated:
     m_PersistentCalls:
@@ -1145,9 +1145,10 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
+      m_PreInfinity: 1
+      m_PostInfinity: 1
       m_RotationOrder: 4
+    scaleMultiplier: 30
     minOffsetRadius: 0.84
     maxOffsetRadius: 2
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
@@ -1262,9 +1263,10 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
+      m_PreInfinity: 1
+      m_PostInfinity: 1
       m_RotationOrder: 4
+    scaleMultiplier: 30
     minOffsetRadius: -1
     maxOffsetRadius: 0
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
@@ -1382,6 +1384,7 @@ MonoBehaviour:
       m_PreInfinity: 1
       m_PostInfinity: 1
       m_RotationOrder: 4
+    scaleMultiplier: 30
     minOffsetRadius: -3
     maxOffsetRadius: 0
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
@@ -1496,9 +1499,10 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
+      m_PreInfinity: 1
+      m_PostInfinity: 1
       m_RotationOrder: 4
+    scaleMultiplier: 30
     minOffsetRadius: 0
     maxOffsetRadius: 2
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
@@ -1613,9 +1617,10 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
+      m_PreInfinity: 1
+      m_PostInfinity: 1
       m_RotationOrder: 4
+    scaleMultiplier: 30
     minOffsetRadius: 0
     maxOffsetRadius: 2
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
@@ -1730,9 +1735,10 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
+      m_PreInfinity: 1
+      m_PostInfinity: 1
       m_RotationOrder: 4
+    scaleMultiplier: 30
     minOffsetRadius: 0
     maxOffsetRadius: 1
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
@@ -1847,9 +1853,10 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
+      m_PreInfinity: 1
+      m_PostInfinity: 1
       m_RotationOrder: 4
+    scaleMultiplier: 30
     minOffsetRadius: 0
     maxOffsetRadius: 1.5
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
@@ -1964,9 +1971,10 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
+      m_PreInfinity: 1
+      m_PostInfinity: 1
       m_RotationOrder: 4
+    scaleMultiplier: 30
     minOffsetRadius: 0
     maxOffsetRadius: 1
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
@@ -2081,9 +2089,10 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
+      m_PreInfinity: 1
+      m_PostInfinity: 1
       m_RotationOrder: 4
+    scaleMultiplier: 30
     minOffsetRadius: 0
     maxOffsetRadius: 2
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
@@ -2198,9 +2207,10 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
+      m_PreInfinity: 1
+      m_PostInfinity: 1
       m_RotationOrder: 4
+    scaleMultiplier: 30
     minOffsetRadius: -1
     maxOffsetRadius: 0
   secondsForCycle: 11
@@ -2763,7 +2773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119282147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.66, z: -5.19}
+  m_LocalPosition: {x: 0, y: 3.66, z: -6.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
