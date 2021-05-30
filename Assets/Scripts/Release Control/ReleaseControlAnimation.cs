@@ -13,6 +13,9 @@ public class ReleaseControlAnimation : MonoBehaviour
         public AnimationCurve curveX;
         public AnimationCurve curveY;
         public AnimationCurve curveZ;
+        public AnimationCurve scaleCurve;
+        public float minOffsetRadius;
+        public float maxOffsetRadius;
     }
 
     #endregion
