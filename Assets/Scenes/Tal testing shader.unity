@@ -5274,6 +5274,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: sphere whith shader scene 02
       objectReference: {fileID: 0}
+    - target: {fileID: 970958914387681806, guid: ea8a0b38537c4074c9551776246bff24, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4261197050752094237, guid: ea8a0b38537c4074c9551776246bff24, type: 3}
       propertyPath: m_RootOrder
       value: 1

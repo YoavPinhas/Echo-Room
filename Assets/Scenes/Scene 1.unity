@@ -277,7 +277,7 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
-  m_FOVAxisMode: 0
+  m_FOVAxisMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_FocalLength: 50
@@ -289,7 +289,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 34.60172
+  field of view: 53.38629
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -315,7 +315,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 247691776}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -2.93, y: 4, z: -1.09}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -571,7 +571,7 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
-  m_FOVAxisMode: 0
+  m_FOVAxisMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_FocalLength: 50
@@ -583,7 +583,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 34.60172
+  field of view: 53.38629
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -609,7 +609,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 393733694}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 3.12, y: 4, z: -1.09}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -919,7 +919,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &942468434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1149,8 +1149,8 @@ MonoBehaviour:
       m_PostInfinity: 1
       m_RotationOrder: 4
     scaleMultiplier: 30
-    minOffsetRadius: 0.84
-    maxOffsetRadius: 2
+    minOffsetRadius: -100
+    maxOffsetRadius: 0
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
     curveX:
       serializedVersion: 2
@@ -1237,28 +1237,28 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0.075932
-        outSlope: 0.075932
+        time: 0.06196952
+        value: 2.5491018
+        inSlope: 0.15302718
+        outSlope: 0.15302718
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51250005
-        value: 1.0389152
-        inSlope: -0.0019469857
-        outSlope: -0.0019469857
+        time: 1.3887545
+        value: 2.752136
+        inSlope: 0.040123682
+        outSlope: 0.040123682
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: -0.079825975
-        outSlope: -0.079825975
+        time: 4.1784587
+        value: 2.5491018
+        inSlope: -0.07277981
+        outSlope: -0.07277981
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1267,7 +1267,7 @@ MonoBehaviour:
       m_PostInfinity: 1
       m_RotationOrder: 4
     scaleMultiplier: 30
-    minOffsetRadius: -1
+    minOffsetRadius: -100
     maxOffsetRadius: 0
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
     curveX:
@@ -1355,28 +1355,28 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0.075932
-        outSlope: 0.075932
+        time: 0.044129133
+        value: 1.206491
+        inSlope: 0.038565423
+        outSlope: 0.038565423
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51250005
-        value: 1.0389152
-        inSlope: -0.0019469857
-        outSlope: -0.0019469857
+        time: 0.5566292
+        value: 1.2262558
+        inSlope: -0.0009888597
+        outSlope: -0.0009888597
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: -0.079825975
-        outSlope: -0.079825975
+        time: 1.0441291
+        value: 1.206491
+        inSlope: -0.040543143
+        outSlope: -0.040543143
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1503,8 +1503,8 @@ MonoBehaviour:
       m_PostInfinity: 1
       m_RotationOrder: 4
     scaleMultiplier: 30
-    minOffsetRadius: 0
-    maxOffsetRadius: 2
+    minOffsetRadius: 1
+    maxOffsetRadius: 300
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
     curveX:
       serializedVersion: 2
@@ -1591,28 +1591,28 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0.075932
-        outSlope: 0.075932
+        time: 0.19028401
+        value: 1.4477565
+        inSlope: 0.033899862
+        outSlope: 0.033899862
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51250005
-        value: 1.0389152
-        inSlope: -0.0019469857
-        outSlope: -0.0019469857
+        time: 0.70278406
+        value: 1.4651302
+        inSlope: -0.0008692313
+        outSlope: -0.0008692313
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: -0.079825975
-        outSlope: -0.079825975
+        time: 1.190284
+        value: 1.4477565
+        inSlope: -0.035638325
+        outSlope: -0.035638325
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1709,28 +1709,28 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0.075932
-        outSlope: 0.075932
+        time: 0.17354321
+        value: 1.2705063
+        inSlope: 0.017677398
+        outSlope: 0.017677398
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51250005
-        value: 1.0389152
-        inSlope: -0.0019469857
-        outSlope: -0.0019469857
+        time: 0.68604326
+        value: 1.2795659
+        inSlope: -0.00045326818
+        outSlope: -0.00045326818
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: -0.079825975
-        outSlope: -0.079825975
+        time: 1.1735432
+        value: 1.2705063
+        inSlope: -0.018583935
+        outSlope: -0.018583935
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1857,7 +1857,7 @@ MonoBehaviour:
       m_PostInfinity: 1
       m_RotationOrder: 4
     scaleMultiplier: 30
-    minOffsetRadius: 0
+    minOffsetRadius: 100
     maxOffsetRadius: 1.5
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
     curveX:
@@ -2063,28 +2063,28 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0.075932
-        outSlope: 0.075932
+        time: 0.35838652
+        value: 2.5848424
+        inSlope: 0.009967756
+        outSlope: 0.009967756
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51250005
-        value: 1.0389152
-        inSlope: -0.0019469857
-        outSlope: -0.0019469857
+        time: 2.1561131
+        value: 2.6027617
+        inSlope: 0.0011198984
+        outSlope: 0.0011198984
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: -0.079825975
-        outSlope: -0.079825975
+        time: 4.4748755
+        value: 2.5848424
+        inSlope: -0.0077279597
+        outSlope: -0.0077279597
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -2093,8 +2093,8 @@ MonoBehaviour:
       m_PostInfinity: 1
       m_RotationOrder: 4
     scaleMultiplier: 30
-    minOffsetRadius: 0
-    maxOffsetRadius: 2
+    minOffsetRadius: -500
+    maxOffsetRadius: -400
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
     curveX:
       serializedVersion: 2
@@ -2213,12 +2213,12 @@ MonoBehaviour:
     scaleMultiplier: 30
     minOffsetRadius: -1
     maxOffsetRadius: 0
-  secondsForCycle: 11
+  secondsForCycle: 7
   rows: 9
   elementsInRow: 8
   width: 11
   height: 12.6
-  radius: 15
+  radius: 10
   randomStrength: 0.408
   curveMovementSpeed: 0.63
   startMovingThreahold: 0.338
@@ -2735,7 +2735,7 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
-  m_FOVAxisMode: 0
+  m_FOVAxisMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
   m_FocalLength: 50
@@ -2747,7 +2747,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 34.60172
+  field of view: 53.38629
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2773,7 +2773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119282147}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.66, z: -6.57}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
