@@ -31,6 +31,7 @@ public class ReleaseControlAnimation : MonoBehaviour
     [SerializeField, Min(5)] private float width;
     [SerializeField, Min(5)] private float height;
     [SerializeField, Min(1)] private float radius;
+    [SerializeField, Min(1)] private float globalScaleMultipier = 1;
     [SerializeField, Range(0, 1)] private float randomStrength;
     [SerializeField, Range(0, 5)] private float curveMovementSpeed;
     [SerializeField, Range(0, 1)] private float startMovingThreahold;
@@ -251,8 +252,8 @@ public class ReleaseControlAnimation : MonoBehaviour
             for (int j = 0; j < shapes[i].Length; j++)
             {
                 shapes[i][j].transform.localPosition = func.Invoke(i, j) + GetPointOnCurve(i, j);
-                float dt = prefabShapes[i].scaleMultiplier * prefabShapes[i].scaleCurve.Evaluate(time);
-                shapes[i][j].transform.localScale =  Vector3.one * ((1-screamLoudness)* prefabShapes[i].scaleMultiplier + dt*screamLoudness);
+                float dt = prefabShapes[i].scaleMultiplier * prefabShapes[i].scaleCurve.Evaluate(time) * globalScaleMultipier;
+                shapes[i][j].transform.localScale =  Vector3.one * ((1-screamLoudness)* prefabShapes[i].scaleMultiplier * globalScaleMultipier + dt*screamLoudness);
             }
         }
     }
@@ -394,7 +395,8 @@ public class ReleaseControlAnimation : MonoBehaviour
                 var p = transform.position + CalculatePointAAt(i, j);
                 var p2 = transform.position + CalculatePointBAt(i, j, true);
                 //drawString(""+GetElementIndex(i, j), p, Color.red);
-                Gizmos.DrawWireMesh(mf.sharedMesh, Vector3.Lerp(p, p2, screamLoudness), Quaternion.identity, Vector3.one*prefabShapes[i].scaleMultiplier);
+                float mul = Mathf.Lerp(prefabShapes[i].scaleMultiplier, prefabShapes[i].scaleMultiplier * globalScaleMultipier, screamLoudness);
+                Gizmos.DrawWireMesh(mf.sharedMesh, Vector3.Lerp(p, p2, screamLoudness), Quaternion.identity, Vector3.one*mul);
             }
         }
         float angle = 2 * Mathf.PI / (3 * elementsInRow);
