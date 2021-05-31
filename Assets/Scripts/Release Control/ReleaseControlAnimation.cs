@@ -85,12 +85,12 @@ public class ReleaseControlAnimation : MonoBehaviour
     {
         if (index < elementsInBlock)
             return -0.5f * sizeBetweenElements;
-        if (index < 2 * elementsInBlock)
+        if (index < 2 * elementsInBlock-2*rows)
         {
             int i = index % elementsInBlock;
             return (i / rows + 0.5f) * sizeBetweenElements;
         }
-        return width + 0.5f * sizeBetweenElements;
+        return width - 1.5f*sizeBetweenElements;
     }
     private float GetPosAY(int index)
     {
@@ -103,19 +103,22 @@ public class ReleaseControlAnimation : MonoBehaviour
         {
             return (i / rows) * sizeBetweenElements;
         }
-        if (index < 2 * elementsInBlock)
+        if (index < 2 * elementsInBlock - 2*rows)
         {
             return width - sizeBetweenElements;
         }
+        i = (index + 2*rows) % (elementsInBlock);
         return width - (i / rows + 1) * sizeBetweenElements;
     }
     #endregion
 
     #region Calculations of Position B
-    private Vector3 CalculatePointBAt(int elementType, int elementIndex)
+    private Vector3 CalculatePointBAt(int elementType, int elementIndex, bool debug = false)
     {
         int index = GetElementIndex(elementType, elementIndex);
-        var rad = radius + Random.Range(prefabShapes[elementType].minOffsetRadius, prefabShapes[elementType].maxOffsetRadius);
+        float rad = radius;
+        if(!debug)
+            rad = radius + Random.Range(prefabShapes[elementType].minOffsetRadius, prefabShapes[elementType].maxOffsetRadius);
         return new Vector3(
             GetPosBX(elementType, index, rad),
             GetPosBY(elementType, index),
@@ -128,7 +131,7 @@ public class ReleaseControlAnimation : MonoBehaviour
     }
     private float GetPosBX(int elementType, int index, float radius)
     {
-        float angleOffset = (2 * Mathf.PI / (3 * elementsInRow)) * ((index / rows) % (3 * elementsInRow)) + RIGHT_ANGLE;
+        float angleOffset = (2 * Mathf.PI / (3 * elementsInRow-2)) * ((index / rows) % (3 * elementsInRow-2)) + RIGHT_ANGLE;
         return (radius * Mathf.Cos(-angleOffset));
     }
     private float GetPosBY(int elementType, int index)
@@ -137,7 +140,7 @@ public class ReleaseControlAnimation : MonoBehaviour
     }
     private float GetPosBZ(int elementType, int index, float radius)
     {
-        float angleOffset = (2 * Mathf.PI / (3 * elementsInRow)) * ((index / rows) % (3 * elementsInRow)) + RIGHT_ANGLE;
+        float angleOffset = (2 * Mathf.PI / (3 * elementsInRow-2)) * ((index / rows) % (3 * elementsInRow-2)) + RIGHT_ANGLE;
         return radius * Mathf.Sin(-angleOffset);
     }
     #endregion
@@ -148,11 +151,11 @@ public class ReleaseControlAnimation : MonoBehaviour
         elementsInBlock = rows * elementsInRow;
         sizeBetweenElements = width / elementsInRow;
         sizeBetweenRows = height / rows;
-        offset = new Vector3(width / 2, 0, width / 2);
+        offset = new Vector3(width / 2 - sizeBetweenElements, 0, width / 2 - sizeBetweenElements/2);
     }
     private void InitShapes()
     {
-        int totalElementsCount = 3 * elementsInBlock;
+        int totalElementsCount = 3 * elementsInBlock - 2 * rows;
         shapes = new GameObject[prefabShapes.Length][];
         for (int i = 0; i < prefabShapes.Length; i++)
         {
@@ -384,13 +387,14 @@ public class ReleaseControlAnimation : MonoBehaviour
         InitSizes();
         for (int i = 0; i < prefabShapes.Length; i++)
         {
-            int s = GetElementCount(elementsInBlock * 3, prefabShapes.Length, i);
+            int s = GetElementCount(elementsInBlock * 3-2*rows, prefabShapes.Length, i);
             MeshFilter mf = prefabShapes[i].meshPrefab.GetComponent<MeshFilter>();
             for (int j = 0; j < s; j++)
             {
                 var p = transform.position + CalculatePointAAt(i, j);
+                var p2 = transform.position + CalculatePointBAt(i, j, true);
                 //drawString(""+GetElementIndex(i, j), p, Color.red);
-                Gizmos.DrawWireMesh(mf.sharedMesh, p);
+                Gizmos.DrawWireMesh(mf.sharedMesh, Vector3.Lerp(p, p2, screamLoudness), Quaternion.identity, Vector3.one*prefabShapes[i].scaleMultiplier);
             }
         }
         float angle = 2 * Mathf.PI / (3 * elementsInRow);
