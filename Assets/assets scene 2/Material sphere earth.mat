@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Material sphere scene 02
+  m_Name: Material sphere earth
   m_Shader: {fileID: 4800000, guid: 22dc785c1bdd83f4abc47c99629605db, type: 3}
   m_ShaderKeywords: _DIRECTIONCHANGE_ON _EMISSION _EXTRUDEUPFACES_ON _STRETCHING_ON
   m_LightmapFlags: 5
@@ -101,7 +101,7 @@ Material:
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
-    - _Animation_speed: 0.18
+    - _Animation_speed: 0.02
     - _BackFace_Intensity: 1
     - _BlendMode: 1
     - _BumpScale: 1
@@ -111,15 +111,15 @@ Material:
     - _CullModeForward: 2
     - _Cutoff: 0.5
     - _Debug_Mask: 0
-    - _DefaultOutlineOpacity: 0
-    - _DefaultShrink: 0.122
+    - _DefaultOutlineOpacity: 25
+    - _DefaultShrink: 0.5
     - _DetailNormalMapScale: 1
     - _DirectionChange: 1
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
     - _ExtrudeUpFaces: 1
-    - _FrontFace_Intensity: 0.37
+    - _FrontFace_Intensity: 2.98
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -127,9 +127,9 @@ Material:
     - _InfluenceRadius: 0.5
     - _Metallic: 0
     - _Mode: 0
-    - _NormalPush: 0.08
+    - _NormalPush: -0.05
     - _OcclusionStrength: 1
-    - _Outline_Opacity: 39
+    - _Outline_Opacity: 200
     - _PannerX: 0.8
     - _PannerY: 0.82
     - _Parallax: 0.02
