@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Torus shader test
+  m_Name: Material sphere
   m_Shader: {fileID: 4800000, guid: 22dc785c1bdd83f4abc47c99629605db, type: 3}
   m_ShaderKeywords: _DIRECTIONCHANGE_ON _EMISSION _STRETCHING_ON
   m_LightmapFlags: 5
@@ -111,8 +111,8 @@ Material:
     - _CullModeForward: 2
     - _Cutoff: 0.5
     - _Debug_Mask: 0
-    - _DefaultOutlineOpacity: 0.1
-    - _DefaultShrink: 0
+    - _DefaultOutlineOpacity: 0
+    - _DefaultShrink: 0.037
     - _DetailNormalMapScale: 1
     - _DirectionChange: 1
     - _DoubleSidedEnable: 0
@@ -127,17 +127,17 @@ Material:
     - _InfluenceRadius: 0.5
     - _Metallic: 0
     - _Mode: 0
-    - _NormalPush: 0.59
+    - _NormalPush: 0.33
     - _OcclusionStrength: 1
-    - _Outline_Opacity: 200
-    - _PannerX: 0.8
-    - _PannerY: 0.8
+    - _Outline_Opacity: 24
+    - _PannerX: -0.66
+    - _PannerY: -0.63
     - _Parallax: 0.02
     - _ReceivesSSR: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
     - _ShadowMatteFilter: 2.006836
-    - _Shrink_Faces_Amplitude: 0.04
+    - _Shrink_Faces_Amplitude: 0.17
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -154,8 +154,8 @@ Material:
     - _Stretching: 1
     - _SurfaceType: 0
     - _TargetMode: 0
-    - _TileX: 0.36
-    - _TileY: 0.36
+    - _TileX: 0.2
+    - _TileY: 0.2
     - _Transition_Factor: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
@@ -173,7 +173,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FrontFace_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _FrontFace_Color: {r: 0, g: 0, b: 0, a: 1}
     - _Outline_Color: {r: 1, g: 1, b: 1, a: 1}
     - _PannerAxis: {r: 0, g: 0, b: 0, a: 0}
     - _target: {r: 0, g: 0, b: 0, a: 0}
