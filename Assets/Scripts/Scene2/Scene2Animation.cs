@@ -53,7 +53,7 @@ public class Scene2Animation : MonoBehaviour
     }
     private void RotateBall()
     {
-        ball.eulerAngles = angle * Vector3.right;
+        ball.eulerAngles = -angle * Vector3.right;
     }
 
     #endregion
