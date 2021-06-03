@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Material sphere scene 02
   m_Shader: {fileID: 4800000, guid: 22dc785c1bdd83f4abc47c99629605db, type: 3}
-  m_ShaderKeywords: _DIRECTIONCHANGE_ON _EMISSION _EXTRUDEUPFACES_ON _STRETCHING_ON
+  m_ShaderKeywords: _DIRECTIONCHANGE_ON _EMISSION _STRETCHING_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -111,14 +111,14 @@ Material:
     - _CullModeForward: 2
     - _Cutoff: 0.5
     - _Debug_Mask: 0
-    - _DefaultOutlineOpacity: 0.4
+    - _DefaultOutlineOpacity: 0
     - _DefaultShrink: 0.122
     - _DetailNormalMapScale: 1
     - _DirectionChange: 1
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
-    - _ExtrudeUpFaces: 1
+    - _ExtrudeUpFaces: 0
     - _FrontFace_Intensity: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -127,9 +127,9 @@ Material:
     - _InfluenceRadius: 0.5
     - _Metallic: 0
     - _Mode: 0
-    - _NormalPush: 0.08
+    - _NormalPush: 3.6
     - _OcclusionStrength: 1
-    - _Outline_Opacity: 29.8
+    - _Outline_Opacity: 86.8
     - _PannerX: 0.8
     - _PannerY: 0.82
     - _Parallax: 0.02
@@ -137,7 +137,7 @@ Material:
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
     - _ShadowMatteFilter: 2.006836
-    - _Shrink_Faces_Amplitude: 0.22
+    - _Shrink_Faces_Amplitude: 2.07
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -154,7 +154,7 @@ Material:
     - _Stretching: 1
     - _SurfaceType: 0
     - _TargetMode: 0
-    - _TileX: 0.2
+    - _TileX: 7.17
     - _TileY: 0.2
     - _Transition_Factor: 1
     - _TransparentBackfaceEnable: 0

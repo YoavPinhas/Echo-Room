@@ -523,7 +523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &942468434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -637,242 +637,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screamLoudness: 0
   prefabShapes:
-  - meshPrefab: {fileID: 530981871561184267, guid: fb28f5493c007ee43b6ad00f9484317e, type: 3}
-    curveX:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    curveY:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.49605107
-        value: -7.4201813
-        inSlope: 7.328789
-        outSlope: 7.328789
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0826147
-        value: 4.2074094
-        inSlope: 0.20391941
-        outSlope: 0.20391941
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.7626715
-        value: -7.4201813
-        inSlope: -6.9209504
-        outSlope: -6.9209504
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 1
-      m_PostInfinity: 1
-      m_RotationOrder: 0
-    curveZ:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    scaleCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.33388484
-        value: 1.6690861
-        inSlope: 0.03271428
-        outSlope: 0.03271428
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.8463849
-        value: 1.6858522
-        inSlope: -0.00083883107
-        outSlope: -0.00083883107
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3338848
-        value: 1.6690861
-        inSlope: -0.034391943
-        outSlope: -0.034391943
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 1
-      m_PostInfinity: 1
-      m_RotationOrder: 4
-    scaleMultiplier: 20
-    minOffsetRadius: -10
-    maxOffsetRadius: 0
-  - meshPrefab: {fileID: 2673646329392078657, guid: e0de60a67287be4418e0e1b0fb179861, type: 3}
-    curveX:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    curveY:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.4773972
-        value: 12.247738
-        inSlope: -2.9746985
-        outSlope: -2.9746985
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 2.0969996
-        value: 7.4299088
-        inSlope: 0.07158036
-        outSlope: 0.07158036
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.57496333
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.773162
-        value: 12.247738
-        inSlope: 2.8743215
-        outSlope: 2.8743215
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 1
-      m_PostInfinity: 1
-      m_RotationOrder: 0
-    curveZ:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    scaleCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0.06196952
-        value: 2.5491018
-        inSlope: 0.15302718
-        outSlope: 0.15302718
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1.3887545
-        value: 2.752136
-        inSlope: 0.040123682
-        outSlope: 0.040123682
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 4.1784587
-        value: 2.5491018
-        inSlope: -0.07277981
-        outSlope: -0.07277981
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0
-      m_PreInfinity: 1
-      m_PostInfinity: 1
-      m_RotationOrder: 4
-    scaleMultiplier: 10
-    minOffsetRadius: -10
-    maxOffsetRadius: 10
   - meshPrefab: {fileID: 530981871561184267, guid: fb28f5493c007ee43b6ad00f9484317e, type: 3}
     curveX:
       serializedVersion: 2
@@ -1109,7 +873,7 @@ MonoBehaviour:
     scaleMultiplier: 10
     minOffsetRadius: 20
     maxOffsetRadius: 30
-  - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
+  - meshPrefab: {fileID: 5382806136878481484, guid: 87b4e2c99d9a7fa47aa3508fe560d9e9, type: 3}
     curveX:
       serializedVersion: 2
       m_Curve:
@@ -1140,26 +904,26 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0.49605107
         value: -7.4201813
-        inSlope: 6.91627
-        outSlope: 6.91627
+        inSlope: 7.328789
+        outSlope: 7.328789
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.3390996
-        value: 5.32684
-        inSlope: 0.4592278
-        outSlope: 0.4592278
+        time: 2.0826147
+        value: 4.2074094
+        inSlope: 0.20391941
+        outSlope: 0.20391941
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 4.4643774
+        time: 3.7626715
         value: -7.4201813
-        inSlope: -5.997814
-        outSlope: -5.997814
+        inSlope: -6.9209504
+        outSlope: -6.9209504
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1195,28 +959,28 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.19028401
-        value: 1.4477565
-        inSlope: 0.033899862
-        outSlope: 0.033899862
+        time: 0.33388484
+        value: 1.6690861
+        inSlope: 0.03271428
+        outSlope: 0.03271428
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.70278406
-        value: 1.4651302
-        inSlope: -0.0008692313
-        outSlope: -0.0008692313
+        time: 0.8463849
+        value: 1.6858522
+        inSlope: -0.00083883107
+        outSlope: -0.00083883107
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.190284
-        value: 1.4477565
-        inSlope: -0.035638325
-        outSlope: -0.035638325
+        time: 1.3338848
+        value: 1.6690861
+        inSlope: -0.034391943
+        outSlope: -0.034391943
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1224,10 +988,10 @@ MonoBehaviour:
       m_PreInfinity: 1
       m_PostInfinity: 1
       m_RotationOrder: 4
-    scaleMultiplier: 30
-    minOffsetRadius: 0
-    maxOffsetRadius: 30
-  - meshPrefab: {fileID: 5382806136878481484, guid: 87b4e2c99d9a7fa47aa3508fe560d9e9, type: 3}
+    scaleMultiplier: 20
+    minOffsetRadius: -10
+    maxOffsetRadius: 0
+  - meshPrefab: {fileID: 530981871561184267, guid: fb28f5493c007ee43b6ad00f9484317e, type: 3}
     curveX:
       serializedVersion: 2
       m_Curve:
@@ -1256,28 +1020,28 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: -1.5555084
-        value: 7.3768415
-        inSlope: -7.7796617
-        outSlope: -7.7796617
+        time: 0.49605107
+        value: -7.4201813
+        inSlope: 7.328789
+        outSlope: 7.328789
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.8799169
-        value: -11.569942
-        inSlope: 0.6727402
-        outSlope: 0.6727402
+        time: 2.0826147
+        value: 4.2074094
+        inSlope: 0.20391941
+        outSlope: 0.20391941
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9562445
-        value: 7.3768415
-        inSlope: 9.125142
-        outSlope: 9.125142
+        time: 3.7626715
+        value: -7.4201813
+        inSlope: -6.9209504
+        outSlope: -6.9209504
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1313,28 +1077,28 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.17354321
-        value: 1.2705063
-        inSlope: 0.017677398
-        outSlope: 0.017677398
+        time: 0.33388484
+        value: 1.6690861
+        inSlope: 0.03271428
+        outSlope: 0.03271428
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.68604326
-        value: 1.2795659
-        inSlope: -0.00045326818
-        outSlope: -0.00045326818
+        time: 0.8463849
+        value: 1.6858522
+        inSlope: -0.00083883107
+        outSlope: -0.00083883107
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1.1735432
-        value: 1.2705063
-        inSlope: -0.018583935
-        outSlope: -0.018583935
+        time: 1.3338848
+        value: 1.6690861
+        inSlope: -0.034391943
+        outSlope: -0.034391943
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1343,8 +1107,8 @@ MonoBehaviour:
       m_PostInfinity: 1
       m_RotationOrder: 4
     scaleMultiplier: 20
-    minOffsetRadius: 0
-    maxOffsetRadius: 30
+    minOffsetRadius: -10
+    maxOffsetRadius: 0
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
     curveX:
       serializedVersion: 2
@@ -1472,7 +1236,7 @@ MonoBehaviour:
     scaleMultiplier: 30
     minOffsetRadius: -20
     maxOffsetRadius: 20
-  - meshPrefab: {fileID: 5382806136878481484, guid: 87b4e2c99d9a7fa47aa3508fe560d9e9, type: 3}
+  - meshPrefab: {fileID: 530981871561184267, guid: fb28f5493c007ee43b6ad00f9484317e, type: 3}
     curveX:
       serializedVersion: 2
       m_Curve:
@@ -1501,28 +1265,28 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: -1.2164886
+        time: 0.49605107
         value: -7.4201813
-        inSlope: 9.792195
-        outSlope: 9.792195
+        inSlope: 7.328789
+        outSlope: 7.328789
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.7775762
-        value: 12.106091
-        inSlope: 0.3147149
-        outSlope: 0.3147149
+        time: 2.0826147
+        value: 4.2074094
+        inSlope: 0.20391941
+        outSlope: 0.20391941
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 2.9086218
+        time: 3.7626715
         value: -7.4201813
-        inSlope: -9.1627655
-        outSlope: -9.1627655
+        inSlope: -6.9209504
+        outSlope: -6.9209504
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1558,28 +1322,28 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0.075932
-        outSlope: 0.075932
+        time: 0.33388484
+        value: 1.6690861
+        inSlope: 0.03271428
+        outSlope: 0.03271428
         tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.51250005
-        value: 1.0389152
-        inSlope: -0.0019469857
-        outSlope: -0.0019469857
+        time: 0.8463849
+        value: 1.6858522
+        inSlope: -0.00083883107
+        outSlope: -0.00083883107
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: -0.079825975
-        outSlope: -0.079825975
+        time: 1.3338848
+        value: 1.6690861
+        inSlope: -0.034391943
+        outSlope: -0.034391943
         tangentMode: 34
         weightedMode: 0
         inWeight: 0.33333334
@@ -1588,8 +1352,362 @@ MonoBehaviour:
       m_PostInfinity: 1
       m_RotationOrder: 4
     scaleMultiplier: 20
-    minOffsetRadius: 0
-    maxOffsetRadius: 20
+    minOffsetRadius: -10
+    maxOffsetRadius: 0
+  - meshPrefab: {fileID: 2673646329392078657, guid: e0de60a67287be4418e0e1b0fb179861, type: 3}
+    curveX:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    curveY:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.4773972
+        value: 12.247738
+        inSlope: -2.9746985
+        outSlope: -2.9746985
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0969996
+        value: 7.4299088
+        inSlope: 0.07158036
+        outSlope: 0.07158036
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.57496333
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.773162
+        value: 12.247738
+        inSlope: 2.8743215
+        outSlope: 2.8743215
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 1
+      m_PostInfinity: 1
+      m_RotationOrder: 0
+    curveZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    scaleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.06196952
+        value: 2.5491018
+        inSlope: 0.15302718
+        outSlope: 0.15302718
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.3887545
+        value: 2.752136
+        inSlope: 0.040123682
+        outSlope: 0.040123682
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 4.1784587
+        value: 2.5491018
+        inSlope: -0.07277981
+        outSlope: -0.07277981
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 1
+      m_PostInfinity: 1
+      m_RotationOrder: 4
+    scaleMultiplier: 10
+    minOffsetRadius: -10
+    maxOffsetRadius: 10
+  - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
+    curveX:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    curveY:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.49605107
+        value: -7.4201813
+        inSlope: 6.91627
+        outSlope: 6.91627
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.3390996
+        value: 5.32684
+        inSlope: 0.4592278
+        outSlope: 0.4592278
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 4.4643774
+        value: -7.4201813
+        inSlope: -5.997814
+        outSlope: -5.997814
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 1
+      m_PostInfinity: 1
+      m_RotationOrder: 0
+    curveZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    scaleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -0.046640575
+        value: 2.9860718
+        inSlope: 0.03389963
+        outSlope: 0.03389963
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.46585947
+        value: 3.0034454
+        inSlope: -0.000869222
+        outSlope: -0.000869222
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9533595
+        value: 2.9860718
+        inSlope: -0.035638075
+        outSlope: -0.035638075
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 1
+      m_PostInfinity: 1
+      m_RotationOrder: 4
+    scaleMultiplier: 30
+    minOffsetRadius: -10
+    maxOffsetRadius: 30
+  - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
+    curveX:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    curveY:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.49605107
+        value: -7.4201813
+        inSlope: 6.91627
+        outSlope: 6.91627
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.3390996
+        value: 5.32684
+        inSlope: 0.4592278
+        outSlope: 0.4592278
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 4.4643774
+        value: -7.4201813
+        inSlope: -5.997814
+        outSlope: -5.997814
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 1
+      m_PostInfinity: 1
+      m_RotationOrder: 0
+    curveZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    scaleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -0.046640575
+        value: 2.9860718
+        inSlope: 0.03389963
+        outSlope: 0.03389963
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.46585947
+        value: 3.0034454
+        inSlope: -0.000869222
+        outSlope: -0.000869222
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.9533595
+        value: 2.9860718
+        inSlope: -0.035638075
+        outSlope: -0.035638075
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 1
+      m_PostInfinity: 1
+      m_RotationOrder: 4
+    scaleMultiplier: 30
+    minOffsetRadius: -10
+    maxOffsetRadius: 30
   - meshPrefab: {fileID: 970958914387681806, guid: 6f6e3c13528df4540ae82089d079f1f8, type: 3}
     curveX:
       serializedVersion: 2
@@ -1708,6 +1826,360 @@ MonoBehaviour:
     scaleMultiplier: 30
     minOffsetRadius: -10
     maxOffsetRadius: 0
+  - meshPrefab: {fileID: 5382806136878481484, guid: 87b4e2c99d9a7fa47aa3508fe560d9e9, type: 3}
+    curveX:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    curveY:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -1.5555084
+        value: 7.3768415
+        inSlope: -7.7796617
+        outSlope: -7.7796617
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.8799169
+        value: -11.569942
+        inSlope: 0.6727402
+        outSlope: 0.6727402
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.9562445
+        value: 7.3768415
+        inSlope: 9.125142
+        outSlope: 9.125142
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 1
+      m_PostInfinity: 1
+      m_RotationOrder: 0
+    curveZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    scaleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.17354321
+        value: 1.2705063
+        inSlope: 0.017677398
+        outSlope: 0.017677398
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.68604326
+        value: 1.2795659
+        inSlope: -0.00045326818
+        outSlope: -0.00045326818
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1735432
+        value: 1.2705063
+        inSlope: -0.018583935
+        outSlope: -0.018583935
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 1
+      m_PostInfinity: 1
+      m_RotationOrder: 4
+    scaleMultiplier: 20
+    minOffsetRadius: 0
+    maxOffsetRadius: 30
+  - meshPrefab: {fileID: 2673646329392078657, guid: e0de60a67287be4418e0e1b0fb179861, type: 3}
+    curveX:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    curveY:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.4773972
+        value: 12.247738
+        inSlope: -2.9746985
+        outSlope: -2.9746985
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.0969996
+        value: 7.4299088
+        inSlope: 0.07158036
+        outSlope: 0.07158036
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.57496333
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 3.773162
+        value: 12.247738
+        inSlope: 2.8743215
+        outSlope: 2.8743215
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 1
+      m_PostInfinity: 1
+      m_RotationOrder: 0
+    curveZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    scaleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0.06196952
+        value: 2.5491018
+        inSlope: 0.15302718
+        outSlope: 0.15302718
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.3887545
+        value: 2.752136
+        inSlope: 0.040123682
+        outSlope: 0.040123682
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 4.1784587
+        value: 2.5491018
+        inSlope: -0.07277981
+        outSlope: -0.07277981
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 1
+      m_PostInfinity: 1
+      m_RotationOrder: 4
+    scaleMultiplier: 10
+    minOffsetRadius: -10
+    maxOffsetRadius: 10
+  - meshPrefab: {fileID: 5382806136878481484, guid: 87b4e2c99d9a7fa47aa3508fe560d9e9, type: 3}
+    curveX:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    curveY:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: -1.2164886
+        value: -7.4201813
+        inSlope: 9.792195
+        outSlope: 9.792195
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.7775762
+        value: 12.106091
+        inSlope: 0.3147149
+        outSlope: 0.3147149
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 2.9086218
+        value: -7.4201813
+        inSlope: -9.1627655
+        outSlope: -9.1627655
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 1
+      m_PostInfinity: 1
+      m_RotationOrder: 0
+    curveZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    scaleCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0.075932
+        outSlope: 0.075932
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.51250005
+        value: 1.0389152
+        inSlope: -0.0019469857
+        outSlope: -0.0019469857
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: -0.079825975
+        outSlope: -0.079825975
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 1
+      m_PostInfinity: 1
+      m_RotationOrder: 4
+    scaleMultiplier: 20
+    minOffsetRadius: 0
+    maxOffsetRadius: 20
   - meshPrefab: {fileID: 2673646329392078657, guid: e0de60a67287be4418e0e1b0fb179861, type: 3}
     curveX:
       serializedVersion: 2
