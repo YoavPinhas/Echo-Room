@@ -101,7 +101,7 @@ Material:
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
-    - _Animation_speed: 0.02
+    - _Animation_speed: 0.001
     - _BackFace_Intensity: 1
     - _BlendMode: 1
     - _BumpScale: 1

@@ -735,9 +735,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 1
   sampleRate: 44100
-  threshold: 0.256
-  sensitivity: 0.42
-  slowingSpeed: 1.03
+  threshold: 0.064
+  sensitivity: 1
+  slowingSpeed: 0.66
   OnMicrophoneLevelCalculated:
     m_PersistentCalls:
       m_Calls:

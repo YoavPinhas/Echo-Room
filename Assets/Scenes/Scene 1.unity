@@ -538,9 +538,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 1
   sampleRate: 44100
-  threshold: 0.256
-  sensitivity: 0.42
-  slowingSpeed: 1.03
+  threshold: 0
+  sensitivity: 1
+  slowingSpeed: 0.45
   OnMicrophoneLevelCalculated:
     m_PersistentCalls:
       m_Calls:
@@ -2298,7 +2298,8 @@ MonoBehaviour:
     scaleMultiplier: 10
     minOffsetRadius: -10
     maxOffsetRadius: 30
-  secondsForCycle: 7
+  maxSecondsForCycle: 10
+  minSecondsForCycle: 4
   rows: 15
   elementsInRow: 15
   width: 30.7
@@ -2306,8 +2307,51 @@ MonoBehaviour:
   radius: 23.12
   globalScaleMultipier: 1
   randomStrength: 0.442
-  curveMovementSpeed: 0.29
-  startMovingThreahold: 0.723
+  curveMovementSpeed: 0.68
+  startMovingThreahold: 0.595
+  sensitivity: 5
+  startRotateCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.1721034
+      outSlope: 2.1721034
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.031930596
+      value: 0.06935655
+      inSlope: 1.3134298
+      outSlope: 1.3134298
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.43392876
+      value: 0.25216773
+      inSlope: 0.8879242
+      outSlope: 0.8879242
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1.3210921
+      outSlope: 1.3210921
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   gridToCircleSeconds: 2
   circleToGridSeconds: 4
   debugDrawing: 1
