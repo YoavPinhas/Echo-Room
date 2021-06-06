@@ -32,7 +32,7 @@ public class Scene2Animation : MonoBehaviour
     private float destSpeed = 0;
     private float currentSpeed = 0;
     private float delta = 0;
-    private ParticleSystem.EmissionModule emission;
+    private ParticleSystem.EmissionModule particleSystemEmission;
     #endregion
 
     #region Animation Methods
@@ -48,8 +48,8 @@ public class Scene2Animation : MonoBehaviour
     }
     private void UpdateParticles()
     {
-        var amount = Mathf.Lerp(0, maxParticlesRate, particleRateChange.Evaluate(delta));
-        emission.rateOverTime = new ParticleSystem.MinMaxCurve(amount);
+        var rateOverTime = Mathf.Lerp(0, maxParticlesRate, particleRateChange.Evaluate(delta));
+        particleSystemEmission.rateOverTime = new ParticleSystem.MinMaxCurve(rateOverTime);
     }
     private void RotateBall()
     {
@@ -62,7 +62,7 @@ public class Scene2Animation : MonoBehaviour
     private void Start()
     {
         //particles.enableEmission = false;
-        emission = particles.emission;
+        particleSystemEmission = particles.emission;
         minSpeed = 360 / maxScondsForCycle;
         maxSpeed = 360 / minScondsForCycle;
     }

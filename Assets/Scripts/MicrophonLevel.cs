@@ -52,7 +52,7 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
             return 0;
         float[] waveData = new float[sampleScope];
         recordedClip.GetData(waveData, pos);
-        float max = waveData.Max();
+        float max = waveData.Max(n => Mathf.Abs(n));
         return max * max;
     }
     #endregion
@@ -87,8 +87,8 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
         else if (max < maxLevel)
             maxLevel = Mathf.Lerp(maxLevel, max, slowingSpeed * Time.deltaTime);
         else
-            maxLevel = Mathf.Lerp(maxLevel, max, sensitivity);
-        OnMicrophoneLevelCalculated.Invoke(maxLevel);
+            maxLevel = Mathf.Lerp(maxLevel, max, sensitivity * Time.deltaTime);
+        OnMicrophoneLevelCalculated.Invoke(Mathf.Clamp01((maxLevel - threshold)/(1-threshold)));
         if (debug)
             Debug.Log(maxLevel);
     }

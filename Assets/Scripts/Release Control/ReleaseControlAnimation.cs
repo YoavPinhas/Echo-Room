@@ -25,7 +25,12 @@ public class ReleaseControlAnimation : MonoBehaviour
     #region Inspector Properties
     [SerializeField, Range(0, 1)] private float screamLoudness;
     [SerializeField] private Shape[] prefabShapes;
-    [SerializeField, Min(0.001f)] private float secondsForCycle;
+    [SerializeField, Min(1), Tooltip("More seconds for cycle = slower speed!\n" +
+                            "This parameter determine the minSpeed in a sense.")]
+    private float maxSecondsForCycle;
+    [SerializeField, Min(1), Tooltip("Less seconds for cycle = faster speed!\n" +
+                            "This parameter determine the maxSpeed in a sense.")]
+    private float minSecondsForCycle;
     [SerializeField, Min(1)] private int rows;
     [SerializeField, Min(1)] private int elementsInRow;
     [SerializeField, Min(5)] private float width;
@@ -35,6 +40,8 @@ public class ReleaseControlAnimation : MonoBehaviour
     [SerializeField, Range(0, 1)] private float randomStrength;
     [SerializeField, Range(0, 5)] private float curveMovementSpeed;
     [SerializeField, Range(0, 1)] private float startMovingThreahold;
+    [SerializeField, Range(1, 5)] private float sensitivity;
+    [SerializeField] private AnimationCurve startRotateCurve;
     [SerializeField, Min(1)] private float gridToCircleSeconds;
     [SerializeField, Min(1)] private float circleToGridSeconds;
     public bool debugDrawing = true;
@@ -57,6 +64,11 @@ public class ReleaseControlAnimation : MonoBehaviour
     private float circleDelta = 0;
     private float angleDelta = 0;
     private float angle = 0;
+    private float minRotationSpeed;
+    private float maxRotationSpeed;
+    private float rawDelta = 0;
+    private float delta = 0;
+   
     #endregion
 
     #region State Machine parameters
@@ -153,6 +165,8 @@ public class ReleaseControlAnimation : MonoBehaviour
         sizeBetweenElements = width / elementsInRow;
         sizeBetweenRows = height / rows;
         offset = new Vector3(width / 2 - sizeBetweenElements, 0, width / 2 - sizeBetweenElements/2);
+        minRotationSpeed = 360 / maxSecondsForCycle;
+        maxRotationSpeed = 360 / minSecondsForCycle;
     }
     private void InitShapes()
     {
@@ -253,15 +267,15 @@ public class ReleaseControlAnimation : MonoBehaviour
             {
                 shapes[i][j].transform.localPosition = func.Invoke(i, j) + GetPointOnCurve(i, j);
                 float dt = prefabShapes[i].scaleMultiplier * prefabShapes[i].scaleCurve.Evaluate(time) * globalScaleMultipier;
-                shapes[i][j].transform.localScale =  Vector3.one * ((1-screamLoudness)* prefabShapes[i].scaleMultiplier + dt*screamLoudness);
+                shapes[i][j].transform.localScale =  Vector3.one * ((1-delta)* prefabShapes[i].scaleMultiplier + dt*delta);
             }
         }
     }
     private Vector3 GetPointOnCurve(int i, int j)
     {
-        shapeCurveOffsets[i][j].x = prefabShapes[i].curveX.Evaluate(time + elementsCurveDelta[i][j]) * curveStreangth * screamLoudness;
-        shapeCurveOffsets[i][j].y = prefabShapes[i].curveY.Evaluate(time + elementsCurveDelta[i][j]) * curveStreangth * screamLoudness;
-        shapeCurveOffsets[i][j].z = prefabShapes[i].curveZ.Evaluate(time + elementsCurveDelta[i][j]) * curveStreangth * screamLoudness;
+        shapeCurveOffsets[i][j].x = prefabShapes[i].curveX.Evaluate(time + elementsCurveDelta[i][j]) * curveStreangth * delta;
+        shapeCurveOffsets[i][j].y = prefabShapes[i].curveY.Evaluate(time + elementsCurveDelta[i][j]) * curveStreangth * delta;
+        shapeCurveOffsets[i][j].z = prefabShapes[i].curveZ.Evaluate(time + elementsCurveDelta[i][j]) * curveStreangth * delta;
         return shapeCurveOffsets[i][j];
     }
     private void SamplePositions()
@@ -303,19 +317,19 @@ public class ReleaseControlAnimation : MonoBehaviour
         switch (state)
         {
             case State.Idle:
-                if (screamLoudness > startMovingThreahold)
+                if (delta > startMovingThreahold)
                 {
                     SetState(State.Moving);
                 }
                 break;
             case State.Moving:
-                if (screamLoudness < startMovingThreahold)
+                if (delta < startMovingThreahold)
                 {
                    if (circleDelta != 1)
                        SetState(State.Idle);
                    else if(angle < 180)
                    {
-                        rotationSpeed = Mathf.Lerp(rotationSpeed, 0.5f/circleToGridSeconds, 0.5f*Time.deltaTime);
+                        rotationSpeed = Mathf.Lerp(rotationSpeed, 180/circleToGridSeconds, 0.5f*Time.deltaTime);
                    }
                    else if(angle >= 180)
                    {
@@ -324,7 +338,7 @@ public class ReleaseControlAnimation : MonoBehaviour
                 }
                 break;
             case State.StopMoving:
-                if (screamLoudness > startMovingThreahold)
+                if (delta > startMovingThreahold)
                 {
                     SetState(State.Moving);
                 }
@@ -345,7 +359,8 @@ public class ReleaseControlAnimation : MonoBehaviour
         sampledAngle = (transform.eulerAngles.y + 360)%360;
         angleDelta = sampledAngle / 360;
         sampleRotation = transform.rotation;
-        rotationSpeed = 1 / secondsForCycle;
+        angle = transform.eulerAngles.y;
+        //rotationSpeed = 1 / secondsForCycle;
     }
     private void UpdateTime(float dt)
     {
@@ -353,8 +368,13 @@ public class ReleaseControlAnimation : MonoBehaviour
     }
     private void UpdateAngle(float dt)
     {
-        angleDelta = (angleDelta + dt *rotationSpeed) % 1;
-        angle = Mathf.Lerp(0, 360, angleDelta);
+        if (delta >= startMovingThreahold)
+        {
+            angleDelta = Mathf.Clamp01((delta - startMovingThreahold) / (1f - startMovingThreahold));
+            rotationSpeed = delta * Mathf.Lerp(minRotationSpeed, maxRotationSpeed, angleDelta);
+        }
+        //angle = Mathf.Lerp(0, 360, angleDelta);
+        angle = (angle + dt * rotationSpeed) % 360;
         //angleDelta = (360 / secondsForCycle) * circleDelta * dt;
     }
     #endregion
@@ -374,7 +394,9 @@ public class ReleaseControlAnimation : MonoBehaviour
     
     private void Update()
     {
-        screamLoudness = Mathf.Clamp01(screamLoudness);
+        rawDelta = Mathf.Lerp(rawDelta, screamLoudness, Time.deltaTime * sensitivity);
+        delta = startRotateCurve.Evaluate(rawDelta);
+        //delta = Mathf.Clamp01(delta);
         UpdateMovement();
     }
     #endregion
@@ -395,31 +417,15 @@ public class ReleaseControlAnimation : MonoBehaviour
                 var p = transform.position + CalculatePointAAt(i, j);
                 var p2 = transform.position + CalculatePointBAt(i, j, true);
                 //drawString(""+GetElementIndex(i, j), p, Color.red);
-                float mul = Mathf.Lerp(prefabShapes[i].scaleMultiplier, prefabShapes[i].scaleMultiplier * globalScaleMultipier, screamLoudness);
-                Gizmos.DrawWireMesh(mf.sharedMesh, Vector3.Lerp(p, p2, screamLoudness), Quaternion.identity, Vector3.one*mul);
+                float mul = Mathf.Lerp(prefabShapes[i].scaleMultiplier, prefabShapes[i].scaleMultiplier * globalScaleMultipier, delta);
+                Gizmos.DrawWireMesh(mf.sharedMesh, Vector3.Lerp(p, p2, delta), Quaternion.identity, Vector3.one*mul);
             }
         }
         float angle = 2 * Mathf.PI / (3 * elementsInRow);
         Gizmos.color = Color.yellow;
 
     }
-    /*static void drawString(string text, Vector3 worldPos, Color? colour = null)
-    {
-        UnityEditor.Handles.BeginGUI();
-        if (colour.HasValue) GUI.color = colour.Value;
-        var view = UnityEditor.SceneView.currentDrawingSceneView;
-        Vector3 screenPos = view.camera.WorldToScreenPoint(worldPos);
-
-        if (screenPos.y < 0 || screenPos.y > Screen.height || screenPos.x < 0 || screenPos.x > Screen.width || screenPos.z < 0)
-        {
-            UnityEditor.Handles.EndGUI();
-            return;
-        }
-
-        Vector2 size = GUI.skin.label.CalcSize(new GUIContent(text));
-        GUI.Label(new Rect(screenPos.x - (size.x / 2), -screenPos.y + view.position.height + 4, size.x, size.y), text);
-        UnityEditor.Handles.EndGUI();
-    }*/
+    
     public void OnMicrophonChangedLevel(float level)
     {
         screamLoudness = Mathf.Lerp(screamLoudness, level, Time.deltaTime);
