@@ -6,7 +6,7 @@ public class RotateAround : MonoBehaviour
 {
     #region Inspector Parameters
     [SerializeField, Min(0)] private float minRandomSpeed;
-    [SerializeField, Min(1)] private float maxRandomSpeed;
+    [SerializeField, Min(0)] private float maxRandomSpeed;
     [SerializeField, Min(1)] private bool rotateAroundX = true;
     [SerializeField, Min(1)] private bool rotateAroundY = true;
     [SerializeField, Min(1)] private bool rotateAroundZ = true;
