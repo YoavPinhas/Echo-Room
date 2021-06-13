@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1532736733827929810}
   - component: {fileID: -3629108939357205283}
   m_Layer: 0
-  m_Name: test sphere whith shader
+  m_Name: spherecolor1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3f05ad1656c3c1d44868f8ec5b345227, type: 2}
+  - {fileID: 2100000, guid: 069332f0b65accd418c24231e17757e4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970958914387681806}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6488ddbdd622ff0488e1f30c4452d9be, type: 3}
   m_Name: 
