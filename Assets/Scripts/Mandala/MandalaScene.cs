@@ -76,6 +76,10 @@ public class MandalaScene : MonoBehaviour
             particles[i].RotateParticle(Time.deltaTime);
         }
     }
+    private void UpdateDelta()
+    {
+        delta = screamLoudnessCurve.Evaluate(screamLoudness);
+    }
     #endregion
 
     #region MonoBehavior Methods
@@ -101,11 +105,11 @@ public class MandalaScene : MonoBehaviour
         }
         UpdatePrticlesPosition();
         UpdateParticlesRotation();
+        UpdateDelta();
     }
     public void OnMicrophonChangedLevel(float level)
     {
         screamLoudness = Mathf.Lerp(screamLoudness, level, Time.deltaTime);
-        delta = screamLoudnessCurve.Evaluate(screamLoudness);
     }
     #endregion
 }
