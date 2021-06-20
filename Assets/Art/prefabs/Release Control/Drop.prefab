@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minRandomSpeed: 0.2
-  maxRandomSpeed: 1
+  maxRandomSpeed: 0.5
   rotateAroundX: 1
   rotateAroundY: 1
   rotateAroundZ: 1

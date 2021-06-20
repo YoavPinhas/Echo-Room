@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1481.7754, g: 1835.8867, b: 2430.4492, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -376,11 +376,11 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   particles:
-  - shapePrefab: {fileID: 1802468934508269904, guid: dbdba09115240cc4eaadf1257da6f21f, type: 3}
-    numberOfCircles: 5
-    elementsInCircle: 20
+  - shapePrefab: {fileID: 970958914387681806, guid: 02c39f6cd2ec5ef47a74581c8c4565f3, type: 3}
+    numberOfCircles: 2
+    elementsInCircle: 13
     minRadius: 3.2
-    maxRadius: 16.89
+    maxRadius: 6.22
     ringRotation: 1
     secondsForCycle: 10
     secondsFromCloseToOpen: 1
@@ -413,15 +413,15 @@ MonoBehaviour:
     zRotation: 0
     elementsRotationSpeed: 10
     minElementSize: 1
-    maxElementSize: 2
-  - shapePrefab: {fileID: 8590585766036342750, guid: 11bbf5bbf9b5a6243a8fe64f07400e5a, type: 3}
-    numberOfCircles: 8
-    elementsInCircle: 30
-    minRadius: 19.06
-    maxRadius: 39
+    maxElementSize: 1
+  - shapePrefab: {fileID: 5382806136878481484, guid: 446b12cd8ee598c4fbfd94eb1a35f92e, type: 3}
+    numberOfCircles: 2
+    elementsInCircle: 13
+    minRadius: 4.57
+    maxRadius: 5.34
     ringRotation: 2
     secondsForCycle: 10
-    secondsFromCloseToOpen: 0.8
+    secondsFromCloseToOpen: 1
     openCurve:
       serializedVersion: 2
       m_Curve:
@@ -450,16 +450,16 @@ MonoBehaviour:
     yRotation: 1
     zRotation: 0
     elementsRotationSpeed: 10
-    minElementSize: 1
-    maxElementSize: 2
-  - shapePrefab: {fileID: 3307694764798788982, guid: 76cbdc3425adbe24d95e080c3265e42a, type: 3}
-    numberOfCircles: 12
+    minElementSize: 15
+    maxElementSize: 15
+  - shapePrefab: {fileID: 530981871561184267, guid: 51598140a7b3f9745bc40141603d9cb5, type: 3}
+    numberOfCircles: 2
     elementsInCircle: 40
-    minRadius: 41.2
-    maxRadius: 73.9
+    minRadius: 7.86
+    maxRadius: 8.54
     ringRotation: 1
     secondsForCycle: 10
-    secondsFromCloseToOpen: 0.6
+    secondsFromCloseToOpen: 1
     openCurve:
       serializedVersion: 2
       m_Curve:
@@ -488,8 +488,84 @@ MonoBehaviour:
     yRotation: 1
     zRotation: 0
     elementsRotationSpeed: 10
+    minElementSize: 20
+    maxElementSize: 20
+  - shapePrefab: {fileID: 970958914387681806, guid: 02c39f6cd2ec5ef47a74581c8c4565f3, type: 3}
+    numberOfCircles: 2
+    elementsInCircle: 50
+    minRadius: 0.1
+    maxRadius: 10.18
+    ringRotation: 2
+    secondsForCycle: 10
+    secondsFromCloseToOpen: 1
+    openCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    xRotation: 0
+    yRotation: 2
+    zRotation: 0
+    elementsRotationSpeed: 10
     minElementSize: 1
-    maxElementSize: 2
+    maxElementSize: 1
+  - shapePrefab: {fileID: 2673646329392078657, guid: ff51196d7c241db4289ce7e290190a10, type: 3}
+    numberOfCircles: 2
+    elementsInCircle: 40
+    minRadius: 12
+    maxRadius: 12
+    ringRotation: 1
+    secondsForCycle: 10
+    secondsFromCloseToOpen: 1
+    openCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    xRotation: 0
+    yRotation: 1
+    zRotation: 0
+    elementsRotationSpeed: 10
+    minElementSize: 15
+    maxElementSize: 15
   debug: 1
 --- !u!4 &1319502596
 Transform:
