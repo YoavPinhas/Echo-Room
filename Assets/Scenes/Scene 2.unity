@@ -1561,7 +1561,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.06
+      scalar: 0.09
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5700,13 +5700,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242505525}
-  m_LocalRotation: {x: -0.45313743, y: 0.0060487627, z: 0.03634601, w: 0.8906789}
-  m_LocalPosition: {x: 0, y: 0.21, z: 17.58}
+  m_LocalRotation: {x: 0.0010880602, y: -0.88815236, z: -0.4545918, w: -0.06730824}
+  m_LocalPosition: {x: 0, y: 8.05, z: -10.22}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: -53.866, y: -2.154, z: 5.768}
+  m_LocalEulerAnglesHint: {x: -53.866, y: -191.6, z: 5.768}
 --- !u!114 &1242505529
 MonoBehaviour:
   m_ObjectHideFlags: 0

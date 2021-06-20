@@ -101,7 +101,7 @@ Material:
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
-    - _Animation_speed: 0.41
+    - _Animation_speed: 0.2
     - _BackFace_Intensity: 1
     - _BlendMode: 1
     - _BumpScale: 1
@@ -111,8 +111,8 @@ Material:
     - _CullModeForward: 2
     - _Cutoff: 0.5
     - _Debug_Mask: 0
-    - _DefaultOutlineOpacity: 8.9
-    - _DefaultShrink: 0.122
+    - _DefaultOutlineOpacity: 0
+    - _DefaultShrink: 0.132
     - _DetailNormalMapScale: 1
     - _DirectionChange: 1
     - _DoubleSidedEnable: 0
@@ -129,7 +129,7 @@ Material:
     - _Mode: 0
     - _NormalPush: 4
     - _OcclusionStrength: 1
-    - _Outline_Opacity: 57.5
+    - _Outline_Opacity: 44.4
     - _PannerX: 0.8
     - _PannerY: 0.82
     - _Parallax: 0.02
@@ -154,8 +154,8 @@ Material:
     - _Stretching: 1
     - _SurfaceType: 0
     - _TargetMode: 0
-    - _TileX: 7.82
-    - _TileY: 1.14
+    - _TileX: 0.68
+    - _TileY: 0.69
     - _Transition_Factor: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
@@ -174,7 +174,7 @@ Material:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FrontFace_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Outline_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Outline_Color: {r: 1, g: 0.14321658, b: 0, a: 1}
     - _PannerAxis: {r: 0, g: 0, b: 0, a: 0}
     - _target: {r: 0, g: 0, b: 0, a: 0}
     - _target2: {r: 0, g: 0, b: 0, a: 0}

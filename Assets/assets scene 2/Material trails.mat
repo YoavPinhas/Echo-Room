@@ -154,7 +154,7 @@ Material:
     - _Stretching: 1
     - _SurfaceType: 0
     - _TargetMode: 0
-    - _TileX: 2.29
+    - _TileX: 10
     - _TileY: 1.71
     - _Transition_Factor: 1
     - _TransparentBackfaceEnable: 0
@@ -174,7 +174,7 @@ Material:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FrontFace_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Outline_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Outline_Color: {r: 0.6320754, g: 0.20644417, b: 0, a: 1}
     - _PannerAxis: {r: 0, g: 0, b: 0, a: 0}
     - _target: {r: 0, g: 0, b: 0, a: 0}
     - _target2: {r: 0, g: 0, b: 0, a: 0}
