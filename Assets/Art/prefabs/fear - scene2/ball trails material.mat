@@ -7,9 +7,9 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Material trails
+  m_Name: ball trails material
   m_Shader: {fileID: 4800000, guid: 22dc785c1bdd83f4abc47c99629605db, type: 3}
-  m_ShaderKeywords: _DIRECTIONCHANGE_ON _EMISSION _EXTRUDEUPFACES_ON _STRETCHING_ON
+  m_ShaderKeywords: _DIRECTIONCHANGE_ON _EMISSION _STRETCHING_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -48,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DisplacementMask:
-        m_Texture: {fileID: 2800000, guid: eeed7f0c8b81a9644a36af77360174a1, type: 3}
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 1, y: 1}
     - _EmissionMap:
@@ -72,7 +72,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OutlineTex:
-        m_Texture: {fileID: 2800000, guid: 7536a892ddd76ea4da1d87cfd46c86af, type: 3}
+        m_Texture: {fileID: 2800000, guid: f0ebce4f965049f43a0f7712735ab545, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -101,7 +101,7 @@ Material:
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
-    - _Animation_speed: 3.57
+    - _Animation_speed: 0.08
     - _BackFace_Intensity: 1
     - _BlendMode: 1
     - _BumpScale: 1
@@ -112,13 +112,13 @@ Material:
     - _Cutoff: 0.5
     - _Debug_Mask: 0
     - _DefaultOutlineOpacity: 0
-    - _DefaultShrink: 0.122
+    - _DefaultShrink: 0
     - _DetailNormalMapScale: 1
     - _DirectionChange: 1
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
-    - _ExtrudeUpFaces: 1
+    - _ExtrudeUpFaces: 0
     - _FrontFace_Intensity: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -127,17 +127,17 @@ Material:
     - _InfluenceRadius: 0.5
     - _Metallic: 0
     - _Mode: 0
-    - _NormalPush: 0.08
+    - _NormalPush: 0.59
     - _OcclusionStrength: 1
-    - _Outline_Opacity: 35.5
-    - _PannerX: 0.8
-    - _PannerY: 0.82
+    - _Outline_Opacity: 32.8
+    - _PannerX: 1
+    - _PannerY: 1
     - _Parallax: 0.02
     - _ReceivesSSR: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
     - _ShadowMatteFilter: 2.006836
-    - _Shrink_Faces_Amplitude: 0.22
+    - _Shrink_Faces_Amplitude: 0.04
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -154,8 +154,8 @@ Material:
     - _Stretching: 1
     - _SurfaceType: 0
     - _TargetMode: 0
-    - _TileX: 10
-    - _TileY: 10
+    - _TileX: 0.36
+    - _TileY: 0.36
     - _Transition_Factor: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
@@ -174,7 +174,7 @@ Material:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FrontFace_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Outline_Color: {r: 0, g: 0.048991106, b: 0.2830189, a: 1}
+    - _Outline_Color: {r: 0.023584902, g: 0.565781, b: 1, a: 1}
     - _PannerAxis: {r: 0, g: 0, b: 0, a: 0}
     - _target: {r: 0, g: 0, b: 0, a: 0}
     - _target2: {r: 0, g: 0, b: 0, a: 0}
