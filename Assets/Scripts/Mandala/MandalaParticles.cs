@@ -46,6 +46,10 @@ public class MandalaParticles
         circle = GameObject.Instantiate(new GameObject(), parent);
         
         circle.name = $"Mandala Particles #{index}";
+        if (circle.name == "Mandala Particles #4")
+        {
+            Debug.Log("Hi");
+        }
         for (int i = 0; i < numberOfCircles * elementsInCircle; i++)
         {
             particles[i] = GameObject.Instantiate(shapePrefab, circle.transform);
@@ -62,8 +66,8 @@ public class MandalaParticles
         maxElementSize *= scaleMagnitude;
         for (int i = 0; i < numberOfCircles; i++)
         {
-            radiuses[i] = Mathf.Lerp(minRadius, maxRadius, ((float)i) / (numberOfCircles-1));
-            sizes[i] = Mathf.Lerp(minElementSize, maxElementSize, ((float)i) / (numberOfCircles-1));
+            radiuses[i] = Mathf.Lerp(minRadius, maxRadius, (numberOfCircles * numberOfCircles) / (float)(numberOfCircles + i));
+            sizes[i] = Mathf.Lerp(minElementSize, maxElementSize, (numberOfCircles*numberOfCircles) / (float)(numberOfCircles + i));
         }
 
 
@@ -103,8 +107,11 @@ public class MandalaParticles
         {
             angle += 0.5f * angleBetweenParticles;
         }
+       
         var radius = currentRadiuses[i / elementsInCircle];
         particles[i].transform.localPosition = radius * new Vector3(Mathf.Cos(angle), Mathf.Sin(angle));
+      //  Debug.Log($"{circle.name} size = {currentSizes.Length}\ti={i}\ti/size = {i/elementsInCircle}");
+        
         particles[i].transform.localScale = currentSizes[i / elementsInCircle] * Vector3.one;
     }
     public void RotateParticle(float delta)
