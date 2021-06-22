@@ -6,7 +6,8 @@ using UnityEngine;
 public class MandalaParticles
 {
     private enum RotationType { None, PositiveDirection, NegativeDirection};
-    
+    private enum Direction { X, Y, Z };
+
     #region Inspector Parameters
     [Header("Global Properties")]
     [SerializeField] private GameObject shapePrefab;
@@ -19,9 +20,9 @@ public class MandalaParticles
     [SerializeField] private float secondsFromCloseToOpen;
     [SerializeField] private AnimationCurve openCurve;
     [Header("Elements Properties")]
-    [SerializeField] private RotationType xRotation;
-    [SerializeField] private RotationType yRotation;
-    [SerializeField] private RotationType zRotation;
+    [SerializeField] private Direction lookAxis;
+    [SerializeField] private Direction rotationAxis;
+    [SerializeField] private RotationType elementsRotation;
     [SerializeField] private float elementsRotationSpeed;
     [SerializeField, Min(0.5f)] private float minElementSize = 1;
     [SerializeField, Min(0.5f)] private float maxElementSize = 1;
@@ -42,6 +43,8 @@ public class MandalaParticles
     #region Particles Update Methods
     public void Init(int index, Transform parent)
     {
+        
+        InitRotation();
         particles = new GameObject[numberOfCircles * elementsInCircle];
         circle = GameObject.Instantiate(new GameObject(), parent);
         
@@ -50,13 +53,23 @@ public class MandalaParticles
         {
             Debug.Log("Hi");
         }
+        angleBetweenParticles = 2 * Mathf.PI / elementsInCircle;
+        var axis = (lookAxis == Direction.X) ? Vector3.right :
+                    (lookAxis == Direction.Y) ? Vector3.up :
+                    Vector3.forward;
         for (int i = 0; i < numberOfCircles * elementsInCircle; i++)
         {
             particles[i] = GameObject.Instantiate(shapePrefab, circle.transform);
             particles[i].transform.localScale = Vector3.zero;
+            float angle = (i % elementsInCircle) * angleBetweenParticles;
+            if ((i / elementsInCircle) % 2 == 1)
+            {
+                angle += 0.5f * angleBetweenParticles;
+            }
+            Vector3 dir = (parent.position - new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0)).normalized;
+            particles[i].transform.LookAt(particles[i].transform.position + dir, axis);
         }
-        angleBetweenParticles = 2 * Mathf.PI / elementsInCircle;
-
+        InitParticlesRotation();
         radiuses = new float[numberOfCircles];
         currentRadiuses = new float[numberOfCircles];
         sizes = new float[numberOfCircles];
@@ -66,21 +79,36 @@ public class MandalaParticles
         maxElementSize *= scaleMagnitude;
         for (int i = 0; i < numberOfCircles; i++)
         {
-            radiuses[i] = Mathf.Lerp(minRadius, maxRadius, (numberOfCircles * numberOfCircles) / (float)(numberOfCircles + i));
-            sizes[i] = Mathf.Lerp(minElementSize, maxElementSize, (numberOfCircles*numberOfCircles) / (float)(numberOfCircles + i));
+            radiuses[i] = Mathf.Lerp(minRadius, maxRadius, ((float)i)/numberOfCircles);
+            sizes[i] = Mathf.Lerp(minElementSize, maxElementSize, ((float)i) / numberOfCircles);
         }
 
-
-        float dirX = (xRotation == RotationType.None) ? 0 : 
-                     (xRotation == RotationType.PositiveDirection) ? 
-                     elementsRotationSpeed : -elementsRotationSpeed;
-        float dirY = (yRotation == RotationType.None) ? 0 :
-                     (yRotation == RotationType.PositiveDirection) ?
-                     elementsRotationSpeed : -elementsRotationSpeed;
-        float dirZ = (zRotation == RotationType.None) ? 0 :
-                     (zRotation == RotationType.PositiveDirection) ?
-                     elementsRotationSpeed : -elementsRotationSpeed;
-        particlesRotationDirection = new Vector3(dirX, dirY, dirZ);
+    }
+    private void InitParticlesRotation()
+    {
+        if (elementsRotation == RotationType.None)
+        {
+            particlesRotationDirection = Vector3.zero;
+        }
+        else
+        {
+            switch (rotationAxis)
+            {
+                case Direction.X:
+                    particlesRotationDirection = Vector3.right;
+                    break;
+                case Direction.Y:
+                    particlesRotationDirection = Vector3.up;
+                    break;
+                case Direction.Z:
+                    particlesRotationDirection = Vector3.forward;
+                    break;
+            }
+            particlesRotationDirection *= (elementsRotation == RotationType.PositiveDirection) ? elementsRotationSpeed : -elementsRotationSpeed;
+        }
+    }
+    private void InitRotation()
+    {
         if (ringRotation == RotationType.None)
             rotationDirection = Vector3.zero;
         else if (ringRotation == RotationType.PositiveDirection)
@@ -118,7 +146,8 @@ public class MandalaParticles
     {
         foreach(var particle in particles)
         {
-            particle.transform.localEulerAngles += particlesRotationDirection*delta;
+            particle.transform.Rotate(Vector3.up * elementsRotationSpeed *delta,Space.Self);
+            //particle.transform.eulerAngles += particle.transform.TransformDirection(particlesRotationDirection.normalized)*elementsRotationSpeed * delta;
         }
         circle.transform.localEulerAngles += rotationDirection * delta;
     }
