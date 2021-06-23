@@ -986,7 +986,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: 149b40a5bfe4a3541b103385343ec45d, type: 2}
-  - {fileID: 2100000, guid: 25a1e25614306f74ea090a1cbedc3d75, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1606,7 +1605,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.09
+      scalar: 0
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1659,7 +1658,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 4
+    type: 12
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -1746,7 +1745,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 5.04
       mode: 0
       spread: 0
       speed:
@@ -1982,21 +1981,21 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
-          inSlope: -1
-          outSlope: -1
+          value: 0.44615364
+          inSlope: -0.44615364
+          outSlope: -0.44615364
           tangentMode: 34
           weightedMode: 0
           inWeight: 0
-          outWeight: 0
+          outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
           value: 0
-          inSlope: -1
-          outSlope: -1
+          inSlope: -0.44615364
+          outSlope: -0.44615364
           tangentMode: 34
           weightedMode: 0
-          inWeight: 0
+          inWeight: 0.33333334
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -4925,7 +4924,7 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 1
+    enabled: 0
     mode: 0
     ratio: 1
     lifetime:
@@ -5059,7 +5058,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.27
+      scalar: 0.12
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5745,13 +5744,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1242505525}
-  m_LocalRotation: {x: 0.0010880602, y: -0.88815236, z: -0.4545918, w: -0.06730824}
-  m_LocalPosition: {x: 0, y: 7.65, z: -10.22}
+  m_LocalRotation: {x: 0.020557236, y: -0.99919647, z: -0.02755747, w: -0.020601373}
+  m_LocalPosition: {x: 0, y: 7.16, z: -1.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: -53.866, y: -191.6, z: 5.768}
+  m_LocalEulerAnglesHint: {x: -3.206, y: -182.298, z: -2.293}
 --- !u!114 &1242505529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21195,7 +21194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1733169034}
   m_LocalRotation: {x: 0.0010880602, y: -0.88815236, z: -0.4545918, w: -0.06730824}
-  m_LocalPosition: {x: 0, y: 7.65, z: -10.22}
+  m_LocalPosition: {x: 0, y: 7.65, z: 1.0699997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

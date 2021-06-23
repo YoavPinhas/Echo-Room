@@ -112,7 +112,7 @@ Material:
     - _Cutoff: 0.5
     - _Debug_Mask: 0
     - _DefaultOutlineOpacity: 0
-    - _DefaultShrink: 0
+    - _DefaultShrink: 0.025
     - _DetailNormalMapScale: 1
     - _DirectionChange: 1
     - _DoubleSidedEnable: 0
