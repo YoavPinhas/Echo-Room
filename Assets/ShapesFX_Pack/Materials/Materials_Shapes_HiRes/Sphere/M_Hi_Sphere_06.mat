@@ -112,7 +112,7 @@ Material:
     - _Cutoff: 0.5
     - _Debug_Mask: 0
     - _DefaultOutlineOpacity: 0
-    - _DefaultShrink: 0.035
+    - _DefaultShrink: 0.28
     - _DetailNormalMapScale: 1
     - _DirectionChange: 1
     - _DoubleSidedEnable: 0
@@ -127,17 +127,17 @@ Material:
     - _InfluenceRadius: 0.5
     - _Metallic: 0
     - _Mode: 0
-    - _NormalPush: 0.22
+    - _NormalPush: 0.16
     - _OcclusionStrength: 1
-    - _Outline_Opacity: 20
-    - _PannerX: -0.12
-    - _PannerY: -0.112
+    - _Outline_Opacity: 67
+    - _PannerX: 0.19
+    - _PannerY: 0.2
     - _Parallax: 0.02
     - _ReceivesSSR: 0
     - _RenderQueueType: 1
     - _RequireSplitLighting: 0
     - _ShadowMatteFilter: 2.006836
-    - _Shrink_Faces_Amplitude: -1.35
+    - _Shrink_Faces_Amplitude: -0.07
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -154,7 +154,7 @@ Material:
     - _Stretching: 1
     - _SurfaceType: 0
     - _TargetMode: 0
-    - _TileX: 0.46
+    - _TileX: 0.5
     - _TileY: 0.17
     - _Transition_Factor: 1
     - _TransparentBackfaceEnable: 0
@@ -174,7 +174,7 @@ Material:
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FrontFace_Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Outline_Color: {r: 0.15553738, g: 0.23960456, b: 1.9396423, a: 1}
+    - _Outline_Color: {r: 0, g: 0.27419028, b: 2.5895748, a: 1}
     - _PannerAxis: {r: 0, g: 0, b: 0, a: 0}
     - _target: {r: 0, g: 0, b: 0, a: 0}
     - _target2: {r: 0, g: 0, b: 0, a: 0}

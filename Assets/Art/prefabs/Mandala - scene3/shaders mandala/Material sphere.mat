@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Material sphere
   m_Shader: {fileID: 4800000, guid: 22dc785c1bdd83f4abc47c99629605db, type: 3}
-  m_ShaderKeywords: _DIRECTIONCHANGE_ON _EMISSION _STRETCHING_ON
+  m_ShaderKeywords: _EMISSION _EXTRUDEUPFACES_ON _STRETCHING_ON
   m_LightmapFlags: 5
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -101,7 +101,7 @@ Material:
     - _AlphaCutoffEnable: 0
     - _AlphaDstBlend: 0
     - _AlphaSrcBlend: 1
-    - _Animation_speed: 0.08
+    - _Animation_speed: 0.07
     - _BackFace_Intensity: 1
     - _BlendMode: 1
     - _BumpScale: 1
@@ -112,13 +112,13 @@ Material:
     - _Cutoff: 0.5
     - _Debug_Mask: 0
     - _DefaultOutlineOpacity: 0
-    - _DefaultShrink: 0.037
+    - _DefaultShrink: 0
     - _DetailNormalMapScale: 1
-    - _DirectionChange: 1
+    - _DirectionChange: 0
     - _DoubleSidedEnable: 0
     - _DoubleSidedNormalMode: 2
     - _DstBlend: 0
-    - _ExtrudeUpFaces: 0
+    - _ExtrudeUpFaces: 1
     - _FrontFace_Intensity: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
@@ -127,10 +127,10 @@ Material:
     - _InfluenceRadius: 0.5
     - _Metallic: 0
     - _Mode: 0
-    - _NormalPush: 0.33
+    - _NormalPush: 0.39
     - _OcclusionStrength: 1
-    - _Outline_Opacity: 24
-    - _PannerX: -0.66
+    - _Outline_Opacity: 76.2
+    - _PannerX: -0.338
     - _PannerY: -0.63
     - _Parallax: 0.02
     - _ReceivesSSR: 0
@@ -154,8 +154,8 @@ Material:
     - _Stretching: 1
     - _SurfaceType: 0
     - _TargetMode: 0
-    - _TileX: 0.2
-    - _TileY: 0.2
+    - _TileX: 0.4
+    - _TileY: 0.21
     - _Transition_Factor: 1
     - _TransparentBackfaceEnable: 0
     - _TransparentCullMode: 2
@@ -173,8 +173,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FrontFace_Color: {r: 0, g: 0, b: 0, a: 1}
-    - _Outline_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _FrontFace_Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Outline_Color: {r: 0, g: 0.105882354, b: 1, a: 1}
     - _PannerAxis: {r: 0, g: 0, b: 0, a: 0}
     - _target: {r: 0, g: 0, b: 0, a: 0}
     - _target2: {r: 0, g: 0, b: 0, a: 0}

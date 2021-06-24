@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 1481.7754, g: 1835.8867, b: 2430.4492, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -866,25 +866,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e395793e987589846959f4e725f9147b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screamLoudness: 0
+  screamLoudness: 1
   screamLoudnessCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
-      tangentMode: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0
@@ -892,14 +892,14 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   particles:
-  - shapePrefab: {fileID: 970958914387681806, guid: 02c39f6cd2ec5ef47a74581c8c4565f3, type: 3}
-    numberOfCircles: 2
-    elementsInCircle: 13
-    minRadius: 3.2
-    maxRadius: 6.22
+  - shapePrefab: {fileID: 970958914387681806, guid: 48bbd8b886af972409bd63da49092135, type: 3}
+    numberOfCircles: 1
+    elementsInCircle: 1
+    minRadius: 0
+    maxRadius: 1.46
     ringRotation: 1
     secondsForCycle: 10
-    secondsFromCloseToOpen: 1
+    secondsFromCloseToOpen: 0.7
     openCurve:
       serializedVersion: 2
       m_Curve:
@@ -924,20 +924,58 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    xRotation: 0
-    yRotation: 1
-    zRotation: 0
+    lookAxis: 0
+    rotationAxis: 0
+    elementsRotation: 0
     elementsRotationSpeed: 10
-    minElementSize: 1
-    maxElementSize: 1
-  - shapePrefab: {fileID: 5382806136878481484, guid: 446b12cd8ee598c4fbfd94eb1a35f92e, type: 3}
-    numberOfCircles: 2
-    elementsInCircle: 13
-    minRadius: 4.57
-    maxRadius: 5.34
+    minElementSize: 2
+    maxElementSize: 2
+  - shapePrefab: {fileID: 5382806136878481484, guid: ffd547806ebae314790dff06eab042b0, type: 3}
+    numberOfCircles: 3
+    elementsInCircle: 20
+    minRadius: 2.26
+    maxRadius: 2.78
+    ringRotation: 1
+    secondsForCycle: 10
+    secondsFromCloseToOpen: 0.6
+    openCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    lookAxis: 2
+    rotationAxis: 2
+    elementsRotation: 1
+    elementsRotationSpeed: 10
+    minElementSize: 5
+    maxElementSize: 5
+  - shapePrefab: {fileID: 5382806136878481484, guid: ffd547806ebae314790dff06eab042b0, type: 3}
+    numberOfCircles: 1
+    elementsInCircle: 17
+    minRadius: 3.82
+    maxRadius: 4.69
     ringRotation: 2
     secondsForCycle: 10
-    secondsFromCloseToOpen: 1
+    secondsFromCloseToOpen: 0.5
     openCurve:
       serializedVersion: 2
       m_Curve:
@@ -962,20 +1000,96 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    xRotation: 0
-    yRotation: 1
-    zRotation: 0
+    lookAxis: 2
+    rotationAxis: 1
+    elementsRotation: 0
     elementsRotationSpeed: 10
     minElementSize: 15
     maxElementSize: 15
-  - shapePrefab: {fileID: 530981871561184267, guid: 51598140a7b3f9745bc40141603d9cb5, type: 3}
+  - shapePrefab: {fileID: 2673646329392078657, guid: 97dcbc1f72dcd5447a71cc7ab01f1604, type: 3}
+    numberOfCircles: 1
+    elementsInCircle: 30
+    minRadius: 5.12
+    maxRadius: 5.67
+    ringRotation: 1
+    secondsForCycle: 10
+    secondsFromCloseToOpen: 0.4
+    openCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    lookAxis: 2
+    rotationAxis: 1
+    elementsRotation: 0
+    elementsRotationSpeed: 10
+    minElementSize: 5
+    maxElementSize: 5
+  - shapePrefab: {fileID: 970958914387681806, guid: 48bbd8b886af972409bd63da49092135, type: 3}
+    numberOfCircles: 1
+    elementsInCircle: 30
+    minRadius: 6.22
+    maxRadius: 6.89
+    ringRotation: 2
+    secondsForCycle: 10
+    secondsFromCloseToOpen: 0.4
+    openCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    lookAxis: 2
+    rotationAxis: 2
+    elementsRotation: 1
+    elementsRotationSpeed: 15.87
+    minElementSize: 0.5
+    maxElementSize: 0.5
+  - shapePrefab: {fileID: 530981871561184267, guid: bbcb960ca9590514e8abf492dca33c83, type: 3}
     numberOfCircles: 2
     elementsInCircle: 40
     minRadius: 7.86
     maxRadius: 8.54
     ringRotation: 1
     secondsForCycle: 10
-    secondsFromCloseToOpen: 1
+    secondsFromCloseToOpen: 0.4
     openCurve:
       serializedVersion: 2
       m_Curve:
@@ -1000,88 +1114,164 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    xRotation: 0
-    yRotation: 1
-    zRotation: 0
-    elementsRotationSpeed: 10
-    minElementSize: 20
-    maxElementSize: 20
-  - shapePrefab: {fileID: 970958914387681806, guid: 02c39f6cd2ec5ef47a74581c8c4565f3, type: 3}
-    numberOfCircles: 2
-    elementsInCircle: 50
-    minRadius: 0.1
-    maxRadius: 10.4
-    ringRotation: 2
-    secondsForCycle: 10
-    secondsFromCloseToOpen: 1
-    openCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    xRotation: 0
-    yRotation: 2
-    zRotation: 0
-    elementsRotationSpeed: 10
-    minElementSize: 1
-    maxElementSize: 1
-  - shapePrefab: {fileID: 2673646329392078657, guid: ff51196d7c241db4289ce7e290190a10, type: 3}
-    numberOfCircles: 2
-    elementsInCircle: 40
-    minRadius: 13
-    maxRadius: 13
-    ringRotation: 1
-    secondsForCycle: 10
-    secondsFromCloseToOpen: 1
-    openCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    xRotation: 0
-    yRotation: 1
-    zRotation: 0
+    lookAxis: 0
+    rotationAxis: 0
+    elementsRotation: 0
     elementsRotationSpeed: 10
     minElementSize: 15
-    maxElementSize: 15
+    maxElementSize: 20
+  - shapePrefab: {fileID: 530981871561184267, guid: bbcb960ca9590514e8abf492dca33c83, type: 3}
+    numberOfCircles: 5
+    elementsInCircle: 40
+    minRadius: 9.66
+    maxRadius: 10.22
+    ringRotation: 2
+    secondsForCycle: 7
+    secondsFromCloseToOpen: 0.4
+    openCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    lookAxis: 0
+    rotationAxis: 0
+    elementsRotation: 0
+    elementsRotationSpeed: 10
+    minElementSize: 5
+    maxElementSize: 5
+  - shapePrefab: {fileID: 970958914387681806, guid: 48bbd8b886af972409bd63da49092135, type: 3}
+    numberOfCircles: 2
+    elementsInCircle: 40
+    minRadius: 11.4
+    maxRadius: 11.69
+    ringRotation: 1
+    secondsForCycle: 7
+    secondsFromCloseToOpen: 0.4
+    openCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    lookAxis: 2
+    rotationAxis: 1
+    elementsRotation: 1
+    elementsRotationSpeed: 10
+    minElementSize: 0.8
+    maxElementSize: 0.8
+  - shapePrefab: {fileID: 970958914387681806, guid: 48bbd8b886af972409bd63da49092135, type: 3}
+    numberOfCircles: 6
+    elementsInCircle: 40
+    minRadius: 12.98
+    maxRadius: 24.1
+    ringRotation: 2
+    secondsForCycle: 7
+    secondsFromCloseToOpen: 1
+    openCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    lookAxis: 2
+    rotationAxis: 1
+    elementsRotation: 1
+    elementsRotationSpeed: 10
+    minElementSize: 0.5
+    maxElementSize: 0.5
+  - shapePrefab: {fileID: 2673646329392078657, guid: 97dcbc1f72dcd5447a71cc7ab01f1604, type: 3}
+    numberOfCircles: 6
+    elementsInCircle: 40
+    minRadius: 24.61
+    maxRadius: 39.9
+    ringRotation: 1
+    secondsForCycle: 7
+    secondsFromCloseToOpen: 1
+    openCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    lookAxis: 2
+    rotationAxis: 1
+    elementsRotation: 2
+    elementsRotationSpeed: 10
+    minElementSize: 2
+    maxElementSize: 2
   debug: 1
 --- !u!4 &1319502596
 Transform:
