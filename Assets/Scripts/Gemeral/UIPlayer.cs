@@ -88,6 +88,7 @@ public class UIPlayer : MonoBehaviour
         {
             text.font = data.font;
         }
+        text.color = data.color;
         text.autoSizeTextContainer = true;
         text.fontSize = data.fontSize;
         FadeText fade = text.gameObject.AddComponent<FadeText>();

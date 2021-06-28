@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public struct TextData
+public class TextData
 {
     public string text;
     public float duration;
     [Range(0, 1)] public float sceenX;
     [Range(0, 1)] public float sceenY;
-    public int fontSize;
+    public int fontSize = 32;
     public TMPro.TMP_FontAsset font;
+    public Color color = Color.white;
 }
 
 [System.Serializable]
