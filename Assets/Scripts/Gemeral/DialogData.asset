@@ -12,19 +12,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3813fd5bb0b946e4b9319616b1fded49, type: 3}
   m_Name: DialogData
   m_EditorClassIdentifier: 
-  fadeInSeconds: 0
+  fadeInSeconds: 2
   fadeInCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  fadeOutSeconds: 0
+  fadeOutSeconds: 4
   fadeOutCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   audio: {fileID: 0}
-  texts: []
+  texts:
+  - text: 3 seconds...
+    duration: 3
+    sceenX: 0.5
+    sceenY: 0.8
+    fontSize: 64
+  - text: 2 seconds...
+    duration: 2
+    sceenX: 0.5
+    sceenY: 0.65
+    fontSize: 64
+  - text: 1 seconds...
+    duration: 1
+    sceenX: 0.5
+    sceenY: 0.5
+    fontSize: 64
+  - text: Hi,
+    duration: 5
+    sceenX: 0.4
+    sceenY: 0.35
+    fontSize: 64
+  - text: this is a test.
+    duration: 5
+    sceenX: 0.5
+    sceenY: 0.35
+    fontSize: 64
+  secondsBeforePlayingAudio: 0
+  secondsBeforeDisplayingText: 4
