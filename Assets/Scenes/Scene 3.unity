@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1481.7754, g: 1835.8867, b: 2430.4492, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1158,9 +1158,9 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 5
     maxElementSize: 5
-  - shapePrefab: {fileID: 970958914387681806, guid: 48bbd8b886af972409bd63da49092135, type: 3}
+  - shapePrefab: {fileID: 970958914387681806, guid: 3a4652936f78caa47882ae396807d17b, type: 3}
     numberOfCircles: 2
-    elementsInCircle: 40
+    elementsInCircle: 5
     minRadius: 11.4
     maxRadius: 11.69
     ringRotation: 1
@@ -1191,11 +1191,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 0
     lookAxis: 2
-    rotationAxis: 1
-    elementsRotation: 1
-    elementsRotationSpeed: 10
-    minElementSize: 0.8
-    maxElementSize: 0.8
+    rotationAxis: 2
+    elementsRotation: 0
+    elementsRotationSpeed: 0
+    minElementSize: 1
+    maxElementSize: 1
   - shapePrefab: {fileID: 970958914387681806, guid: 48bbd8b886af972409bd63da49092135, type: 3}
     numberOfCircles: 6
     elementsInCircle: 40
@@ -1632,7 +1632,7 @@ MonoBehaviour:
   sampleRate: 44100
   threshold: 0
   sensitivity: 1
-  slowingSpeed: 1
+  slowingSpeed: 5
   OnMicrophoneLevelCalculated:
     m_PersistentCalls:
       m_Calls:
