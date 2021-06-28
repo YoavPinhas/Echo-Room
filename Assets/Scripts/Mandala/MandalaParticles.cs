@@ -49,10 +49,7 @@ public class MandalaParticles
         circle = GameObject.Instantiate(new GameObject(), parent);
         
         circle.name = $"Mandala Particles #{index}";
-        if (circle.name == "Mandala Particles #4")
-        {
-            Debug.Log("Hi");
-        }
+    
         angleBetweenParticles = 2 * Mathf.PI / elementsInCircle;
         var axis = (lookAxis == Direction.X) ? Vector3.right :
                     (lookAxis == Direction.Y) ? Vector3.up :
