@@ -84,6 +84,10 @@ public class UIPlayer : MonoBehaviour
         var posY = data.sceenY * height - 0.5f * height;
         text.rectTransform.anchoredPosition = new Vector3(posX, posY, 0);
         text.text = data.text;
+        if(data.font != null)
+        {
+            text.font = data.font;
+        }
         text.autoSizeTextContainer = true;
         text.fontSize = data.fontSize;
         FadeText fade = text.gameObject.AddComponent<FadeText>();

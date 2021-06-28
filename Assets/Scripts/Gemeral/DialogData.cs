@@ -10,6 +10,7 @@ public struct TextData
     [Range(0, 1)] public float sceenX;
     [Range(0, 1)] public float sceenY;
     public int fontSize;
+    public TMPro.TMP_FontAsset font;
 }
 
 [System.Serializable]
