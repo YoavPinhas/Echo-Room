@@ -69,25 +69,35 @@ MonoBehaviour:
     sceenX: 0.5
     sceenY: 0.8
     fontSize: 64
+    font: {fileID: 11400000, guid: 93896fc66c2b87a4986ace979a4b3879, type: 2}
+    color: {r: 1, g: 0.033018887, b: 0.033018887, a: 1}
   - text: 2 seconds...
     duration: 2
     sceenX: 0.5
     sceenY: 0.65
     fontSize: 64
+    font: {fileID: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
   - text: 1 seconds...
     duration: 1
     sceenX: 0.5
     sceenY: 0.5
     fontSize: 64
+    font: {fileID: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
   - text: Hi,
     duration: 5
     sceenX: 0.4
     sceenY: 0.35
     fontSize: 64
+    font: {fileID: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
   - text: this is a test.
     duration: 5
     sceenX: 0.5
     sceenY: 0.35
     fontSize: 64
+    font: {fileID: 0}
+    color: {r: 1, g: 1, b: 1, a: 1}
   secondsBeforePlayingAudio: 0
   secondsBeforeDisplayingText: 4

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1532736733827929810}
   - component: {fileID: -3629108939357205283}
   m_Layer: 0
-  m_Name: test sphere whith shader
+  m_Name: Sphere 90
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40,7 +40,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 970958914387681806}
-  m_Mesh: {fileID: 2263899899176933641, guid: 1655e349782100a4b9031745c9bc6877, type: 3}
+  m_Mesh: {fileID: 2263899899176933641, guid: 21430ddf3a73ad949857a27aec58264e, type: 3}
 --- !u!23 &1532736733827929810
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -60,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 257
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a1ec3b746d14c17438cb9e672ac62d48, type: 2}
+  - {fileID: 2100000, guid: 442a8c59e484fa04595eb01cc6576b7c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

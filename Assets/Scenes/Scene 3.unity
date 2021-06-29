@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 1481.7754, g: 1835.8867, b: 2430.4492, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -930,7 +930,7 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 2
     maxElementSize: 2
-  - shapePrefab: {fileID: 5382806136878481484, guid: ffd547806ebae314790dff06eab042b0, type: 3}
+  - shapePrefab: {fileID: 5382806136878481484, guid: e0928b7b137607e44bee08790bdf684a, type: 3}
     numberOfCircles: 3
     elementsInCircle: 20
     minRadius: 2.26
@@ -968,7 +968,7 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 5
     maxElementSize: 5
-  - shapePrefab: {fileID: 5382806136878481484, guid: ffd547806ebae314790dff06eab042b0, type: 3}
+  - shapePrefab: {fileID: 5382806136878481484, guid: 86ae2b956362bbb48ba321fa53ac1c69, type: 3}
     numberOfCircles: 1
     elementsInCircle: 17
     minRadius: 3.82
@@ -1006,7 +1006,7 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 15
     maxElementSize: 15
-  - shapePrefab: {fileID: 2673646329392078657, guid: 97dcbc1f72dcd5447a71cc7ab01f1604, type: 3}
+  - shapePrefab: {fileID: 2673646329392078657, guid: f3ce05c57e33ede489657c19a091f586, type: 3}
     numberOfCircles: 1
     elementsInCircle: 30
     minRadius: 5.12
@@ -1044,9 +1044,9 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 5
     maxElementSize: 5
-  - shapePrefab: {fileID: 970958914387681806, guid: 48bbd8b886af972409bd63da49092135, type: 3}
+  - shapePrefab: {fileID: 970958914387681806, guid: f0e45b9b4e9fe9146aa076762fccd2bb, type: 3}
     numberOfCircles: 1
-    elementsInCircle: 30
+    elementsInCircle: 15
     minRadius: 6.22
     maxRadius: 6.89
     ringRotation: 2
@@ -1082,11 +1082,11 @@ MonoBehaviour:
     elementsRotationSpeed: 15.87
     minElementSize: 0.5
     maxElementSize: 0.5
-  - shapePrefab: {fileID: 530981871561184267, guid: bbcb960ca9590514e8abf492dca33c83, type: 3}
+  - shapePrefab: {fileID: 530981871561184267, guid: e6964b6720e04004b8b9b2ba4b858808, type: 3}
     numberOfCircles: 2
     elementsInCircle: 40
-    minRadius: 7.86
-    maxRadius: 8.54
+    minRadius: 8.01
+    maxRadius: 8.94
     ringRotation: 1
     secondsForCycle: 10
     secondsFromCloseToOpen: 0.4
@@ -1118,13 +1118,13 @@ MonoBehaviour:
     rotationAxis: 0
     elementsRotation: 0
     elementsRotationSpeed: 10
-    minElementSize: 15
-    maxElementSize: 20
-  - shapePrefab: {fileID: 530981871561184267, guid: bbcb960ca9590514e8abf492dca33c83, type: 3}
+    minElementSize: 20
+    maxElementSize: 25
+  - shapePrefab: {fileID: 530981871561184267, guid: 1db0fe158d1c1e6499c60051fa608827, type: 3}
     numberOfCircles: 5
     elementsInCircle: 40
-    minRadius: 9.66
-    maxRadius: 10.22
+    minRadius: 10.16
+    maxRadius: 10.83
     ringRotation: 2
     secondsForCycle: 7
     secondsFromCloseToOpen: 0.4
@@ -1158,11 +1158,11 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 5
     maxElementSize: 5
-  - shapePrefab: {fileID: 970958914387681806, guid: 3a4652936f78caa47882ae396807d17b, type: 3}
+  - shapePrefab: {fileID: 7287706316997988168, guid: 293899c7b9e66fb4d942b2b5958b3cea, type: 3}
     numberOfCircles: 2
     elementsInCircle: 5
-    minRadius: 11.4
-    maxRadius: 11.69
+    minRadius: 12.15
+    maxRadius: 13
     ringRotation: 1
     secondsForCycle: 7
     secondsFromCloseToOpen: 0.4
@@ -1192,14 +1192,14 @@ MonoBehaviour:
       m_RotationOrder: 0
     lookAxis: 2
     rotationAxis: 2
-    elementsRotation: 0
-    elementsRotationSpeed: 0
+    elementsRotation: 1
+    elementsRotationSpeed: 20
     minElementSize: 1
     maxElementSize: 1
-  - shapePrefab: {fileID: 970958914387681806, guid: 48bbd8b886af972409bd63da49092135, type: 3}
+  - shapePrefab: {fileID: 970958914387681806, guid: 8f21d4aeee8f3524dabde3c224115af2, type: 3}
     numberOfCircles: 6
     elementsInCircle: 40
-    minRadius: 12.98
+    minRadius: 12.08
     maxRadius: 24.1
     ringRotation: 2
     secondsForCycle: 7
@@ -1234,7 +1234,7 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 0.5
     maxElementSize: 0.5
-  - shapePrefab: {fileID: 2673646329392078657, guid: 97dcbc1f72dcd5447a71cc7ab01f1604, type: 3}
+  - shapePrefab: {fileID: 2673646329392078657, guid: 5e8f0a86975497d4c9ebc43c88645a09, type: 3}
     numberOfCircles: 6
     elementsInCircle: 40
     minRadius: 24.61
