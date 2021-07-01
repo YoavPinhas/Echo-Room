@@ -62,7 +62,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  audio: {fileID: 0}
+  audio: {fileID: 8300000, guid: 633c399b8c7f3de49ba3754e2ec5d429, type: 3}
   texts:
   - text: 3 seconds...
     duration: 3
