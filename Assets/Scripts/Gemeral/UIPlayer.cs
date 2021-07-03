@@ -3,151 +3,201 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Text = TMPro.TextMeshProUGUI;
+[RequireComponent(typeof(AudioSource))]
 public class UIPlayer : MonoBehaviour
 {
     [SerializeField] private Data[] dataToPlay;
     [SerializeField] private Canvas canvas;
-    [SerializeField] private AudioSource audioSource;
+    private AudioSource audioSource;
 
     private bool isPlaying = false;
     private bool thereIsText = false;
-    private bool thereIsAudio = false;
+    private bool audioIsEnded = false;
+    private bool textDisplayEnded = false;
+    private bool textDestroyEnded = false;
     private int currentDataIndex = -1;
     private WaitWhile waitIfAudioIsPlaying;
+    private Dictionary<Data, UIMedia> uiMedia = new Dictionary<Data, UIMedia>();
+    UIMedia currentMedia = null;
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         waitIfAudioIsPlaying = new WaitWhile(() => audioSource.isPlaying);
     }
 
-
-    // Update is called once per frame
     void Update()
     {
-        if (!isPlaying)
+        if (currentMedia == null || !currentMedia.IsPlaying)
         {
             currentDataIndex++;
             if (currentDataIndex >= dataToPlay.Length)
                 return;
-            switch (dataToPlay[currentDataIndex].GetDataType())
-            {
-                case DataType.DialogData:
-                    StartCoroutine(PlayDialogData((DialogData)dataToPlay[currentDataIndex]));
-                    return;
-                case DataType.ChooseFrustrationLevel:
-                    StartCoroutine(PlayChooseFrustrationLevelData((ChooseFrustrationLevelData)dataToPlay[currentDataIndex]));
-                    return;
-            }
+            CreateMedia(dataToPlay[currentDataIndex]);
+            StartCoroutine(currentMedia.Play());
         }
     }
 
-    IEnumerator PlayText(TextData[] textsData, float secondsBeforeDisplaying,
-        float fadeInSeconds, AnimationCurve fadeInCurve, 
-        float fadeOutSeconds, AnimationCurve fadeOutCurve)
+    private void CreateMedia(Data data)
     {
-        thereIsText = true;
-        yield return new WaitForSeconds(secondsBeforeDisplaying);
-        int textIndex = 0;
-        List<GameObject> texts = new List<GameObject>();
-        var width = canvas.pixelRect.width;
-        var height = canvas.pixelRect.height;
-
-        while (textIndex < textsData.Length)
+        Destroy(currentMedia);
+        switch (data.GetDataType())
         {
-            texts.Add(CreateDialogText(textsData[textIndex], fadeInSeconds, fadeInCurve, width, height, $"text {textIndex}"));
-            yield return new WaitForSeconds(textsData[textIndex].duration);
-            textIndex++;
+            case DataType.DialogData:
+                currentMedia = gameObject.AddComponent<UIDialogMedia>();
+                currentMedia.data = (DialogData)data;
+                break;
+            case DataType.StressLevel:
+                currentMedia = gameObject.AddComponent<UIChooseStressMedia>();
+                currentMedia.data = (ChooseStressLevelData)data;
+                break;
+            case DataType.ReleaseOption:
+                break;
         }
-        foreach (GameObject o in texts)
-        {
-            o.GetComponent<FadeText>().FadeOut(fadeOutSeconds, fadeOutCurve);
-        }
-        yield return new WaitForSeconds(fadeOutSeconds);
-        foreach (GameObject o in texts)
-        {
-            Destroy(o);
-        }
-        texts = null;
-        thereIsText = false;
-    }
-    IEnumerator PlayAudio(AudioClip audio, float secondsBeforeAudio)
-    {
-        thereIsAudio = true;
-        yield return new WaitForSeconds(secondsBeforeAudio);
-        audioSource.PlayOneShot(audio);
-        yield return waitIfAudioIsPlaying;
-        thereIsAudio = false;
+        currentMedia.audioSource = audioSource;
+        currentMedia.canvas = canvas;
     }
 
+    //IEnumerator PlayAudio(AudioClip audio, float secondsBeforeAudio)
+    //{
+    //    audioIsEnded = false;
+    //    yield return new WaitForSeconds(secondsBeforeAudio);
+    //    audioSource.PlayOneShot(audio);
+    //    yield return waitIfAudioIsPlaying;
+    //    audioIsEnded = true;
+    //}
+    //IEnumerator PlayChooseStressLevelData(ChooseStressLevelData stressLevel)
+    //{
+    //    StartCoroutine(PlayChooseStressLevelText(stressLevel));
+    //    yield return new WaitUntil(() => textDisplayEnded && audioIsEnded);
+    //    SpeechToText.Instance.StartListening((str) => {
+    //        GameObject obj = new GameObject(name);
+    //        obj.transform.SetParent(canvas.transform);
+    //        TextMeshProUGUI text = obj.AddComponent<TextMeshProUGUI>();
+    //        text.text = stressLevel.evaluator.Choose(str);
+    //        var width = canvas.pixelRect.width;
+    //        var height = canvas.pixelRect.height;
+    //        var posX = 0.5f * width - 0.5f * width;
+    //        var posY = 0.2f * height - 0.5f * height;
+    //        text.rectTransform.anchoredPosition = new Vector3(posX, posY, 0);
+    //    });
 
-    IEnumerator PlayChooseFrustrationLevelData(ChooseFrustrationLevelData frustrationLevel)
-    {
-        PlayChooseFrustrationLevelText(frustrationLevel);
-        yield return null;
-    }
 
-    private void PlayChooseFrustrationLevelText(ChooseFrustrationLevelData data)
-    {
-        int length1 = data.textsBeforeOptionsDisplayed.Length;
-        Type fsType = typeof(ChooseFrustrationLevelData);
-        TextData[] texts = new TextData[length1 + 10];
-        Array.Copy(data.textsBeforeOptionsDisplayed, texts, length1);
-        texts[length1] = data.levelIs1;
-        texts[length1 + 1] = data.levelIs2;
-        texts[length1 + 2] = data.levelIs3;
-        texts[length1 + 3] = data.levelIs4;
-        texts[length1 + 4] = data.levelIs5;
-        texts[length1 + 5] = data.levelIs6;
-        texts[length1 + 6] = data.levelIs7;
-        texts[length1 + 7] = data.levelIs8;
-        texts[length1 + 8] = data.levelIs9;
-        texts[length1 + 9] = data.levelIs10;
-        StartCoroutine(PlayText(texts, data.secondsBeforeDisplayingText, data.fadeInSeconds, data.fadeInCurve
-                                , data.fadeOutSeconds, data.fadeOutCurve));
-    }
+    //}
 
-    #region DialogData Methods
-    IEnumerator PlayDialogData(DialogData dialog)
-    {
-        isPlaying = true;
-        if (dialog.audio != null)
-            PlayDialogAudio(dialog);
-        PlayDialogText(dialog);
-        yield return new WaitUntil(() => thereIsText == false && thereIsAudio == false);
-        isPlaying = false;
-    }
-    
-    private void PlayDialogText(DialogData dialog)
-    {
-        StartCoroutine(PlayText(dialog.texts, dialog.secondsBeforeDisplayingText, dialog.fadeInSeconds,
-                                dialog.fadeInCurve, dialog.fadeOutSeconds, dialog.fadeOutCurve));
-    }
-    private void PlayDialogAudio(DialogData dialog)
-    {
-        StartCoroutine(PlayAudio(dialog.audio, dialog.secondsBeforePlayingAudio));
-    }
-    private GameObject CreateDialogText(TextData data, float fadeInSeconds, AnimationCurve curve, float width, float height, string name)
-    {
-        GameObject obj = new GameObject(name);
-        obj.transform.SetParent(canvas.transform);
-        TextMeshProUGUI text = obj.AddComponent<TextMeshProUGUI>();
+    //private IEnumerator PlayChooseStressLevelText(ChooseStressLevelData data)
+    //{
+    //    isPlaying = true;
+    //    int length1 = data.textsBeforeOptionsDisplayed.Length;
+    //    Type fsType = typeof(ChooseStressLevelData);
+    //    TextData[] texts = new TextData[length1 + 10];
+    //    Array.Copy(data.textsBeforeOptionsDisplayed, texts, length1);
+    //    for (int i = 0; i < 10; i++)
+    //    {
+    //        texts[length1 + i] = new TextData()
+    //        {
+    //            text = $"{i + 1}",
+    //            color = data.numbersFormat.color,
+    //            duration = (i == 9) ? data.numbersFormat.duration : 0,
+    //            font = data.numbersFormat.font,
+    //            fontSize = data.numbersFormat.fontSize,
+    //            sceenX = 0.1f + i * (0.8f / 9f),
+    //            sceenY = data.numbersFormat.sceenY
+    //        };
+    //    }
+    //    Text[] uiTexts = CreateUITextsArray(texts, canvas);
+    //    StartCoroutine(PlayAudio(data.audio, data.secondsBeforePlayingAudio));
+    //    StartCoroutine(DisplayUITexts(uiTexts, texts, data.fadeInSeconds, data.fadeInCurve, data.secondsBeforeDisplayingText));
+    //    yield return new WaitUntil(() => textDisplayEnded && audioIsEnded);
+    //    isPlaying = false;
+    //}
 
-        text.alpha = 0;
-        var posX = data.sceenX * width - 0.5f * width;
-        var posY = data.sceenY * height - 0.5f * height;
-        text.rectTransform.anchoredPosition = new Vector3(posX, posY, 0);
-        text.text = data.text;
-        if(data.font != null)
-        {
-            text.font = data.font;
-        }
-        text.color = data.color;
-        text.autoSizeTextContainer = true;
-        text.fontSize = data.fontSize;
-        FadeText fade = text.gameObject.AddComponent<FadeText>();
-        fade.text = text;
-        fade.FadeIn(fadeInSeconds, curve);
-        return obj;
-    }
-    
-    #endregion
+    //#region DialogData Methods
+    //IEnumerator PlayDialogData(DialogData dialog)
+    //{
+    //    isPlaying = true;
+    //    if (dialog.audio != null)
+    //        PlayDialogAudio(dialog);
+    //    StartCoroutine(PlayDialogText(dialog));
+    //    yield return new WaitUntil(() => textDestroyEnded && audioIsEnded);
+    //    isPlaying = false;
+    //}
+
+    //private IEnumerator PlayDialogText(DialogData dialog)
+    //{
+    //    Text[] texts = CreateUITextsArray(dialog.texts, canvas);
+    //    StartCoroutine(DisplayUITexts(texts, dialog.texts, dialog.fadeInSeconds, dialog.fadeInCurve, dialog.secondsBeforeDisplayingText));
+    //    yield return new WaitUntil(() => textDisplayEnded);
+    //    StartCoroutine(DistroyUIText(texts, dialog.fadeOutSeconds, dialog.fadeOutCurve));
+    //    yield return new WaitUntil(() => textDestroyEnded);
+    //}
+    //private void PlayDialogAudio(DialogData dialog)
+    //{
+    //    StartCoroutine(PlayAudio(dialog.audio, dialog.secondsBeforePlayingAudio));
+    //}
+
+    //#endregion
+
+    //private Text[] CreateUITextsArray(TextData[] inputTexts, Canvas canvas)
+    //{
+    //    if(inputTexts == null || inputTexts.Length == 0)
+    //    {
+    //        Debug.LogError("Create UI Text Array need to get valid non empty array.", this);
+    //        return null;
+    //    }
+    //    var width = canvas.pixelRect.width;
+    //    var height = canvas.pixelRect.height;
+    //    Text[] result = new Text[inputTexts.Length];
+    //    for (int i = 0; i < inputTexts.Length; i++)
+    //    {
+    //        result[i] = CreateUIText(inputTexts[i], width, height, canvas, $"Text {i}");
+    //    }
+    //    return result;
+    //}
+    //private Text CreateUIText(TextData inputText, float width, float height, Canvas canvas, string name = "")
+    //{
+    //    GameObject obj = new GameObject(name);
+    //    obj.transform.SetParent(canvas.transform);
+    //    Text text = obj.AddComponent<Text>();
+    //    var posX = (inputText.sceenX - 0.5f) * width;
+    //    var posY = (inputText.sceenY - 0.5f) * width;
+    //    text.rectTransform.anchoredPosition = new Vector3(posX, posY, 0);
+    //    FadeText fade = obj.AddComponent<FadeText>();
+    //    fade.text = text;
+    //    text.text = inputText.text;
+    //    text.alpha = 0;
+    //    return text;
+    //}
+
+    //private IEnumerator DisplayUITexts(Text[] texts, TextData[] data, float fadeInSeconds, AnimationCurve fadeInCurve, float delay)
+    //{
+    //    if(texts == null || data == null || texts.Length == 0 || data.Length == 0 || texts.Length != data.Length)
+    //    {
+    //        Debug.LogError("Texts and data must be a valid arrays with same length for DisplayUIText to work.", this);
+    //        yield break;
+    //    }
+    //    yield return new WaitForSeconds(delay);
+    //    textDisplayEnded = false;
+    //    for (int i = 0; i < texts.Length; i++)
+    //    {
+    //        texts[i].GetComponent<FadeText>().FadeIn(fadeInSeconds, fadeInCurve);
+    //        yield return new WaitForSeconds(data[i].duration);
+    //    }
+    //    textDisplayEnded = true;
+    //}
+
+    //private IEnumerator DistroyUIText(Text[] texts, float fadeOutSeconds, AnimationCurve fadeOutCurve)
+    //{
+    //    textDestroyEnded = false;
+    //    foreach(Text text in texts)
+    //    {
+    //        text.GetComponent<FadeText>().FadeOut(fadeOutSeconds, fadeOutCurve);
+    //    }
+    //    yield return new WaitForSeconds(fadeOutSeconds);
+    //    foreach(Text text in texts)
+    //    {
+    //        Destroy(text.gameObject);
+    //    }
+    //    textDestroyEnded = true;
+    //}
 }

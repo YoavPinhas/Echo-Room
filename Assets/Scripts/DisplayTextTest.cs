@@ -10,4 +10,5 @@ public class DisplayTextTest : MonoBehaviour
         Debug.Log(text);
         Debug.Log(evaluator.Choose(text));
     }
+
 }

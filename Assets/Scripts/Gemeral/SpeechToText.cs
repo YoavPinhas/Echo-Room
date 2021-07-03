@@ -1,275 +1,228 @@
-using UnityEngine;
-using System.Collections;
-using System.IO;
-using IBM.Watson.SpeechToText.V1;
-using IBM.Cloud.SDK;
-using IBM.Cloud.SDK.Authentication.Iam;
-using IBM.Cloud.SDK.Utilities;
-using IBM.Cloud.SDK.DataTypes;
 using System;
+using System.Collections;
+using UnityEngine;
+using Google.Cloud.Speech.V1;
+using System.IO;
+using Grpc.Core;
+using Grpc.Auth;
+using Google.Apis.Auth.OAuth2;
 
-#region ApiKey and ServiceURL data structure
-public struct APIFileData
-{
-    public string serviceURL;
-    public string apiKey;
-}
-#endregion
+[Serializable]
+public class OnFinalResultEvent : UnityEngine.Events.UnityEvent<string> { }
 
-[System.Serializable]
-public class OnRecognitionEvent : UnityEngine.Events.UnityEvent<string> { }
-
-public class SpeechToText : MonoBehaviour
+public class SpeechToText : IndestructibleSingleton<SpeechToText>
 {
     #region Inspector Parameters
     [SerializeField] private string pathToApiKey;
-    [SerializeField] private int silenceSecondsToStopListening;
-    public OnRecognitionEvent OnRecognition;
-
+    [SerializeField] private int maxRecordTimeInSeconds = 10;
+    [SerializeField] private float timeGapBetweenWords = 0.7f;
+    [SerializeField] private bool debug = false;
+    [SerializeField] private float talktThreshold = 0.3f;
+    [SerializeField] private OnFinalResultEvent OnFinalResult;
     #endregion
-
+    #region Constants
+    private const float MICROPHONE_INITIALIZATION_TIMEOUT = 1;
+    private const int SAMPLE_RATE = 16000;
+    private Action<string> currentAction = null;
+    #endregion
     #region Parameters
-    APIFileData authenticationData;
-    private int recordingRouting = 0;
-    private string microphoneDevice = null;
-    private AudioClip recordedAudio = null;
-    private int recordingBufferSize = 1;
-    private int recordingFrequency = 22050;
-    private SpeechToTextService speechToTextService;
-    private bool stopRecording = false;
+    private string microphoneDeviceName = null;
+    private AudioClip recordedAudio;
     #endregion
-
-    #region Init Methods
-    private void GetAuthentication()
+    #region Microphone Methods
+    private void StartMicrophone()
     {
-        string json = null;
-        try
+        if (debug)
+            Debug.Log("Initialize Microphone");
+
+        recordedAudio = Microphone.Start(microphoneDeviceName, false, maxRecordTimeInSeconds + 1, SAMPLE_RATE);
+
+        //Wait for microphone initialization
+        float timesStartTime = Time.realtimeSinceStartup;
+        bool timedOut = false;
+        while (!(Microphone.GetPosition(microphoneDeviceName) > 0) && !timedOut)
         {
-            json = File.ReadAllText(pathToApiKey);
-            if (string.IsNullOrEmpty(json))
+            timedOut = Time.realtimeSinceStartup - timesStartTime >= MICROPHONE_INITIALIZATION_TIMEOUT;
+        }
+        if (timedOut)
+        {
+            Debug.LogError("Unable to initialize microphone.", this);
+            return;
+        }
+    }
+    private IEnumerator RecordingHandle()
+    {
+        bool userHasTalked = false;
+        bool isLoud = false;
+        float silenceTime = 0;
+        int start = 0;
+        int end = 0;
+        float timeCounter = 0;
+
+        while (Microphone.IsRecording(microphoneDeviceName))
+        {
+            if (timeCounter > maxRecordTimeInSeconds)
             {
-                throw new FileLoadException($"Please Make sure the file in {pathToApiKey} has the right format!");
-            }
-        }
-        catch (FileLoadException e)
-        {
-            Debug.LogError(e.Message);
-        }
-        
-        try
-        {
-            authenticationData = JsonUtility.FromJson<APIFileData>(json);
-            if(string.IsNullOrEmpty(authenticationData.apiKey) || string.IsNullOrEmpty(authenticationData.serviceURL))
-                throw new IOException($"Please Make sure the file in {pathToApiKey} has the right format!");
-        }
-        catch(IOException e)
-        {
-            Debug.LogError(e.Message);
-        }
-    }
-    private IEnumerator InitService()
-    {
-        IamAuthenticator authenticator = new IamAuthenticator(apikey: authenticationData.apiKey);
-
-        //Wait for the Token Data
-        while (!authenticator.CanAuthenticate())
-            yield return null;
-        speechToTextService = new SpeechToTextService(authenticator);
-        speechToTextService.SetServiceUrl(authenticationData.serviceURL);
-        speechToTextService.StreamMultipart = true;
-
-        speechToTextService.RecognizeModel = "en-US_BroadbandModel";
-        speechToTextService.DetectSilence = true;
-        speechToTextService.EnableWordConfidence = true;
-        speechToTextService.EnableTimestamps = false;
-        speechToTextService.SilenceThreshold = 0.01f;
-        speechToTextService.MaxAlternatives = 1;
-        speechToTextService.EnableInterimResults = true; //Get only final result
-        speechToTextService.OnError = OnError;
-        speechToTextService.InactivityTimeout = silenceSecondsToStopListening;
-        speechToTextService.ProfanityFilter = false;
-        speechToTextService.SmartFormatting = true; //TODO: Check that one!
-        speechToTextService.SpeakerLabels = false;
-        speechToTextService.WordAlternativesThreshold = 0.3f; //TODO: Check that one also!
-        speechToTextService.EndOfPhraseSilenceTime = null;
-
-    }
-    #endregion
-
-    #region Speech Recognition Methods
-    private void StartRecording()
-    {
-        if(recordingRouting == 0)
-        {
-            UnityObjectUtil.StartDestroyQueue();
-            recordingRouting = Runnable.Run(RecordingHandler());
-        }
-    }
-    private void StartListening()
-    {
-        stopRecording = false;
-        speechToTextService.StartListening(OnRecognize, OnRecognizeSpeaker);
-        StartRecording();
-    }
-    private void StopListening()
-    {
-        speechToTextService.StopListening();
-        Microphone.End(microphoneDevice);
-        Runnable.Stop(0);
-        recordingRouting = 0;
-        stopRecording = false;
-    }
-    private IEnumerator RecordingHandler()
-    {
-        recordedAudio = Microphone.Start(microphoneDevice, true, recordingBufferSize, recordingFrequency);
-        yield return null; //Let recordingRouting get set
-
-        if (recordedAudio == null)
-        {
-            StopRecording();
-            yield break;
-        }
-
-        bool isFirstBlock = true;
-        int midPoint = recordedAudio.samples / 2;
-        float[] samples = null;
-        while(recordingRouting != 0 && recordedAudio != null)
-        {
-            int writingPosition = Microphone.GetPosition(microphoneDevice);
-            if(writingPosition > recordedAudio.samples || !Microphone.IsRecording(microphoneDevice))
-            {
-                Debug.LogError("Microphone disconnected.", this);
-                StopRecording();
-                yield break;
-            }
-
-            if (stopRecording)
-            {
-                StopListening();
-                yield break;
-            }
-
-            if((isFirstBlock && writingPosition >= midPoint) || (!isFirstBlock && writingPosition < midPoint))
-            {
-                // front block is recorded, make a RecordClip and pass it onto our callback.
-                samples = new float[midPoint];
-                recordedAudio.GetData(samples, isFirstBlock ? 0 : midPoint);
-
-                AudioData record = new AudioData();
-                record.MaxLevel = Mathf.Max(Math.Abs(Mathf.Min(samples)), Mathf.Max(samples));
-                record.Clip = AudioClip.Create("Recording", midPoint, recordedAudio.channels, recordingFrequency, false);
-                record.Clip.SetData(samples, 0);
-                speechToTextService.OnListen(record);
-                isFirstBlock = !isFirstBlock;
+                if (userHasTalked)
+                    OnAudioRecorded(start, end);
+                else
+                    StopRecording();
+                break;
             }
             else
             {
-                // calculate the number of samples remaining until we ready for a block of audio, 
-                // and wait that amount of time it will take to record.
-                int remaining = isFirstBlock ? (midPoint - writingPosition) : (recordedAudio.samples - writingPosition);
-                float timeRemaining = (float)remaining / (float)recordingFrequency;
-                yield return new WaitForSeconds(timeRemaining);
-            }
-        }
-        yield break;
-    }
-
-    private void StopRecording()
-    {
-        if(recordingRouting != 0)
-        {
-            Microphone.End(microphoneDevice);
-            Runnable.Stop(recordingRouting);
-            recordingRouting = 0;
-        }
-    }
-
-    private void OnError(string error)
-    {
-        speechToTextService.StopListening();
-        Debug.LogError($"Error has occurred in SpeechToText. error: {error}");
-    }
-    private void OnRecognize(SpeechRecognitionEvent results)
-    {
-        if (results == null || results.results.Length == 0)
-            return;
-        Debug.Log("On Recognize:");
-        string res = "";
-        if (results.HasFinalResult())
-        {
-            foreach(var result in results.results)
-            {
-                if (result.final)
+                isLoud = IsLoudPeack();
+                if (!userHasTalked)
                 {
-                    res = result.alternatives[0].transcript;
-                    break;
+                    if (isLoud)
+                    {
+                        userHasTalked = true;
+                        start = Mathf.Clamp(Microphone.GetPosition(microphoneDeviceName) - 9000, 0, 99999999);
+                    }
+                }
+                else
+                {
+                    timeCounter += Time.deltaTime;
+                    if (!isLoud)
+                        silenceTime += Time.deltaTime;
+                    else
+                        silenceTime = 0;
+                    end = Microphone.GetPosition(microphoneDeviceName);// - (int)(timeGapBetweenWords);
+                    if (silenceTime > timeGapBetweenWords)
+                    {
+                        OnAudioRecorded(start, end);
+                    }
                 }
             }
-            StopListening();
-            OnRecognition.Invoke(res);
-        }
-        /*foreach(var result in results.results)
-        {
-            foreach(var alternative in result.alternatives)
-            {
-                if()
-                string text = string.Format("{0} ({1}, {2:0.00})\n", alternative.transcript, result.final ? "Final" : "Interim", alternative.confidence);
-                Debug.Log(text);
-            }
 
-            if (result.keywords_result == null || result.keywords_result.keyword == null)
-                continue;
-            foreach(var keyword in result.keywords_result.keyword)
+            yield return new WaitForEndOfFrame();
+        }
+    }
+    private bool IsLoudPeack()
+    {
+        float[] waveData = new float[128];
+        int micPosition = Microphone.GetPosition(microphoneDeviceName) - (128 + 1);
+        if (micPosition < 0)
+            return false;
+        recordedAudio.GetData(waveData, micPosition);
+        for (int i = 0; i < 128; i++)
+        {
+            float wavePeak = waveData[i] * waveData[i];
+            if (wavePeak > talktThreshold)
             {
-                string text = string.Format("keyword: {0}, confidence: {1}, start time: {2}, end time: {3}", keyword.normalized_text, keyword.confidence, keyword.start_time, keyword.end_time);
-                Debug.Log(text);
+                return true;
             }
         }
-        if (results.HasFinalResult())
-        {
-            StopListening();
-            OnRecognition.Invoke(results.results.Fin)
-        }*/
+        return false;
     }
-    private void OnRecognizeSpeaker(SpeakerRecognitionEvent results)
+    private void StopRecording()
     {
-        if (results == null)
+        Microphone.End(microphoneDeviceName);
+    }
+    private void OnAudioRecorded(int start, int end)
+    {
+        StopRecording();
+        if (start == end)
             return;
-        Debug.Log($"On Recognize Speaker:");
-        foreach (SpeakerLabelsResult labelResult in results.speaker_labels)
-        {
-            Debug.Log($"speaker result: {labelResult.speaker} | confidence: {labelResult.confidence} | from: {labelResult.from} " +
-                $"| to: {labelResult.to}");
-        }
+        AudioClip clip = ChopSound(recordedAudio ,start, end);
+        GetTextFromAudio(clip);
+
     }
     #endregion
+    #region Google Speech-TO-Text Methods
+    public void StartListening(Action<string> action = null)
+    {
+        currentAction = action;
+        StartMicrophone();
+        StartCoroutine(RecordingHandle());
+    }
+    private void GetTextFromAudio(AudioClip clip)
+    {
+        if(!File.Exists(pathToApiKey))
+        {
+            Debug.LogError("Cannot Find ApiKey json file :(");
+            return;
+        }
+        byte[] audio = AudioClip2Wave(clip);
 
+    //    ChannelCredentials credential;
+  //      credential = GoogleCredential.FromFile(pathToApiKey).ToChannelCredentials();
+
+//        Channel channel = new Channel(SpeechClient.DefaultEndpoint.Host, SpeechClient.DefaultEndpoint.Port, credential);
+
+        SpeechClient speech = SpeechClient.Create();
+
+        RecognizeResponse response = speech.Recognize(new RecognitionConfig()
+        {
+            Encoding = RecognitionConfig.Types.AudioEncoding.Linear16,
+            SampleRateHertz = SAMPLE_RATE,
+            LanguageCode = "en",
+        }, RecognitionAudio.FromBytes(audio));
+        currentAction?.Invoke(response.Results[0].Alternatives[0].Transcript);
+        OnFinalResult.Invoke(response.Results[0].Alternatives[0].Transcript);
+    }
+    #endregion
+    #region MonoBehavior Methods
+    protected override void OnAwake()
+    {
+        base.OnAwake();
+        Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", pathToApiKey);
+    }
+    private void OnApplicationFocus(bool focus)
+    {
+        if (!focus)
+            StopRecording();
+    }
     private void OnDisable()
     {
-        StopListening();
+        StopRecording();
     }
-    private void OnEnable()
-    {
-        GetAuthentication();
-        Runnable.Run(InitService());
-    }
-
-    bool start = false;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!start)
-            {
-                StartListening();
-                start = true;
-            }
-            else
-            {
-                StopListening();
-                start = false;
-            }
+            StartMicrophone();
+            StartCoroutine(RecordingHandle());
         }
-         
     }
+    #endregion
+    #region Helper Methods
+    Byte[] AudioClip2Wave(AudioClip clip) // Taks unity AudioClip and turns it into a  Wave File (Liner16 File)
+    {
+        var samples = new float[clip.samples];
+        clip.GetData(samples, 0);
+
+        Int16[] intData = new Int16[clip.samples];
+
+        Byte[] byteData = new Byte[2 * clip.samples];
+
+        int rescaleFactor = 32767; //to convert float to Int16
+
+        for (int i = 0; i < samples.Length; i++)
+        {
+            intData[i] = (short)(samples[i] * rescaleFactor);
+            Byte[] byteArr = new Byte[2];
+            byteArr = BitConverter.GetBytes(intData[i]);
+            byteArr.CopyTo(byteData, i * 2);
+        }
+        return byteData;
+    }
+
+    private AudioClip ChopSound(AudioClip recordedAudio, int start, int end)
+    {
+        int frequency = recordedAudio.frequency;
+        int samplesLength = end - start + 1;
+        float[] clip_data = new float[recordedAudio.samples];
+        float[] data = new float[samplesLength];
+        var result = AudioClip.Create("Record", samplesLength, 1, frequency, false);
+
+        recordedAudio.GetData(clip_data, 0);
+        for (int i = start; i <= end; i++)
+        {
+            data[i - start] = clip_data[i];
+        }
+        result.SetData(data, 0);
+        return result;
+    }
+    #endregion
 }

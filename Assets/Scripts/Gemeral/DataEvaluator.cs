@@ -17,15 +17,16 @@ public class DataEvaluator : ScriptableObject
     {
         if (Options == null || Options.Length == 0)
             return null;
-        sentence = sentence.Replace(".", string.Empty);
-        sentence = sentence.Replace(",", string.Empty);
-        sentence = sentence.Replace("'", string.Empty);
-        sentence = sentence.Replace("\\", string.Empty);
-        sentence = sentence.Replace("/", string.Empty);
-        sentence = sentence.Replace(";", string.Empty);
-        sentence = sentence.Replace(":", string.Empty);
-        sentence = sentence.Replace("+", string.Empty);
-        sentence = sentence.Replace("-", string.Empty);
+        
+            sentence = sentence.Replace(".", string.Empty);
+            sentence = sentence.Replace(",", string.Empty);
+            sentence = sentence.Replace("'", string.Empty);
+            sentence = sentence.Replace("\\", string.Empty);
+            sentence = sentence.Replace("/", string.Empty);
+            sentence = sentence.Replace(";", string.Empty);
+            sentence = sentence.Replace(":", string.Empty);
+            sentence = sentence.Replace("+", string.Empty);
+            sentence = sentence.Replace("-", string.Empty);
         int maxIndex = 0;
         float max = Options[0].option.Evaluate(sentence);
         for (int i = 1; i < Options.Length; i++)
