@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 1481.7754, g: 1835.8867, b: 2430.4492, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -319,11 +319,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataToPlay:
-  - {fileID: 11400000, guid: d86bf2cc85fd5b044981f0d667ef86b9, type: 2}
   - {fileID: 11400000, guid: 417ccf85cf66d8643bb8133441a1dc88, type: 2}
   - {fileID: 11400000, guid: 16cfd769828ea6849b569b57e2f93eec, type: 2}
   canvas: {fileID: 826516679}
-  audioSource: {fileID: 1226850869}
 --- !u!4 &1226850868
 Transform:
   m_ObjectHideFlags: 0
