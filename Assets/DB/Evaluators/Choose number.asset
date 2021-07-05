@@ -13,7 +13,23 @@ MonoBehaviour:
   m_Name: Choose number
   m_EditorClassIdentifier: 
   Options:
-  - optionName: One
+  - optionName: 1
     option: {fileID: 11400000, guid: 818ed824087ffaa4582f209bad00731e, type: 2}
-  - optionName: Two
+  - optionName: 2
     option: {fileID: 11400000, guid: f7bd5cacafea1e44fb6f0c5bb84dfe1b, type: 2}
+  - optionName: 3
+    option: {fileID: 11400000, guid: cd545f2dfb86fca4f95a5538c9ed1ddb, type: 2}
+  - optionName: 4
+    option: {fileID: 11400000, guid: 4757d85e1bd946c47b1c18c8f4a4d72c, type: 2}
+  - optionName: 5
+    option: {fileID: 11400000, guid: f0cc6471aa186564883987029bb55011, type: 2}
+  - optionName: 6
+    option: {fileID: 11400000, guid: 5097c7a45172f034a8eca24892d5f741, type: 2}
+  - optionName: 7
+    option: {fileID: 11400000, guid: 14772d4a60ea4e542a90e7e3f5eec34f, type: 2}
+  - optionName: 8
+    option: {fileID: 11400000, guid: 020c7fbe2f79f924890069837d3f7f87, type: 2}
+  - optionName: 9
+    option: {fileID: 11400000, guid: 22eaed8fc6f88f041a227de2183774e3, type: 2}
+  - optionName: 10
+    option: {fileID: 11400000, guid: 2bed7f3fa6825194b9ea650d747f269c, type: 2}

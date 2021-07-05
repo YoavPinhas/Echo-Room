@@ -10,11 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8439182e2e9ee5b49a026a51b119b128, type: 3}
-  m_Name: B
+  m_Name: fear
   m_EditorClassIdentifier: 
-  sentences: []
+  sentences:
+  - I want to release fear
+  - release fear
+  - 'fear release '
+  - second option
+  - option two
+  - I would like to release fear
+  - let go of fear
+  - let go fear
+  - today I want to release fear
+  - release fear today
   keyWords:
-  - 2
+  - fear
+  - ear
   - two
+  - 2
   - second
-  - twice

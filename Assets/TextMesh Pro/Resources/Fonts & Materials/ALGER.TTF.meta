@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e31d2b520bfab6541972a55c130e2f1e
+guid: 210b44e7ef2f8f84990fcadaf1fda084
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - GretaText Light
+  - Algerian
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

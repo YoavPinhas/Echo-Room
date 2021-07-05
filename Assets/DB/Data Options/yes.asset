@@ -10,11 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8439182e2e9ee5b49a026a51b119b128, type: 3}
-  m_Name: B
+  m_Name: yes
   m_EditorClassIdentifier: 
-  sentences: []
+  sentences:
+  - yes please
+  - I want
+  - I want to scream
+  - Let's scream
+  - Okay I will scream
+  - Fine scream
+  - let me scream
+  - yes thank you
+  - why not
   keyWords:
-  - 2
-  - two
-  - second
-  - twice
+  - yes
+  - OK
+  - okay
+  - thanks
+  - sure
+  - fine

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3813fd5bb0b946e4b9319616b1fded49, type: 3}
-  m_Name: 01 Welcome 1
+  m_Name: 02 What is your stress level
   m_EditorClassIdentifier: 
   fadeInSeconds: 1
   fadeInCurve:
@@ -42,41 +42,41 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      time: -0.007827759
+      value: 0.99736404
+      inSlope: -2.101409
+      outSlope: -2.101409
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.14633423
     - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 2
-      outSlope: 2
+      time: 1.0083351
+      value: 0.007080078
+      inSlope: 0.026977772
+      outSlope: 0.026977772
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.1742777
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
   audio: {fileID: 0}
   texts:
-  - text: Welcome to Void
-    duration: 1
+  - text: What is your currant
+    duration: 0
     sceenX: 0.5
-    sceenY: 0.7
+    sceenY: 0.598
     fontSize: 32
-    font: {fileID: 11400000, guid: d051779f6dc3ff7419d8da524231ab24, type: 2}
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
-  - text: A space to scream and let go
+  - text: stress level?
     duration: 1
     sceenX: 0.5
     sceenY: 0.5
     fontSize: 32
-    font: {fileID: 11400000, guid: d051779f6dc3ff7419d8da524231ab24, type: 2}
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   secondsBeforePlayingAudio: 0
   secondsBeforeDisplayingText: 0
