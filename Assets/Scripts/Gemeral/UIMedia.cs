@@ -38,6 +38,10 @@ public abstract class UIMedia : MonoBehaviour
         var posX = (inputText.sceenX - 0.5f) * width;
         var posY = (inputText.sceenY - 0.5f) * height;
         text.rectTransform.anchoredPosition = new Vector3(posX, posY, 0);
+        text.font = inputText.font;
+        text.fontSize = inputText.fontSize;
+        text.color = inputText.color;
+        text.autoSizeTextContainer = true;
         FadeText fade = obj.AddComponent<FadeText>();
         fade.text = text;
         text.text = inputText.text;
