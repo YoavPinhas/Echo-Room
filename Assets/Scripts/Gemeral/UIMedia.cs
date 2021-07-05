@@ -69,7 +69,7 @@ public abstract class UIMedia : MonoBehaviour
         textDestroyEnded = false;
         foreach (Text text in texts)
         {
-            text.GetComponent<FadeText>().FadeOut(fadeOutSeconds, fadeOutCurve);
+            text.gameObject.GetComponent<FadeText>().FadeOut(fadeOutSeconds, fadeOutCurve);
         }
         yield return new WaitForSeconds(fadeOutSeconds);
         foreach (Text text in texts)

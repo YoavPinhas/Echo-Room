@@ -37,6 +37,7 @@ public class UIChooseStressMedia : UIMedia
     private IEnumerator OnResult(ChooseStressLevelData data, string text, Text[] texts)
     {
         string res = data.evaluator.Choose(text);
+        Debug.Log(res);
         StartCoroutine(DestroyUIText(texts, data.fadeOutSeconds, data.fadeOutCurve));
         var waitForDestroy = new WaitUntil(() => textDestroyEnded);
         yield return waitForDestroy;
