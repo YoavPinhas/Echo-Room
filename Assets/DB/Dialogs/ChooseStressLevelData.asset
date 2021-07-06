@@ -64,7 +64,21 @@ MonoBehaviour:
     m_RotationOrder: 4
   nextSceneName: 
   audio: {fileID: 0}
-  textsBeforeOptionsDisplayed: []
+  textsBeforeOptionsDisplayed:
+  - text: What is your currant
+    duration: 0
+    sceenX: 0.5
+    sceenY: 0.598
+    fontSize: 32
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
+  - text: stress level?
+    duration: 1
+    sceenX: 0.5
+    sceenY: 0.5
+    fontSize: 32
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
   numbersFormat:
     text: 
     duration: 5
@@ -73,6 +87,6 @@ MonoBehaviour:
     fontSize: 32
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 1}
-  evaluator: {fileID: 0}
+  evaluator: {fileID: 11400000, guid: 098a6a92dd9ab164d84bc0fa8343948b, type: 2}
   secondsBeforePlayingAudio: 0
   secondsBeforeDisplayingText: 0

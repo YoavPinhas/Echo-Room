@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400392ed5562cc341af1fa5bc3fa5bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathToApiKey: er\Downloads\NotSecretKey.json
+  pathToApiKey: C:\Users\user\Downloads\NotSecretKey.json
   maxRecordTimeInSeconds: 10
   timeGapBetweenWords: 0.7
   debug: 1
@@ -743,7 +743,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataToPlay:
   - {fileID: 11400000, guid: 417ccf85cf66d8643bb8133441a1dc88, type: 2}
-  - {fileID: 11400000, guid: 080c9b83c019b8742be11342ce9d1773, type: 2}
   - {fileID: 11400000, guid: 16cfd769828ea6849b569b57e2f93eec, type: 2}
   canvas: {fileID: 632001470}
 --- !u!82 &2067887776
