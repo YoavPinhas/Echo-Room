@@ -27,7 +27,10 @@ public class UIChooseStressMedia : UIMedia
             };
         }
         Text[] uiTexts = CreateUITextsArray(texts);
-        StartCoroutine(PlayAudio(_data.audio, _data.secondsBeforePlayingAudio));
+        if(_data.audio != null)
+            StartCoroutine(PlayAudio(_data.audio, _data.secondsBeforePlayingAudio));
+        else
+            audioPlayEnded = true;
         StartCoroutine(DisplayUITexts(uiTexts, texts, _data.fadeInSeconds, _data.fadeInCurve, _data.secondsBeforeDisplayingText));
         var waitForDisplay = new WaitUntil(() => textDisplayEnded && audioPlayEnded);
         yield return waitForDisplay;
