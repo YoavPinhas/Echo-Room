@@ -9,8 +9,11 @@ public class UIDialogMedia : UIMedia
     {
         DialogData _data = (DialogData)data;
         isPlaying = true;
+
         if (((DialogData)data).audio != null)
             StartCoroutine(PlayAudio(_data.audio, _data.secondsBeforePlayingAudio));
+        else
+            audioPlayEnded = true;
         Text[] texts = CreateUITextsArray(_data.texts);
         StartCoroutine(DisplayUITexts(texts, _data.texts, _data.fadeInSeconds, _data.fadeInCurve, _data.secondsBeforeDisplayingText));
         //var waitForDisplay = new WaitUntil(() => textDisplayEnded && audioPlayEnded);
