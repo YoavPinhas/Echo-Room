@@ -33,7 +33,7 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
     private void StartMicrophone()
     {
         if (debug)
-            Debug.Log("Initialize Microphone");
+            Debug.Log("Initialize Microphone.");
 
         recordedAudio = Microphone.Start(microphoneDeviceName, false, maxRecordTimeInSeconds + 1, SAMPLE_RATE);
 
@@ -58,7 +58,8 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
         int start = 0;
         int end = 0;
         float timeCounter = 0;
-
+        if (debug)
+            Debug.Log("Start Recording.");
         while (Microphone.IsRecording(microphoneDeviceName))
         {
             if (timeCounter > maxRecordTimeInSeconds)
