@@ -64,6 +64,8 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
         {
             if (timeCounter > maxRecordTimeInSeconds)
             {
+                if (debug)
+                    Debug.Log("Times up. Prepeare to stop recording.");
                 if (userHasTalked)
                     OnAudioRecorded(start, end);
                 else
@@ -79,6 +81,8 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
                     {
                         userHasTalked = true;
                         start = Mathf.Clamp(Microphone.GetPosition(microphoneDeviceName) - 9000, 0, 99999999);
+                        if (debug)
+                            Debug.Log("User start talking.");
                     }
                 }
                 else
@@ -118,6 +122,8 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
     }
     private void StopRecording()
     {
+        if (debug)
+            Debug.Log("Stop recording.");
         Microphone.End(microphoneDeviceName);
     }
     private void OnAudioRecorded(int start, int end)
@@ -126,14 +132,17 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
         if (start == end)
             return;
         AudioClip clip = ChopSound(recordedAudio ,start, end);
+        if (debug)
+            Debug.Log("Sending Audio To Google.");
         GetTextFromAudio(clip);
-
     }
     #endregion
     #region Google Speech-TO-Text Methods
     public void StartListening(Action<string> action = null)
     {
         currentAction = action;
+        if (debug)
+            Debug.Log("Prepare to start listening.");
         StartMicrophone();
         StartCoroutine(RecordingHandle());
     }
@@ -161,7 +170,7 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
         }, RecognitionAudio.FromBytes(audio));
         currentAction?.Invoke(response.Results[0].Alternatives[0].Transcript);
         if (debug)
-            Debug.Log("I think you said: " +response.Results[0].Alternatives[0].Transcript);
+            Debug.Log("Google think you said: " +response.Results[0].Alternatives[0].Transcript);
         OnFinalResult.Invoke(response.Results[0].Alternatives[0].Transcript);
     }
     #endregion
