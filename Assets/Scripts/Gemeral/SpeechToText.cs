@@ -160,6 +160,8 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
             LanguageCode = "en",
         }, RecognitionAudio.FromBytes(audio));
         currentAction?.Invoke(response.Results[0].Alternatives[0].Transcript);
+        if (debug)
+            Debug.Log("I think you said: " +response.Results[0].Alternatives[0].Transcript);
         OnFinalResult.Invoke(response.Results[0].Alternatives[0].Transcript);
     }
     #endregion
@@ -178,14 +180,7 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
     {
         StopRecording();
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            StartMicrophone();
-            StartCoroutine(RecordingHandle());
-        }
-    }
+    
     #endregion
     #region Helper Methods
     Byte[] AudioClip2Wave(AudioClip clip) // Taks unity AudioClip and turns it into a  Wave File (Liner16 File)

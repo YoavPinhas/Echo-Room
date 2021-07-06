@@ -10,5 +10,11 @@ public class DisplayTextTest : MonoBehaviour
         Debug.Log(text);
         Debug.Log(evaluator.Choose(text));
     }
-
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SpeechToText.Instance.StartListening();
+        }
+    }
 }
