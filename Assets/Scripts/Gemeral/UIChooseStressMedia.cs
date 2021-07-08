@@ -5,6 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Text = TMPro.TextMeshProUGUI;
+using UnityEngine.UI;
 
 public class UIChooseStressMedia : UIMedia
 {
@@ -12,7 +13,10 @@ public class UIChooseStressMedia : UIMedia
     private bool endChoosing;
     private bool resultHasDisplayed;
     private int result;
-    public  override IEnumerator Play()
+
+
+
+    public override IEnumerator Play()
     {
         isPlaying = true;
         endChoosing = false;
@@ -29,44 +33,82 @@ public class UIChooseStressMedia : UIMedia
                 duration = 0,
                 font = data.numbersFormat.font,
                 fontSize = data.numbersFormat.fontSize,
-                sceenX = 0.1f + i * (0.8f / 9f),
+                sceenX = 0.2f + i * (0.6f / 9f),
                 sceenY = data.numbersFormat.sceenY
             };
         }
         Text[] uiTexts = CreateUITextsArray(texts);
         StartCoroutine(PlayAudio(data.audio, data.secondsBeforePlayingAudio));
-        
         StartCoroutine(DisplayUITexts(uiTexts, texts, data.fadeInSeconds, data.fadeInCurve, data.secondsBeforeDisplayingText));
+        float duration = 0;
+        for (int i = 0; i < length; i++)
+        {
+            duration += texts[i].duration;
+        }
+        WaitForSeconds delay = new WaitForSeconds(duration);
+        yield return delay;
 
+        RawImage[] decorators = DisplayNumberDecorators(texts.Skip(length).Take(10).ToArray());
         WaitUntil wait = new WaitUntil(() => textDisplayEnded && audioPlayEnded);
         yield return wait;
 
-        WaitForSeconds delay = new WaitForSeconds(1);
+        delay = new WaitForSeconds(1);
 
         yield return delay;
 
-        SpeechToText.Instance.StartListening((str) => StartCoroutine(OnResult(str)), data.maxRecordingSeconds);
+        SpeechToText.Instance.StartListening((str) => OnResult(str), data.maxRecordingSeconds);
 
         wait = new WaitUntil(() => endChoosing);
         yield return wait;
 
-        resultHasDisplayed = false;
-        StartCoroutine(DisplayResult(uiTexts.Skip(length).Take(10).ToArray()));
+        if (result != -1)
+        {
+            resultHasDisplayed = false;
+            StartCoroutine(DisplayResult(uiTexts.Skip(length).Take(10).ToArray(), decorators));
 
-        wait = new WaitUntil(() => resultHasDisplayed);
-        yield return wait;
+            wait = new WaitUntil(() => resultHasDisplayed);
+            yield return wait;
 
-        WaitForSeconds waitBeforeDestroy = new WaitForSeconds(data.numbersFormat.duration);
-        yield return waitBeforeDestroy;
+            WaitForSeconds waitBeforeDestroy = new WaitForSeconds(data.numbersFormat.duration);
+            yield return waitBeforeDestroy;
 
-        StartCoroutine(DestroyUIText(uiTexts, data.fadeOutSeconds, data.fadeOutCurve));
-        WaitUntil waitForDestroy = new WaitUntil(() => textDestroyEnded);
-        yield return waitForDestroy;
-        if(result == 1)
-            SceneManager.LoadScene(data.option1SceneName);
+            StartCoroutine(DestroyUIText(uiTexts, data.fadeOutSeconds, data.fadeOutCurve));
+            StartCoroutine(DestroyDecorators(decorators));
+            WaitUntil waitForDestroy = new WaitUntil(() => textDestroyEnded);
+            yield return waitForDestroy;
+            if (result == 1)
+                SceneManager.LoadScene(data.option1SceneName);
+            else
+                SceneManager.LoadScene(data.options2To10SceneName);
+        }
         else
-            SceneManager.LoadScene(data.options2To10SceneName);
+        {
+
+        }
         isPlaying = false;
+    }
+
+    private RawImage[] DisplayNumberDecorators(TextData[] numbers)
+    {
+        RawImage[] decorators = new RawImage[numbers.Length];
+        float width = canvas.pixelRect.width;
+        float height = canvas.pixelRect.height;
+        for (int i = 0; i < numbers.Length; i++)
+        {
+            GameObject obj = new GameObject($"number {i} decorator");
+            obj.transform.SetParent(canvas.transform);
+            decorators[i] = obj.AddComponent<RawImage>();
+            var posX = (numbers[i].sceenX - 0.5f) * width;
+            var posY = (numbers[i].sceenY - 0.45f) * height;
+            decorators[i].rectTransform.anchoredPosition = new Vector3(posX, posY, 0);
+            decorators[i].texture = data.numbersDecorator;
+            decorators[i].rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, 15);
+            decorators[i].rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, 15);
+            Fade fade = obj.AddComponent<Fade>();
+            fade.text = decorators[i];
+            fade.FadeIn(data.fadeInSeconds, data.fadeInCurve);
+        }
+        return decorators;
     }
 
     public override void SetData(Data data)
@@ -74,37 +116,44 @@ public class UIChooseStressMedia : UIMedia
         this.data = (ChooseStressLevelData)data;
     }
 
-    private IEnumerator OnResult(string text)
+    private void OnResult(string text)
     {
         string res = data.evaluator.Choose(text);
-        Debug.Log(res);
-        result = int.Parse(res);
-        yield return null;
+        if (res != null)
+        {
+            Debug.Log(res);
+            result = int.Parse(res);
+        }
+        else
+        {
+            result = -1;
+        }
         endChoosing = true;
     }
 
-    private IEnumerator DisplayResult(Text[] texts)
+    private IEnumerator DisplayResult(Text[] texts, RawImage[] decorators)
     {
         float seconds = 0;
         if (result != 0)
             seconds = 0.6f;
-        List<GameObject> objects = new List<GameObject>();
-        Vector3 offset = new Vector3(0, 0, 1f);
-        Vector3 direction = (texts[0].rectTransform.position - Camera.main.transform.position).normalized;
-        Vector3 startPosition = texts[0].rectTransform.position + 2* direction;
-        
-        for(int i = 0; i < result; i++)
-        {
-            //Debug.Log(texts[i].rectTransform.position);
-            direction = (texts[i].rectTransform.position - Camera.main.transform.position).normalized;
-            Vector3 finalePosition = texts[i].rectTransform.position + 2*direction;
-            objects.Add(Instantiate(data.displayResultPrefab, startPosition, Quaternion.identity));
-            Tween tween = objects[i].AddComponent<Tween>();
-            tween.StartTween(startPosition, finalePosition, seconds, 1);
-            startPosition = finalePosition;
-            yield return tween.TweenMotionCompleted;
-        }
+        texts[result-1].color = data.selectedColor;
+        decorators[result-1].color = data.selectedColor;
+        WaitForSeconds wait = new WaitForSeconds(seconds);
+        yield return wait;
         resultHasDisplayed = true;
+    }
+
+    private IEnumerator DestroyDecorators(RawImage[] decorators)
+    {
+        foreach (RawImage decorator in decorators)
+        {
+            decorator.gameObject.GetComponent<Fade>().FadeOut(data.fadeOutSeconds, data.fadeOutCurve);
+        }
+        yield return new WaitForSeconds(data.fadeOutSeconds);
+        foreach (RawImage decorator in decorators)
+        {
+            Destroy(decorator.gameObject);
+        }
     }
 
 }

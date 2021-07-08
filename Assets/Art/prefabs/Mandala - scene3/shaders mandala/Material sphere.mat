@@ -127,7 +127,7 @@ Material:
     - _InfluenceRadius: 0.5
     - _Metallic: 0
     - _Mode: 0
-    - _NormalPush: 0.39
+    - _NormalPush: 0.16
     - _OcclusionStrength: 1
     - _Outline_Opacity: 76.2
     - _PannerX: -0.338

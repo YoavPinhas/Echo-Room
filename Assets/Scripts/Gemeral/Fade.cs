@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Text = TMPro.TextMeshProUGUI;
 
-public class FadeText : MonoBehaviour
+public class Fade : MonoBehaviour
 {
-    public TMPro.TextMeshProUGUI text;
+    public MaskableGraphic text;
     private WaitForEndOfFrame endOfFrame = new WaitForEndOfFrame();
+    private Color color;
     public void FadeIn(float seconds, AnimationCurve curve)
     {
         if (seconds < 0)
@@ -17,12 +20,15 @@ public class FadeText : MonoBehaviour
     private IEnumerator FadeInEnomerator(float seconds, AnimationCurve curve)
     {
         float counter = 0;
-        text.alpha = 1;
+        color = text.color;
+        color.a = 1;
+        text.color = color;
         while (counter != seconds)
         {
             counter = Mathf.Clamp(counter + Time.deltaTime, 0, seconds);
             float t = counter / seconds;
-            text.alpha = curve.Evaluate(t);
+            color.a = curve.Evaluate(t);
+            text.color = color;
             yield return endOfFrame;
         }
     }
@@ -38,12 +44,15 @@ public class FadeText : MonoBehaviour
     private IEnumerator FadeOutEnomerator(float seconds, AnimationCurve curve)
     {
         float counter = 0;
-        text.alpha = 1;
+        color = text.color;
+        color.a = 1;
+        text.color = color;
         while (counter != seconds)
         {
             counter = Mathf.Clamp(counter + Time.deltaTime, 0, seconds);
             float t = 1 - counter / seconds;
-            text.alpha = curve.Evaluate(t);
+            color.a = curve.Evaluate(t);
+            text.color = color;
             yield return endOfFrame;
         }
     }

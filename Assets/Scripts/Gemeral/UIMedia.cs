@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Text = TMPro.TextMeshProUGUI;
 
 public abstract class UIMedia : MonoBehaviour
@@ -14,7 +15,6 @@ public abstract class UIMedia : MonoBehaviour
     public bool IsPlaying => isPlaying;
     public abstract IEnumerator Play();
     public abstract void SetData(Data data);
-
     protected Text[] CreateUITextsArray(TextData[] inputTexts)
     {
         if (inputTexts == null || inputTexts.Length == 0)
@@ -43,7 +43,7 @@ public abstract class UIMedia : MonoBehaviour
         text.fontSize = inputText.fontSize;
         text.color = inputText.color;
         text.autoSizeTextContainer = true;
-        FadeText fade = obj.AddComponent<FadeText>();
+        Fade fade = obj.AddComponent<Fade>();
         fade.text = text;
         text.text = inputText.text;
         text.alpha = 0;
@@ -61,8 +61,9 @@ public abstract class UIMedia : MonoBehaviour
         textDisplayEnded = false;
         for (int i = 0; i < texts.Length; i++)
         {
-            texts[i].GetComponent<FadeText>().FadeIn(fadeInSeconds, fadeInCurve);
-            yield return new WaitForSeconds(data[i].duration);
+            texts[i].GetComponent<Fade>().FadeIn(fadeInSeconds, fadeInCurve);
+            if(data[i].duration != 0)
+                yield return new WaitForSeconds(data[i].duration);
         }
         textDisplayEnded = true;
     }
@@ -71,7 +72,7 @@ public abstract class UIMedia : MonoBehaviour
         textDestroyEnded = false;
         foreach (Text text in texts)
         {
-            text.gameObject.GetComponent<FadeText>().FadeOut(fadeOutSeconds, fadeOutCurve);
+            text.gameObject.GetComponent<Fade>().FadeOut(fadeOutSeconds, fadeOutCurve);
         }
         yield return new WaitForSeconds(fadeOutSeconds);
         foreach (Text text in texts)
@@ -86,9 +87,10 @@ public abstract class UIMedia : MonoBehaviour
         if (audio != null)
         {
             yield return new WaitForSeconds(secondsBeforeAudio);
-            audioSource.PlayOneShot(audio);
-            var wait = new WaitWhile(() => audioSource.isPlaying);
-            yield return wait;
+            UIContainer.Instance.PlayAudio(audio);
+            //audioSource.PlayOneShot(audio);
+            //var wait = new WaitWhile(() => audioSource.isPlaying);
+            yield return UIContainer.Instance.AudioPlayEnded;
         }
         audioPlayEnded = true;
     }

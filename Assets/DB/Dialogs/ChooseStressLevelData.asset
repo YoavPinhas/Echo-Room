@@ -83,7 +83,7 @@ MonoBehaviour:
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 1}
   numbersDecorator: {fileID: 0}
-  selectedColor: {r: 0, g: 0, b: 0, a: 0}
+  selectedColor: {r: 0, g: 0.614023, b: 1, a: 1}
   evaluator: {fileID: 11400000, guid: 098a6a92dd9ab164d84bc0fa8343948b, type: 2}
   secondsBeforePlayingAudio: 0
   secondsBeforeDisplayingText: 1

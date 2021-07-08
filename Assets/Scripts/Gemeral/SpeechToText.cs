@@ -6,6 +6,7 @@ using System.IO;
 using Grpc.Core;
 using Grpc.Auth;
 using Google.Apis.Auth.OAuth2;
+using System.Threading.Tasks;
 
 [Serializable]
 public class OnFinalResultEvent : UnityEngine.Events.UnityEvent<string> { }
@@ -148,7 +149,7 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
         StartMicrophone();
         StartCoroutine(RecordingHandle());
     }
-    private void GetTextFromAudio(AudioClip clip)
+    private async void GetTextFromAudio(AudioClip clip)
     {
         if(!File.Exists(pathToApiKey))
         {
@@ -157,14 +158,11 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
         }
         byte[] audio = AudioClip2Wave(clip);
 
-    //    ChannelCredentials credential;
-  //      credential = GoogleCredential.FromFile(pathToApiKey).ToChannelCredentials();
-
-//        Channel channel = new Channel(SpeechClient.DefaultEndpoint.Host, SpeechClient.DefaultEndpoint.Port, credential);
-
         SpeechClient speech = SpeechClient.Create();
+ 
 
-        RecognizeResponse response = speech.Recognize(new RecognitionConfig()
+
+        RecognizeResponse response = await speech.RecognizeAsync(new RecognitionConfig()
         {
             Encoding = RecognitionConfig.Types.AudioEncoding.Linear16,
             SampleRateHertz = SAMPLE_RATE,
