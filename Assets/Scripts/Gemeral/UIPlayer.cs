@@ -23,8 +23,6 @@ public class UIPlayer : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         waitIfAudioIsPlaying = new WaitWhile(() => audioSource.isPlaying);
-        var cameraRig = FindObjectOfType<CameraRig>();
-        UIContainer.Instance.SetCameras(cameraRig);
     }
 
     void Update()

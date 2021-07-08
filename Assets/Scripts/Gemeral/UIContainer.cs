@@ -22,16 +22,6 @@ public class UIContainer : SingletonMonoBehavior<UIContainer>
         leftCanvasRenderer = leftCanvas.GetComponent<CanvasRenderer>();
     }
 
-    public void SetCameras(CameraRig rig)
-    {
-        mainCanvas.renderMode = RenderMode.ScreenSpaceCamera;
-        mainCanvas.worldCamera = rig.front;
-        rightCanvas.renderMode = RenderMode.ScreenSpaceCamera;
-        rightCanvas.worldCamera = rig.right;
-        leftCanvas.renderMode = RenderMode.ScreenSpaceCamera;
-        leftCanvas.worldCamera = rig.left;
-    }
-
     public void FadeOut(float seconds, AnimationCurve curve)
     {
         fadeOut = false;
