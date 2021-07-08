@@ -62,40 +62,47 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  option1SceneName: Scene 1
-  options2To10SceneName: Scene 2
-  audio: {fileID: 0}
+  option1SceneName: Scream for fun yesno
+  options2To10SceneName: What would you like to release
+  audio: {fileID: 8300000, guid: 621142f08c7d86b449d31eb67c43478f, type: 3}
   selectionAudio: {fileID: 0}
   textsBeforeOptionsDisplayed:
-  - text: What is your currant
-    duration: 0
-    sceenX: 0.5
-    sceenY: 0.598
-    fontSize: 1
-    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
-    color: {r: 1, g: 1, b: 1, a: 0}
-  - text: stress level?
-    duration: 1
+  - text: What is your currant stress level?
+    duration: 2
     sceenX: 0.5
     sceenY: 0.5
-    fontSize: 1
+    fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   numbersFormat:
     text: 
     duration: 5
     sceenX: 0
-    sceenY: 0.3
-    fontSize: 1
+    sceenY: 0.4
+    fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 1}
   numbersDecorator: {fileID: 0}
   selectedColor: {r: 0, g: 0, b: 0, a: 0}
   evaluator: {fileID: 11400000, guid: 098a6a92dd9ab164d84bc0fa8343948b, type: 2}
   secondsBeforePlayingAudio: 0
-  secondsBeforeDisplayingText: 0
+  secondsBeforeDisplayingText: 1
   maxRecordingSeconds: 10
   displayResultPrefab: {fileID: 970958914387681806, guid: c8f4447635a65fa4a812cd63d9aa4bde, type: 3}
-  unrecognizedAudio: {fileID: 0}
-  unrecognizedText: []
+  unrecognizedAudio: {fileID: 8300000, guid: 14c8f98cd04d8a14eb797b79da0e4098, type: 3}
+  unrecognizedText:
+  - text: I can't understand you
+    duration: 1
+    sceenX: 0.5
+    sceenY: 0.5
+    fontSize: 32
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
+  - text: Let me choose for you
+    duration: 1
+    sceenX: 0.5
+    sceenY: 0.5
+    fontSize: 32
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
   defaultSelection: 7

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3813fd5bb0b946e4b9319616b1fded49, type: 3}
   m_Name: 01 Welcome
   m_EditorClassIdentifier: 
-  fadeInSeconds: 1
+  fadeInSeconds: 1.5
   fadeInCurve:
     serializedVersion: 2
     m_Curve:
@@ -37,7 +37,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  fadeOutSeconds: 3
+  fadeOutSeconds: 1.5
   fadeOutCurve:
     serializedVersion: 2
     m_Curve:
@@ -62,21 +62,21 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  audio: {fileID: 0}
+  audio: {fileID: 8300000, guid: 078a9fad298db454b9ddca822ddb0058, type: 3}
   texts:
-  - text: Welcome to Void
-    duration: 1
-    sceenX: 0.5
-    sceenY: 0.598
-    fontSize: 1
-    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
-    color: {r: 1, g: 1, b: 1, a: 0}
-  - text: A space to scream and let go
-    duration: 1
+  - text: ' Void'
+    duration: 1.8
     sceenX: 0.5
     sceenY: 0.5
-    fontSize: 1
+    fontSize: 32
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
+  - text: Scream and let go
+    duration: 1
+    sceenX: 0.51
+    sceenY: 0.45
+    fontSize: 22
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   secondsBeforePlayingAudio: 0
-  secondsBeforeDisplayingText: 0
+  secondsBeforeDisplayingText: 0.5
