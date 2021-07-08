@@ -68,14 +68,14 @@ MonoBehaviour:
     duration: 1
     sceenX: 0.5
     sceenY: 0.598
-    fontSize: 32
+    fontSize: 1
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   - text: A space to scream and let go
     duration: 1
     sceenX: 0.5
     sceenY: 0.5
-    fontSize: 32
+    fontSize: 1
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   secondsBeforePlayingAudio: 0

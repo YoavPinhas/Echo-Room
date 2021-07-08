@@ -8,7 +8,6 @@ using Text = TMPro.TextMeshProUGUI;
 public class UIPlayer : MonoBehaviour
 {
     [SerializeField] private Data[] dataToPlay;
-    [SerializeField] private Canvas canvas;
     private AudioSource audioSource;
 
     private bool isPlaying = false;
@@ -24,6 +23,8 @@ public class UIPlayer : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
         waitIfAudioIsPlaying = new WaitWhile(() => audioSource.isPlaying);
+        var cameraRig = FindObjectOfType<CameraRig>();
+        UIContainer.Instance.SetCameras(cameraRig);
     }
 
     void Update()
@@ -45,17 +46,20 @@ public class UIPlayer : MonoBehaviour
         {
             case DataType.DialogData:
                 currentMedia = gameObject.AddComponent<UIDialogMedia>();
-                currentMedia.data = (DialogData)data;
                 break;
             case DataType.StressLevel:
                 currentMedia = gameObject.AddComponent<UIChooseStressMedia>();
-                currentMedia.data = (ChooseStressLevelData)data;
                 break;
             case DataType.ReleaseOption:
+                currentMedia = gameObject.AddComponent<UIReleaseOptionsMedia>();
+                break;
+            case DataType.FadeOut:
+                currentMedia = gameObject.AddComponent<UIFadeOutMedia>();
                 break;
         }
+        currentMedia.SetData(data);
         currentMedia.audioSource = audioSource;
-        currentMedia.canvas = canvas;
+        currentMedia.canvas = UIContainer.Instance.mainCanvas;
     }
 
 }

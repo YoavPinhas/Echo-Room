@@ -5,24 +5,29 @@ using Text = TMPro.TextMeshProUGUI;
 
 public class UIDialogMedia : UIMedia
 {
+    private DialogData data;
     public override IEnumerator Play()
     {
-        DialogData _data = (DialogData)data;
         isPlaying = true;
+        StartCoroutine(PlayAudio(data.audio, data.secondsBeforePlayingAudio));
+        
+        Text[] texts = CreateUITextsArray(data.texts);
+        if(texts != null && texts.Length > 0)
+            StartCoroutine(DisplayUITexts(texts, data.texts, data.fadeInSeconds, data.fadeInCurve, data.secondsBeforeDisplayingText));
+       
+        WaitUntil wait = new WaitUntil(() => textDisplayEnded && audioPlayEnded);
+        yield return wait;
 
-        if (((DialogData)data).audio != null)
-            StartCoroutine(PlayAudio(_data.audio, _data.secondsBeforePlayingAudio));
-        else
-            audioPlayEnded = true;
-        Text[] texts = CreateUITextsArray(_data.texts);
-        StartCoroutine(DisplayUITexts(texts, _data.texts, _data.fadeInSeconds, _data.fadeInCurve, _data.secondsBeforeDisplayingText));
-        //var waitForDisplay = new WaitUntil(() => textDisplayEnded && audioPlayEnded);
-        //yield return waitForDisplay;
-        yield return new WaitUntil(() => textDisplayEnded && audioPlayEnded);
-        StartCoroutine(DestroyUIText(texts, _data.fadeOutSeconds, _data.fadeOutCurve));
-        //var waitForDestroy = new WaitUntil(() => textDestroyEnded);
-        //yield return waitForDestroy;
-        yield return new WaitUntil(() => textDestroyEnded);
+        if (texts != null && texts.Length > 0)
+            StartCoroutine(DestroyUIText(texts, data.fadeOutSeconds, data.fadeOutCurve));
+        
+        wait = new WaitUntil(() => textDestroyEnded);
+        yield return wait;
         isPlaying = false;
+    }
+
+    public override void SetData(Data data)
+    {
+        this.data = (DialogData)data;
     }
 }

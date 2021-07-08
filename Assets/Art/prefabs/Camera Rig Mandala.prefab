@@ -603,6 +603,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4172934284416586558}
+  - component: {fileID: 4185636832424322077}
   m_Layer: 0
   m_Name: Camera Rig Mandala
   m_TagString: Untagged
@@ -627,3 +628,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4185636832424322077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4859952713803571710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d5bcb9c889b6b4ea9934ba50a1ec76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  front: {fileID: 3376084642759087489}
+  right: {fileID: 3376084641426195047}
+  left: {fileID: 3376084641267637797}

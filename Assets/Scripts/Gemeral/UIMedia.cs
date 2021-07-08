@@ -9,11 +9,12 @@ public abstract class UIMedia : MonoBehaviour
     protected bool textDestroyEnded;
     protected bool audioPlayEnded;
     protected bool isPlaying;
-    public Data data;
     public Canvas canvas;
     public AudioSource audioSource;
     public bool IsPlaying => isPlaying;
     public abstract IEnumerator Play();
+    public abstract void SetData(Data data);
+
     protected Text[] CreateUITextsArray(TextData[] inputTexts)
     {
         if (inputTexts == null || inputTexts.Length == 0)
@@ -46,6 +47,7 @@ public abstract class UIMedia : MonoBehaviour
         fade.text = text;
         text.text = inputText.text;
         text.alpha = 0;
+        text.transform.localPosition = new Vector3(text.transform.localPosition.x, text.transform.localPosition.y, 0);
         return text;
     }
     protected IEnumerator DisplayUITexts(Text[] texts, TextData[] data, float fadeInSeconds, AnimationCurve fadeInCurve, float delay)
@@ -81,10 +83,13 @@ public abstract class UIMedia : MonoBehaviour
     protected IEnumerator PlayAudio(AudioClip audio, float secondsBeforeAudio)
     {
         audioPlayEnded = false;
-        yield return new WaitForSeconds(secondsBeforeAudio);
-        audioSource.PlayOneShot(audio);
-        var wait = new WaitWhile(() => audioSource.isPlaying);
-        yield return wait;
+        if (audio != null)
+        {
+            yield return new WaitForSeconds(secondsBeforeAudio);
+            audioSource.PlayOneShot(audio);
+            var wait = new WaitWhile(() => audioSource.isPlaying);
+            yield return wait;
+        }
         audioPlayEnded = true;
     }
 }

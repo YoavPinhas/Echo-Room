@@ -138,9 +138,11 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
     }
     #endregion
     #region Google Speech-TO-Text Methods
-    public void StartListening(Action<string> action = null)
+    public void StartListening(Action<string> action = null, int maxSeconds = -1)
     {
         currentAction = action;
+        if (maxSeconds > 0)
+            maxRecordTimeInSeconds = maxSeconds;
         if (debug)
             Debug.Log("Prepare to start listening.");
         StartMicrophone();
