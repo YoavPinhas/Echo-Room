@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIContainer : SingletonMonoBehavior<UIContainer>
+public class UIContainer : IndestructibleSingleton<UIContainer>
 {
     public Canvas mainCanvas;
     public Canvas rightCanvas;
