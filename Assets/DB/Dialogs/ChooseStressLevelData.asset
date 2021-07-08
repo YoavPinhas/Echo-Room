@@ -62,8 +62,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  option1SceneName: Scream for fun yesno
-  options2To10SceneName: What would you like to release
+  option1SceneName: ChooseOneOption
+  options2To10SceneName: ChooseRelease
   audio: {fileID: 8300000, guid: 621142f08c7d86b449d31eb67c43478f, type: 3}
   selectionAudio: {fileID: 0}
   textsBeforeOptionsDisplayed:
