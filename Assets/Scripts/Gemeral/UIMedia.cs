@@ -10,7 +10,6 @@ public abstract class UIMedia : MonoBehaviour
     protected bool textDestroyEnded;
     protected bool audioPlayEnded;
     protected bool isPlaying;
-    public Canvas canvas;
     public AudioSource audioSource;
     public bool IsPlaying => isPlaying;
     public abstract IEnumerator Play();
@@ -22,8 +21,8 @@ public abstract class UIMedia : MonoBehaviour
             Debug.LogError("Create UI Text Array need to get valid non empty array.");
             return null;
         }
-        var width = canvas.pixelRect.width;
-        var height = canvas.pixelRect.height;
+        var width = UIContainer.Instance.mainCanvas.pixelRect.width;
+        var height = UIContainer.Instance.mainCanvas.pixelRect.height;
         Text[] result = new Text[inputTexts.Length];
         for (int i = 0; i < inputTexts.Length; i++)
         {
@@ -34,7 +33,7 @@ public abstract class UIMedia : MonoBehaviour
     protected Text CreateUIText(TextData inputText, float width, float height, string name = "")
     {
         GameObject obj = new GameObject(name);
-        obj.transform.SetParent(canvas.transform);
+        obj.transform.SetParent(UIContainer.Instance.mainCanvas.transform);
         Text text = obj.AddComponent<Text>();
         var posX = (inputText.sceenX - 0.5f) * width;
         var posY = (inputText.sceenY - 0.5f) * height;

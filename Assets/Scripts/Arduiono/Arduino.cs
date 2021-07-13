@@ -15,6 +15,7 @@ public class Arduino : SingletonMonoBehavior<Arduino>
     private TcpClient socketConnection;
     private Thread clientReciveThread;
 
+
     private void Start()
     {
         ConnectToTcpServer();

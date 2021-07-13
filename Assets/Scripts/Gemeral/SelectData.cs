@@ -5,19 +5,22 @@ using UnityEngine;
 
 
 
-[CreateAssetMenu(fileName ="ReleaseOptions.asset", menuName ="Data/Release Options")]
-public class ReleaseOptionsData : Data
+[CreateAssetMenu(fileName ="SelectData.asset", menuName ="Data/Select from Options")]
+public class SelectData : Data
 {
     public float fadeInSeconds;
     public AnimationCurve fadeInCurve;
     public float fadeOutSeconds;
     public AnimationCurve fadeOutCurve;
-    public string option1SceneName;
     public AudioClip audio;
-    public TextData[] texts;
+    public AudioClip selectionAudio;
+    public Color SelectionColor;
+    public TextData[] textsBeforeSelection;
+    public TextData[] selectionOptions;
     public DataEvaluator evaluator;
     public float secondsBeforePlayingAudio;
     public float secondsBeforeDisplayingText;
+    public float secondsBeforeFadeOut;
 
     public override DataType GetDataType()
     {

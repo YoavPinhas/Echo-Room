@@ -15,7 +15,7 @@ public class TextData
 }
 
 [System.Serializable]
-public enum DataType { DialogData, StressLevel, ReleaseOption, FadeOut }
+public enum DataType { DialogData, StressLevel, ReleaseOption, FadeOut, StartScream, StopScream, FadeOutSphere }
 
 [System.Serializable]
 public abstract class Data : ScriptableObject

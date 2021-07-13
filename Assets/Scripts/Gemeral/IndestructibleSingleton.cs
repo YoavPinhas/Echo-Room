@@ -12,6 +12,7 @@ public class IndestructibleSingleton<T> : MonoBehaviour where T : MonoBehaviour
             Destroy(gameObject);
         Instance = GetComponent<T>();
         DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(Instance);
         OnAwake();
     }
     protected virtual void OnAwake() { }

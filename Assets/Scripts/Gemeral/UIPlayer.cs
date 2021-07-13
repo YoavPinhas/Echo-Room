@@ -49,15 +49,20 @@ public class UIPlayer : MonoBehaviour
                 currentMedia = gameObject.AddComponent<UIChooseStressMedia>();
                 break;
             case DataType.ReleaseOption:
-                currentMedia = gameObject.AddComponent<UIReleaseOptionsMedia>();
+                currentMedia = gameObject.AddComponent<UISelectionMedia>();
                 break;
             case DataType.FadeOut:
                 currentMedia = gameObject.AddComponent<UIFadeOutMedia>();
                 break;
+            case DataType.StartScream:
+                currentMedia = gameObject.AddComponent<UIStartScreamMedia>();
+                break;
+            /*case DataType.FadeOutSphere:
+                currentMedia = gameObject.AddComponent<UIStartScreamMedia>();
+                break;*/
         }
         currentMedia.SetData(data);
         currentMedia.audioSource = audioSource;
-        currentMedia.canvas = UIContainer.Instance.mainCanvas;
     }
 
 }

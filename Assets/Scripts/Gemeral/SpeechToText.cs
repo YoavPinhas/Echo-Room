@@ -36,20 +36,21 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
         if (debug)
             Debug.Log("Initialize Microphone.");
 
+
         recordedAudio = Microphone.Start(microphoneDeviceName, false, maxRecordTimeInSeconds + 1, SAMPLE_RATE);
 
         //Wait for microphone initialization
         float timesStartTime = Time.realtimeSinceStartup;
         bool timedOut = false;
-        while (!(Microphone.GetPosition(microphoneDeviceName) > 0) && !timedOut)
-        {
-            timedOut = Time.realtimeSinceStartup - timesStartTime >= MICROPHONE_INITIALIZATION_TIMEOUT;
-        }
-        if (timedOut)
-        {
-            Debug.LogError("Unable to initialize microphone.", this);
-            return;
-        }
+        //while (!(Microphone.GetPosition(microphoneDeviceName) > 0) && !timedOut)
+        //{
+        //    timedOut = Time.realtimeSinceStartup - timesStartTime >= MICROPHONE_INITIALIZATION_TIMEOUT;
+        //}
+        //if (timedOut)
+        //{
+        //    Debug.LogError("Unable to initialize microphone.", this);
+        //    return;
+        //}
     }
     private IEnumerator RecordingHandle()
     {
@@ -68,19 +69,28 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
                 if (debug)
                     Debug.Log("Times up. Prepeare to stop recording.");
                 if (userHasTalked)
+                {
                     OnAudioRecorded(start, end);
+                    yield break;
+                }
                 else
+                {
+                    currentAction.Invoke(null);
+                    OnFinalResult.Invoke(null);
                     StopRecording();
-                break;
+                    yield break;
+                }
             }
             else
             {
                 isLoud = IsLoudPeack();
                 if (!userHasTalked)
                 {
+                    timeCounter += Time.deltaTime;
                     if (isLoud)
                     {
                         userHasTalked = true;
+                        timeCounter = 0;
                         start = Mathf.Clamp(Microphone.GetPosition(microphoneDeviceName) - 9000, 0, 99999999);
                         if (debug)
                             Debug.Log("User start talking.");
@@ -168,10 +178,21 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
             SampleRateHertz = SAMPLE_RATE,
             LanguageCode = "en",
         }, RecognitionAudio.FromBytes(audio));
-        currentAction?.Invoke(response.Results[0].Alternatives[0].Transcript);
-        if (debug)
-            Debug.Log("Google think you said: " +response.Results[0].Alternatives[0].Transcript);
-        OnFinalResult.Invoke(response.Results[0].Alternatives[0].Transcript);
+        if (response.Results != null && response.Results.Count > 0)
+        {
+            currentAction?.Invoke(response.Results[0].Alternatives[0].Transcript);
+            if (debug)
+                Debug.Log("Google think you said: " + response.Results[0].Alternatives[0].Transcript);
+            OnFinalResult.Invoke(response.Results[0].Alternatives[0].Transcript);
+        }
+        else
+        {
+            currentAction?.Invoke(null);
+            OnFinalResult.Invoke(null);
+        }
+
+
+
     }
     #endregion
     #region MonoBehavior Methods

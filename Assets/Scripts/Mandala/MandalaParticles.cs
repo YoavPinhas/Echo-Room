@@ -26,6 +26,7 @@ public class MandalaParticles
     [SerializeField] private float elementsRotationSpeed;
     [SerializeField, Min(0.5f)] private float minElementSize = 1;
     [SerializeField, Min(0.5f)] private float maxElementSize = 1;
+    [SerializeField, Range(0,1)] private float WhenOpenNext;
     #endregion
 
     #region Private Parameters

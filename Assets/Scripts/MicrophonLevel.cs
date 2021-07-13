@@ -37,23 +37,33 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
             Debug.Log(device);
 
     }
-    private void StartMicrophone()
+    public void StartMicrophone()
     {
         recordedClip = Microphone.Start(device, true, 5, sampleRate);
     }
-    private void StopMicrophone()
+    public void StopMicrophone()
     {
         Microphone.End(device);
     }
-    private float CalculateMaxLevel()
+
+    private float GetRMS()
+    {
+        return GetRMSFromChannel(0) + GetRMSFromChannel(1);
+    }
+
+    private float GetRMSFromChannel(int channel)
     {
         int pos = Microphone.GetPosition(device) - (sampleScope - 1);
         if (pos < 0)
             return 0;
-        float[] waveData = new float[sampleScope];
-        recordedClip.GetData(waveData, pos);
-        float max = waveData.Max(n => Mathf.Abs(n));
-        return max * max;
+        float[] samples = new float[sampleScope];
+        recordedClip.GetData(samples, channel);
+        float sum = 0;
+        foreach (float f in samples)
+        {
+            sum += f * f;
+        }
+        return Mathf.Sqrt(sum);
     }
     #endregion
 
@@ -61,7 +71,6 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     private void OnEnable()
     {
         InitMicrophone();
-        StartMicrophone();
     }
     private void OnDisable()
     {
@@ -72,23 +81,27 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
         if (focus)
         {
             InitMicrophone();
-            StartMicrophone();
         }
         else
             StopMicrophone();
     }
     void Update()
     {
-        float max = CalculateMaxLevel();
-        if (max < threshold)
+        if (Input.GetKeyDown(KeyCode.Q))
+            StartMicrophone();
+        float min = 0f;
+        float max = 10f;
+        float level = Mathf.InverseLerp(min, max, GetRMS());
+        if (level < threshold)
         {
             maxLevel = Mathf.Lerp(maxLevel, 0, slowingSpeed * Time.deltaTime);
         }
-        else if (max < maxLevel)
-            maxLevel = Mathf.Lerp(maxLevel, max, slowingSpeed * Time.deltaTime);
+        else if (level < maxLevel)
+            maxLevel = Mathf.Lerp(maxLevel, level, slowingSpeed * Time.deltaTime);
         else
-            maxLevel = Mathf.Lerp(maxLevel, max, sensitivity * Time.deltaTime);
-        OnMicrophoneLevelCalculated.Invoke(Mathf.Clamp01((maxLevel - threshold)/(1-threshold)));
+            maxLevel = Mathf.Lerp(maxLevel, level, sensitivity * Time.deltaTime);
+        level = Mathf.Lerp(level, 0, slowingSpeed * Time.deltaTime);
+        OnMicrophoneLevelCalculated.Invoke(Mathf.Max(level, 0));
         if (debug)
             Debug.Log(maxLevel);
     }

@@ -19,6 +19,7 @@ public class ChooseStressLevelData : Data
     public DataEvaluator evaluator;
     public float secondsBeforePlayingAudio;
     public float secondsBeforeDisplayingText;
+    public float secondsAfterSelection;
     public int maxRecordingSeconds;
     public GameObject displayResultPrefab;
     public AudioClip unrecognizedAudio;

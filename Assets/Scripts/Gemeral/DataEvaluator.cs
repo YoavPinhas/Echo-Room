@@ -15,7 +15,7 @@ public class DataEvaluator : ScriptableObject
     public OptionContainer[] Options;
     public string Choose(string sentence)
     {
-        if (Options == null || Options.Length == 0)
+        if (Options == null || Options.Length == 0 || sentence == null)
             return null;
         
             sentence = sentence.Replace(".", string.Empty);
@@ -37,6 +37,10 @@ public class DataEvaluator : ScriptableObject
                 maxIndex = i;
                 max = score;
             }    
+        }
+        if(max < 10)
+        {
+            return null;
         }
         return Options[maxIndex].optionName;
     }

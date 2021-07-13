@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Choose release options
   m_EditorClassIdentifier: 
   Options:
-  - optionName: control
+  - optionName: ReleaseControl
     option: {fileID: 11400000, guid: b838522b9fe9a604db9306816c427e4b, type: 2}
-  - optionName: fear
+  - optionName: ReleaseFear
     option: {fileID: 11400000, guid: da98c3ad02f208f48b9e25bca9ecaa94, type: 2}
-  - optionName: frustration
+  - optionName: ReleaseFrustration
     option: {fileID: 11400000, guid: f3488c2e3fdce204e84c4259427777e9, type: 2}
-  - optionName: dont know
+  - optionName: ChooseOneOption
     option: {fileID: 11400000, guid: 5cbac07c5b77e3c499623fc20bebec65, type: 2}

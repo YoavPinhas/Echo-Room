@@ -19,14 +19,84 @@ public class UIChooseStressMedia : UIMedia
     public override IEnumerator Play()
     {
         isPlaying = true;
+        Text[] texts = DisplayTextBeforeOptions();
+        WaitUntil wait = new WaitUntil(() => textDisplayEnded);
+        yield return wait;
+        TextData[] numbers = CreateNUmbers();
+        RawImage[] decorators = DisplayNumberDecorators(numbers);
+        Text[] options = DisplayOptions(numbers);
+        wait = new WaitUntil(() => textDisplayEnded && audioPlayEnded);
+        yield return wait;
+        SpeechToText.Instance.StartListening(OnResult, data.maxRecordingSeconds);
         endChoosing = false;
-        int length = data.textsBeforeOptionsDisplayed.Length;
-        TextData[] texts = new TextData[length + 10];
-        Array.Copy(data.textsBeforeOptionsDisplayed, texts, length);
-        float finaleDuration = data.numbersFormat.duration;
+        wait = new WaitUntil(() => endChoosing);
+        yield return wait;
+        if (result != -1)
+            StartCoroutine(HasResultsHandler(texts, options, decorators));
+        else
+            StartCoroutine(DosentHasResultHandler(texts, options, decorators));
+    }
+
+    private IEnumerator DosentHasResultHandler(Text[] texts, Text[] options, RawImage[] decorators)
+    {
+        StartCoroutine(DestroyUIText(texts, data.fadeOutSeconds, data.fadeOutCurve));
+        WaitUntil wait = new WaitUntil(() => textDestroyEnded);
+        yield return wait;
+        Text[] newTexts = CreateUITextsArray(data.unrecognizedText);
+        StartCoroutine(PlayAudio(data.unrecognizedAudio, 0));
+        StartCoroutine(DisplayUITexts(newTexts, data.unrecognizedText, data.fadeInSeconds, data.fadeInCurve, 0));
+        wait = new WaitUntil(() => textDisplayEnded && audioPlayEnded);
+        yield return wait;
+        result = UnityEngine.Random.Range(3, 8);
+        WaitForSeconds waitSeconds = new WaitForSeconds(1);
+        yield return waitSeconds;
+        StartCoroutine(DisplayResult(options, decorators));
+        wait = new WaitUntil(() => resultHasDisplayed);
+        yield return wait;
+        waitSeconds = new WaitForSeconds(data.secondsAfterSelection);
+        yield return waitSeconds;
+        Text[] allTexts = new Text[newTexts.Length + 10];
+        Array.Copy(newTexts, allTexts, newTexts.Length);
+        Array.Copy(options, 0, allTexts, newTexts.Length, 10);
+        StartCoroutine(DestroyUIText(allTexts, data.fadeOutSeconds, data.fadeOutCurve));
+        StartCoroutine(DestroyDecorators(decorators));
+        wait = new WaitUntil(() => textDestroyEnded);
+        yield return wait;
+        SceneManager.LoadScene(data.options2To10SceneName);
+        isPlaying = false;
+    }
+
+    public IEnumerator HasResultsHandler(Text[] texts, Text[] options, RawImage[] decorators)
+    {
+        StartCoroutine(DisplayResult(options, decorators));
+        WaitUntil wait = new WaitUntil(() => resultHasDisplayed);
+        yield return wait;
+        WaitForSeconds waitSeconds = new WaitForSeconds(data.secondsAfterSelection);
+        yield return waitSeconds;
+        Text[] allTexts = new Text[texts.Length + 10];
+        Array.Copy(texts, allTexts, texts.Length);
+        Array.Copy(options, 0, allTexts, texts.Length, 10);
+        StartCoroutine(DestroyUIText(allTexts, data.fadeInSeconds, data.fadeOutCurve));
+        StartCoroutine(DestroyDecorators(decorators));
+        wait = new WaitUntil(() => textDestroyEnded);
+        yield return wait;
+        SceneManager.LoadScene((result == 1) ? data.option1SceneName : data.options2To10SceneName);
+        isPlaying = false;
+    }
+
+    private Text[] DisplayTextBeforeOptions()
+    {
+        Text[] texts = CreateUITextsArray(data.textsBeforeOptionsDisplayed);
+        StartCoroutine(PlayAudio(data.audio, data.secondsBeforePlayingAudio));
+        StartCoroutine(DisplayUITexts(texts, data.textsBeforeOptionsDisplayed, data.fadeInSeconds, data.fadeInCurve, data.secondsBeforeDisplayingText));
+        return texts;
+    }
+    private TextData[] CreateNUmbers()
+    {
+        TextData[] numbers = new TextData[10];
         for (int i = 0; i < 10; i++)
         {
-            texts[length + i] = new TextData()
+            numbers[i] = new TextData()
             {
                 text = $"{i + 1}",
                 color = data.numbersFormat.color,
@@ -37,66 +107,31 @@ public class UIChooseStressMedia : UIMedia
                 sceenY = data.numbersFormat.sceenY
             };
         }
-        Text[] uiTexts = CreateUITextsArray(texts);
-        StartCoroutine(PlayAudio(data.audio, data.secondsBeforePlayingAudio));
-        StartCoroutine(DisplayUITexts(uiTexts, texts, data.fadeInSeconds, data.fadeInCurve, data.secondsBeforeDisplayingText));
-        float duration = 0;
-        for (int i = 0; i < length; i++)
+        return numbers;
+    }
+    private Text[] DisplayOptions(TextData[] numbers)
+    {
+        
+        Text[] options = new Text[10];
+        float width = UIContainer.Instance.mainCanvas.pixelRect.width;
+        float height = UIContainer.Instance.mainCanvas.pixelRect.height;
+        for (int i = 0; i < 10; i++)
         {
-            duration += texts[i].duration;
+            options[i] = CreateUIText(numbers[i], width, height);
         }
-        WaitForSeconds delay = new WaitForSeconds(duration);
-        yield return delay;
-
-        RawImage[] decorators = DisplayNumberDecorators(texts.Skip(length).Take(10).ToArray());
-        WaitUntil wait = new WaitUntil(() => textDisplayEnded && audioPlayEnded);
-        yield return wait;
-
-        delay = new WaitForSeconds(1);
-
-        yield return delay;
-
-        SpeechToText.Instance.StartListening((str) => OnResult(str), data.maxRecordingSeconds);
-
-        wait = new WaitUntil(() => endChoosing);
-        yield return wait;
-
-        if (result != -1)
-        {
-            resultHasDisplayed = false;
-            StartCoroutine(DisplayResult(uiTexts.Skip(length).Take(10).ToArray(), decorators));
-
-            wait = new WaitUntil(() => resultHasDisplayed);
-            yield return wait;
-
-            WaitForSeconds waitBeforeDestroy = new WaitForSeconds(data.numbersFormat.duration);
-            yield return waitBeforeDestroy;
-
-            StartCoroutine(DestroyUIText(uiTexts, data.fadeOutSeconds, data.fadeOutCurve));
-            StartCoroutine(DestroyDecorators(decorators));
-            WaitUntil waitForDestroy = new WaitUntil(() => textDestroyEnded);
-            yield return waitForDestroy;
-            if (result == 1)
-                SceneManager.LoadScene(data.option1SceneName);
-            else
-                SceneManager.LoadScene(data.options2To10SceneName);
-        }
-        else
-        {
-
-        }
-        isPlaying = false;
+        StartCoroutine(DisplayUITexts(options, numbers, data.fadeInSeconds, data.fadeOutCurve, 0));
+        return options;
     }
 
     private RawImage[] DisplayNumberDecorators(TextData[] numbers)
     {
         RawImage[] decorators = new RawImage[numbers.Length];
-        float width = canvas.pixelRect.width;
-        float height = canvas.pixelRect.height;
+        float width = UIContainer.Instance.mainCanvas.pixelRect.width;
+        float height = UIContainer.Instance.mainCanvas.pixelRect.height;
         for (int i = 0; i < numbers.Length; i++)
         {
             GameObject obj = new GameObject($"number {i} decorator");
-            obj.transform.SetParent(canvas.transform);
+            obj.transform.SetParent(UIContainer.Instance.mainCanvas.transform);
             decorators[i] = obj.AddComponent<RawImage>();
             var posX = (numbers[i].sceenX - 0.5f) * width;
             var posY = (numbers[i].sceenY - 0.45f) * height;
@@ -133,11 +168,13 @@ public class UIChooseStressMedia : UIMedia
 
     private IEnumerator DisplayResult(Text[] texts, RawImage[] decorators)
     {
+        resultHasDisplayed = false;
         float seconds = 0;
         if (result != 0)
             seconds = 0.6f;
         texts[result-1].color = data.selectedColor;
         decorators[result-1].color = data.selectedColor;
+        UIContainer.Instance.PlayAudio(data.selectionAudio, false);
         WaitForSeconds wait = new WaitForSeconds(seconds);
         yield return wait;
         resultHasDisplayed = true;

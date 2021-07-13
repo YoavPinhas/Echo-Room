@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6f9821059b9a63459cf427b4ddc295f, type: 3}
+  m_Name: SelectWhatToRelease
+  m_EditorClassIdentifier: 
+  fadeInSeconds: 1
+  fadeInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  fadeOutSeconds: 2
+  fadeOutCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  audio: {fileID: 8300000, guid: 98c83faa19d7e2148ada7fbf7f121a8f, type: 3}
+  selectionAudio: {fileID: 8300000, guid: 95d43b282eb49ce45afdc64154d736b3, type: 3}
+  SelectionColor: {r: 0, g: 0.5890684, b: 1, a: 1}
+  textsBeforeSelection:
+  - text: What would you like to release today?
+    duration: 3
+    sceenX: 0.5
+    sceenY: 0.4
+    fontSize: 32
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
+  selectionOptions:
+  - text: Control
+    duration: 0.2
+    sceenX: 0.3
+    sceenY: 0.3
+    fontSize: 32
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
+  - text: Fear
+    duration: 0.2
+    sceenX: 0.4333333
+    sceenY: 0.3
+    fontSize: 32
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
+  - text: Frustration
+    duration: 0.2
+    sceenX: 0.56666666
+    sceenY: 0.3
+    fontSize: 32
+    font: {fileID: 11400000, guid: c9d949de0cc0cf8449ebc8b84dad53b2, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
+  - text: I don't know
+    duration: 0.2
+    sceenX: 0.70000005
+    sceenY: 0.3
+    fontSize: 32
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
+  evaluator: {fileID: 11400000, guid: 385a95a903c34f84bafc4539a007ccc5, type: 2}
+  secondsBeforePlayingAudio: 2
+  secondsBeforeDisplayingText: 2
+  secondsBeforeFadeOut: 5

@@ -10,7 +10,7 @@ public class UIContainer : IndestructibleSingleton<UIContainer>
     public Canvas mainCanvas;
     public Canvas rightCanvas;
     public Canvas leftCanvas;
-
+    
     private CanvasRenderer mainCanvasRenderer;
     private CanvasRenderer rightCanvasRenderer;
     private CanvasRenderer leftCanvasRenderer;
@@ -20,6 +20,9 @@ public class UIContainer : IndestructibleSingleton<UIContainer>
 
     private bool fadeOut = false;
     public bool IsFadeOut => fadeOut;
+ 
+
+
     void Start()
     {
         mainCanvasRenderer = mainCanvas.GetComponent<CanvasRenderer>();
@@ -52,10 +55,13 @@ public class UIContainer : IndestructibleSingleton<UIContainer>
         fadeOut = true;
     }
 
-    public void PlayAudio(AudioClip audio)
+    public void PlayAudio(AudioClip audio, bool withVisualisation = true)
     {
+        if (audio == null)
+            return;
         audioSource.PlayOneShot(audio);
-        StartCoroutine(VisualizeAudio());
+        if(withVisualisation)
+            StartCoroutine(VisualizeAudio());
     }
 
     private IEnumerator VisualizeAudio()
@@ -66,11 +72,9 @@ public class UIContainer : IndestructibleSingleton<UIContainer>
         float max = 10f;
         while (audioSource.isPlaying)
         {
-            float rms = GetRMS();
-            Debug.Log("RMS = "+rms);
-            float t = Mathf.InverseLerp(min, max, GetRMS());// * multiplyer;
+            //float rms = GetRMS();
+            float t = Mathf.InverseLerp(min, max, GetRMS());
             talkingSphere.SetHeight(t);
-            Debug.Log("t = " + t);
             yield return waitFrame;
         }
     }
