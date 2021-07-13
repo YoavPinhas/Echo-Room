@@ -78,7 +78,7 @@ MonoBehaviour:
     text: 
     duration: 5
     sceenX: 0
-    sceenY: 0.3
+    sceenY: 0.25
     fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 1}

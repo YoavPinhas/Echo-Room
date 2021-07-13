@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6068406b2f4dcbd4aa41dbc42439bf5d, type: 3}
   m_Name: StartScream
   m_EditorClassIdentifier: 
-  maxSeconds: 120
+  maxSeconds: 60

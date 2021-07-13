@@ -36,7 +36,7 @@ MonoBehaviour:
     sceenY: 0.5
     fontSize: 25
     font: {fileID: 0}
-    color: {r: 0, g: 0, b: 0, a: 0}
+    color: {r: 1, g: 1, b: 1, a: 0}
   selectionOptions:
   - text: Yes
     duration: 0.1

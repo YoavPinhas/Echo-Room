@@ -70,7 +70,7 @@ MonoBehaviour:
     duration: 3
     sceenX: 0.5
     sceenY: 0.4
-    fontSize: 32
+    fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   selectionOptions:
@@ -78,28 +78,28 @@ MonoBehaviour:
     duration: 0.2
     sceenX: 0.3
     sceenY: 0.3
-    fontSize: 32
+    fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   - text: Fear
     duration: 0.2
     sceenX: 0.4333333
     sceenY: 0.3
-    fontSize: 32
+    fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   - text: Frustration
     duration: 0.2
     sceenX: 0.56666666
     sceenY: 0.3
-    fontSize: 32
-    font: {fileID: 11400000, guid: c9d949de0cc0cf8449ebc8b84dad53b2, type: 2}
+    fontSize: 25
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   - text: I don't know
     duration: 0.2
     sceenX: 0.70000005
     sceenY: 0.3
-    fontSize: 32
+    fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   evaluator: {fileID: 11400000, guid: 385a95a903c34f84bafc4539a007ccc5, type: 2}
