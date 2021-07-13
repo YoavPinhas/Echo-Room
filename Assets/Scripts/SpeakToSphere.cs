@@ -28,19 +28,9 @@ public class SpeakToSphere : MonoBehaviour
 
     private void Start()
     {
-        if (!Microphone.IsRecording(null))
-        {
-            StartCoroutine(Talk());
-        }
+        StartTalking();
     }
 
-    private void OnEnable()
-    {
-        if (!Microphone.IsRecording(null))
-        {
-            StartCoroutine(Talk());
-        }
-    }
 
     private IEnumerator Talk()
     {
