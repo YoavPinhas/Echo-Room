@@ -8,9 +8,16 @@ public class SpeakToSphere : MonoBehaviour
     private AudioClip recording;
     public void StartTalking()
     {
-        container.PlayAudio(Microphone.Start(null, false, 120, 44000));
+        recording = Microphone.Start(null, false, 120, 44000);
+        
     }
-
+    private void Update()
+    {
+        if (!container.IsPlaying)
+        {
+            container.PlayAudio(recording);
+        }
+    }
     public void StopTalking()
     {
         Microphone.End(null);

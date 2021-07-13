@@ -20,7 +20,7 @@ public class UIContainer : IndestructibleSingleton<UIContainer>
 
     private bool fadeOut = false;
     public bool IsFadeOut => fadeOut;
- 
+    public bool IsPlaying => audioSource.isPlaying;
 
 
     void Start()
