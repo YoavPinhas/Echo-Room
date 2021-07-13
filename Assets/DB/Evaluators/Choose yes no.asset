@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Choose yes no
   m_EditorClassIdentifier: 
   Options:
-  - optionName: yes
+  - optionName: ReleaseForFun
     option: {fileID: 11400000, guid: 5191b0416b788fc46a0597a3c4f0f21b, type: 2}
-  - optionName: no
+  - optionName: FastEnd
     option: {fileID: 11400000, guid: c21417a50d2c51b40acea3005bbaf3b6, type: 2}
