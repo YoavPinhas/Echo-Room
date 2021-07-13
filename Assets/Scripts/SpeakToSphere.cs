@@ -26,6 +26,14 @@ public class SpeakToSphere : MonoBehaviour
         StopTalking();
     }
 
+    private void Start()
+    {
+        if (!Microphone.IsRecording(null))
+        {
+            StartCoroutine(Talk());
+        }
+    }
+
     private void OnEnable()
     {
         if (!Microphone.IsRecording(null))
@@ -36,7 +44,7 @@ public class SpeakToSphere : MonoBehaviour
 
     private IEnumerator Talk()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         StartTalking();
     }
 
