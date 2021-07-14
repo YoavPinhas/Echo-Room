@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class UIContainer : IndestructibleSingleton<UIContainer>
+public class UIContainer : MonoBehaviour
 {
     public Canvas mainCanvas;
     public Canvas rightCanvas;
@@ -22,6 +22,20 @@ public class UIContainer : IndestructibleSingleton<UIContainer>
     public bool IsFadeOut => fadeOut;
     public bool IsPlaying => audioSource.isPlaying;
 
+    private static UIContainer instance;
+    public static UIContainer Instance => instance;
+    void Awake()
+    {
+        if(instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     void Start()
     {

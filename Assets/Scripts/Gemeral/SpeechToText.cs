@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 [Serializable]
 public class OnFinalResultEvent : UnityEngine.Events.UnityEvent<string> { }
 
-public class SpeechToText : IndestructibleSingleton<SpeechToText>
+public class SpeechToText : MonoBehaviour
 {
     #region Inspector Parameters
     [SerializeField] private string pathToApiKey;
@@ -21,6 +21,23 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
     [SerializeField] private float talktThreshold = 0.3f;
     [SerializeField] private OnFinalResultEvent OnFinalResult;
     #endregion
+
+    private static SpeechToText instance;
+    public static SpeechToText Instance => instance;
+    void Awake()
+    {
+        if(instance != null && instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", pathToApiKey);
+    }
+
     #region Constants
     private const float MICROPHONE_INITIALIZATION_TIMEOUT = 1;
     private const int SAMPLE_RATE = 16000;
@@ -196,11 +213,7 @@ public class SpeechToText : IndestructibleSingleton<SpeechToText>
     }
     #endregion
     #region MonoBehavior Methods
-    protected override void OnAwake()
-    {
-        base.OnAwake();
-        Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", pathToApiKey);
-    }
+    
     private void OnApplicationFocus(bool focus)
     {
         if (!focus)

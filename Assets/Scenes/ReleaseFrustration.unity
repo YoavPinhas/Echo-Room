@@ -180,138 +180,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
---- !u!1 &126989240
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 126989243}
-  - component: {fileID: 126989242}
-  - component: {fileID: 126989241}
-  m_Layer: 0
-  m_Name: EventSystem (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &126989241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126989240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &126989242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126989240}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &126989243
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 126989240}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &483167345
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 483167348}
-  - component: {fileID: 483167347}
-  - component: {fileID: 483167346}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &483167346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483167345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &483167347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483167345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &483167348
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 483167345}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1319502594
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e395793e987589846959f4e725f9147b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screamLoudness: 1
+  screamLoudness: 0
   screamLoudnessCurve:
     serializedVersion: 2
     m_Curve:
@@ -405,6 +273,7 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 2
     maxElementSize: 2
+    WhenOpenNext: 0
   - shapePrefab: {fileID: 5382806136878481484, guid: e0928b7b137607e44bee08790bdf684a, type: 3}
     numberOfCircles: 3
     elementsInCircle: 20
@@ -443,6 +312,7 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 5
     maxElementSize: 5
+    WhenOpenNext: 0
   - shapePrefab: {fileID: 5382806136878481484, guid: 86ae2b956362bbb48ba321fa53ac1c69, type: 3}
     numberOfCircles: 1
     elementsInCircle: 17
@@ -481,6 +351,7 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 15
     maxElementSize: 15
+    WhenOpenNext: 0
   - shapePrefab: {fileID: 2673646329392078657, guid: f3ce05c57e33ede489657c19a091f586, type: 3}
     numberOfCircles: 1
     elementsInCircle: 30
@@ -519,6 +390,7 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 5
     maxElementSize: 5
+    WhenOpenNext: 0
   - shapePrefab: {fileID: 970958914387681806, guid: f0e45b9b4e9fe9146aa076762fccd2bb, type: 3}
     numberOfCircles: 1
     elementsInCircle: 15
@@ -557,6 +429,7 @@ MonoBehaviour:
     elementsRotationSpeed: 15.87
     minElementSize: 0.5
     maxElementSize: 0.5
+    WhenOpenNext: 0
   - shapePrefab: {fileID: 530981871561184267, guid: e6964b6720e04004b8b9b2ba4b858808, type: 3}
     numberOfCircles: 2
     elementsInCircle: 40
@@ -595,6 +468,7 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 20
     maxElementSize: 25
+    WhenOpenNext: 0
   - shapePrefab: {fileID: 530981871561184267, guid: 1db0fe158d1c1e6499c60051fa608827, type: 3}
     numberOfCircles: 5
     elementsInCircle: 40
@@ -633,6 +507,7 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 5
     maxElementSize: 5
+    WhenOpenNext: 0
   - shapePrefab: {fileID: 7287706316997988168, guid: 293899c7b9e66fb4d942b2b5958b3cea, type: 3}
     numberOfCircles: 2
     elementsInCircle: 5
@@ -671,6 +546,7 @@ MonoBehaviour:
     elementsRotationSpeed: 20
     minElementSize: 1
     maxElementSize: 1
+    WhenOpenNext: 0
   - shapePrefab: {fileID: 970958914387681806, guid: 8f21d4aeee8f3524dabde3c224115af2, type: 3}
     numberOfCircles: 6
     elementsInCircle: 40
@@ -709,6 +585,7 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 0.5
     maxElementSize: 0.5
+    WhenOpenNext: 0
   - shapePrefab: {fileID: 2673646329392078657, guid: 5e8f0a86975497d4c9ebc43c88645a09, type: 3}
     numberOfCircles: 6
     elementsInCircle: 40
@@ -747,6 +624,7 @@ MonoBehaviour:
     elementsRotationSpeed: 10
     minElementSize: 2
     maxElementSize: 2
+    WhenOpenNext: 0
   debug: 1
 --- !u!4 &1319502596
 Transform:
@@ -1013,7 +891,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 185c791e13723c74aa4eb5af942032c9, type: 2}
   - {fileID: 11400000, guid: 3431a40768162564fba79a78e17421b6, type: 2}
   - {fileID: 11400000, guid: 9e0a52e49a4f65a449f8b1ac246994c3, type: 2}
+  - {fileID: 11400000, guid: aa1f27f34f66f8e4b86f299582106f23, type: 2}
   - {fileID: 11400000, guid: 6080a0012210ff34c9d5a95734229cdd, type: 2}
+  - {fileID: 11400000, guid: 1b307fa410ec2164298b2357460baf72, type: 2}
 --- !u!82 &1811101330
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1122,7 +1002,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2061519310
 GameObject:
@@ -1158,6 +1038,9 @@ MonoBehaviour:
   threshold: 0
   sensitivity: 1
   slowingSpeed: 5
+  secondsForYouCanDoBetter: 5
+  secondsOfSilenceBeforNextScene: 5
+  maxLoudnessThreshold: 5
   OnMicrophoneLevelCalculated:
     m_PersistentCalls:
       m_Calls:
@@ -1173,6 +1056,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  lastSceneName: EndScene
 --- !u!4 &2061519312
 Transform:
   m_ObjectHideFlags: 0

@@ -12,30 +12,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6f9821059b9a63459cf427b4ddc295f, type: 3}
   m_Name: YesNo
   m_EditorClassIdentifier: 
-  fadeInSeconds: 0
+  fadeInSeconds: 1
   fadeInCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  fadeOutSeconds: 0
+  fadeOutSeconds: 1
   fadeOutCurve:
     serializedVersion: 2
-    m_Curve: []
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  audio: {fileID: 0}
-  selectionAudio: {fileID: 0}
-  SelectionColor: {r: 0.7735849, g: 0.1788003, b: 0.1788003, a: 0}
+  audio: {fileID: 8300000, guid: a9586058c3c230347885b12afae4a245, type: 3}
+  listeningAudio: {fileID: 8300000, guid: 66a402fdfd95f9744b7ffb21380b691c, type: 3}
+  selectionAudio: {fileID: 8300000, guid: 2be652a82ef58dd498eb20c0fb11ff1a, type: 3}
+  SelectionColor: {r: 0, g: 0.5882353, b: 1, a: 1}
   textsBeforeSelection:
-  - text: Choose
+  - text: What is your currant stress level?
     duration: 1
     sceenX: 0.5
     sceenY: 0.5
     fontSize: 25
-    font: {fileID: 0}
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   selectionOptions:
   - text: Yes
@@ -43,16 +80,16 @@ MonoBehaviour:
     sceenX: 0.4
     sceenY: 0.4
     fontSize: 25
-    font: {fileID: 0}
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   - text: No
-    duration: 10
+    duration: 0.1
     sceenX: 0.6
     sceenY: 0.4
     fontSize: 25
-    font: {fileID: 0}
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   evaluator: {fileID: 11400000, guid: 6528051a225285147be851d66924c62b, type: 2}
   secondsBeforePlayingAudio: 0
   secondsBeforeDisplayingText: 0
-  secondsBeforeFadeOut: 0
+  secondsBeforeFadeOut: 1

@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 using Text = TMPro.TextMeshProUGUI;
 [RequireComponent(typeof(AudioSource))]
 public class UIPlayer : MonoBehaviour
@@ -52,14 +54,14 @@ public class UIPlayer : MonoBehaviour
                 currentMedia = gameObject.AddComponent<UISelectionMedia>();
                 break;
             case DataType.FadeOut:
-                currentMedia = gameObject.AddComponent<UIFadeOutMedia>();
+                currentMedia = gameObject.AddComponent<UIFadeMedia>();
                 break;
             case DataType.StartScream:
                 currentMedia = gameObject.AddComponent<UIStartScreamMedia>();
                 break;
-            /*case DataType.FadeOutSphere:
-                currentMedia = gameObject.AddComponent<UIStartScreamMedia>();
-                break;*/
+            case DataType.LoadScene:
+                SceneManager.LoadScene(((LoadSceneData)data).sceneName);
+            return;
         }
         currentMedia.SetData(data);
         currentMedia.audioSource = audioSource;

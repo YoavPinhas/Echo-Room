@@ -1,7 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 #region Microphon Event for the Inspector
 [System.Serializable]
@@ -13,9 +15,13 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     [SerializeField] private bool debug = false;
     [SerializeField] private int sampleRate = 44100;
     [SerializeField, Range(0, 1)] private float threshold = 0;
-    [SerializeField, Range(0, 1)] private float sensitivity = 0;
+    [SerializeField, Range(1, 3)] private float sensitivity = 0;
     [SerializeField, Range(0, 5)] private float slowingSpeed = 1;
+    [SerializeField] private float secondsForYouCanDoBetter = 5;
+    [SerializeField] private float secondsOfSilenceBeforNextScene = 5;
+    private float maxLoudnessThreshold = 0.7f;
     public MicrophonLevelEvent OnMicrophoneLevelCalculated;
+    [SerializeField] private string lastSceneName = "EndScene";
     #endregion
 
     #region Private Parameters
@@ -24,6 +30,9 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     private int sampleScope = 128;
     private float waveLevel = 0;
     private float maxLevel = 0;
+    private bool firstScream = true;
+    private float counter = 0;
+    private bool screamWasMade = false;
     #endregion
 
     #region Microphon Methods
@@ -40,10 +49,15 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     public void StartMicrophone()
     {
         recordedClip = Microphone.Start(device, true, 5, sampleRate);
+        ArduinoMnager.Instance?.StartScreamLight();
+        screamWasMade = false;
     }
     public void StopMicrophone()
     {
         Microphone.End(device);
+        ArduinoMnager.Instance?.StopScreamLight();
+        if(firstScream)
+            firstScream = false;
     }
 
     private float GetRMS()
@@ -87,8 +101,8 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-            StartMicrophone();
+        /*if (Input.GetKeyDown(KeyCode.Q))
+            StartMicrophone();  
         float min = 0f;
         float max = 10f;
         float level = Mathf.InverseLerp(min, max, GetRMS());
@@ -101,9 +115,34 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
         else
             maxLevel = Mathf.Lerp(maxLevel, level, sensitivity * Time.deltaTime);
         level = Mathf.Lerp(level, 0, slowingSpeed * Time.deltaTime);
-        OnMicrophoneLevelCalculated.Invoke(Mathf.Max(level, 0));
-        if (debug)
-            Debug.Log(maxLevel);
+        OnMicrophoneLevelCalculated.Invoke(Mathf.Max(maxLevel, 0));*/
+        float[] samples = new float[128];
+        if(Microphone.GetPosition(null) <= 128)
+            return;
+        recordedClip.GetData(samples, Microphone.GetPosition(null)-128);
+        maxLevel = Mathf.Max(Mathf.Abs(Mathf.Min(samples)), Mathf.Max(samples));
+        OnMicrophoneLevelCalculated.Invoke(maxLevel);
+        //if (debug)
+        //    Debug.Log(maxLevel);
+        
+        if(!firstScream)
+        {
+            if(maxLevel > maxLoudnessThreshold)
+            {
+                screamWasMade = true;
+                counter = 0;
+            }
+            if(screamWasMade && maxLevel < 0.35f)
+                counter += Time.deltaTime;
+
+            if(counter >= secondsOfSilenceBeforNextScene)
+                GoToLastScene();
+        }
+    }
+
+    private void GoToLastScene()
+    {
+        SceneManager.LoadScene(lastSceneName);
     }
     #endregion
 }

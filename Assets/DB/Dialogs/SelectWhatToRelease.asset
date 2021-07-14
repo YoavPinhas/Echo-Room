@@ -63,13 +63,14 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   audio: {fileID: 8300000, guid: 98c83faa19d7e2148ada7fbf7f121a8f, type: 3}
-  selectionAudio: {fileID: 8300000, guid: 95d43b282eb49ce45afdc64154d736b3, type: 3}
+  listeningAudio: {fileID: 8300000, guid: 66a402fdfd95f9744b7ffb21380b691c, type: 3}
+  selectionAudio: {fileID: 8300000, guid: 2be652a82ef58dd498eb20c0fb11ff1a, type: 3}
   SelectionColor: {r: 0, g: 0.5890684, b: 1, a: 1}
   textsBeforeSelection:
   - text: What would you like to release today?
     duration: 3
     sceenX: 0.5
-    sceenY: 0.4
+    sceenY: 0.5
     fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
@@ -77,28 +78,21 @@ MonoBehaviour:
   - text: Control
     duration: 0.2
     sceenX: 0.3
-    sceenY: 0.3
+    sceenY: 0.4
     fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   - text: Fear
     duration: 0.2
     sceenX: 0.4333333
-    sceenY: 0.3
+    sceenY: 0.4
     fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   - text: Frustration
     duration: 0.2
     sceenX: 0.56666666
-    sceenY: 0.3
-    fontSize: 25
-    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
-    color: {r: 1, g: 1, b: 1, a: 0}
-  - text: I don't know
-    duration: 0.2
-    sceenX: 0.70000005
-    sceenY: 0.3
+    sceenY: 0.4
     fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}

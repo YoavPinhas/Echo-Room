@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "FadeOut.asset", menuName ="Data/FadeOut")]
-public class FadeOutData : Data
+public class FadeData : Data
 {
-    public float fadeSeconds;
-    public AnimationCurve fadeCurve;
+    public bool fadeIn;
     public override DataType GetDataType()
     {
         return DataType.FadeOut;

@@ -12,11 +12,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Scenes UI/ChoseOneOption.unity
     guid: e1d48d3a876278e49ad214bf373c6996
   - enabled: 1
+    path: Assets/Scenes/Wait for arduino.unity
+    guid: ddcf6c91fb85d114dae8976479d83c40
+  - enabled: 1
     path: Assets/Scenes/Opening Scene.unity
     guid: 4ea0803435d974143a9b5e44e237e96c
-  - enabled: 1
-    path: Assets/Scenes/ChooseOneOption.unity
-    guid: 5c29635c4c8cf654cb25f7606d07ebd7
   - enabled: 1
     path: Assets/Scenes/ChooseRelease.unity
     guid: 21431a84f9c4b134f9d5915b3de5d7dc
@@ -35,4 +35,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FastEnd.unity
     guid: 29fe0b33052642f448590068b3521c1a
+  - enabled: 1
+    path: Assets/Scenes/ReleaseForFun.unity
+    guid: 6808b6d0c840ce04ca0e64f774ae3ae7
+  - enabled: 1
+    path: Assets/Scenes/ReleaseDontKnow.unity
+    guid: ce872c804278e8c4c93463610180e4ad
+  - enabled: 1
+    path: Assets/Scenes/ChooseOneOption.unity
+    guid: 046340c69d3fee648bdc45933e09290b
   m_configObjects: {}

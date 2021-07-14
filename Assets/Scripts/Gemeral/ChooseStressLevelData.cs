@@ -11,6 +11,7 @@ public class ChooseStressLevelData : Data
     public string option1SceneName;
     public string options2To10SceneName;
     public AudioClip audio;
+    public AudioClip listeningAudio;
     public AudioClip selectionAudio;
     public TextData[] textsBeforeOptionsDisplayed;
     public TextData numbersFormat;

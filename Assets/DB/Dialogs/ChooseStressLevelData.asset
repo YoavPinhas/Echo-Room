@@ -65,6 +65,7 @@ MonoBehaviour:
   option1SceneName: ChooseOneOption
   options2To10SceneName: ChooseRelease
   audio: {fileID: 8300000, guid: 621142f08c7d86b449d31eb67c43478f, type: 3}
+  listeningAudio: {fileID: 8300000, guid: 66a402fdfd95f9744b7ffb21380b691c, type: 3}
   selectionAudio: {fileID: 8300000, guid: 95d43b282eb49ce45afdc64154d736b3, type: 3}
   textsBeforeOptionsDisplayed:
   - text: What is your currant stress level?

@@ -22,18 +22,22 @@ public class UISelectionMedia : UIMedia
         wait = new WaitUntil(() => textDisplayEnded && audioPlayEnded);
         yield return wait;
         hasResults = false;
+        ArduinoMnager.Instance.StartListeningLight();
+        UIContainer.Instance.PlayAudio(data.listeningAudio, false);
         SpeechToText.Instance.StartListening(OnResults);
         WaitUntil waitForResults = new WaitUntil(() => hasResults);
         yield return waitForResults;
         if (resultIndex == -1)
-            resultIndex = 3;
+            resultIndex = options.Length-1;
         
-        DisplayResult(options[resultIndex]);
+        if(resultIndex < options.Length)
+            DisplayResult(options[resultIndex]);
         StartCoroutine(DestroyUIText(texts, data.fadeInSeconds, data.fadeInCurve));
         WaitForSeconds waitForSeconds = new WaitForSeconds(data.secondsBeforeFadeOut);
         yield return waitForSeconds;
         StartCoroutine(DestroyUIText(options, data.fadeInSeconds, data.fadeInCurve));
         wait = new WaitUntil(() => textDestroyEnded);
+        yield return wait;
         SceneManager.LoadScene(data.evaluator.Options[resultIndex].optionName);
         
         isPlaying = false;
@@ -62,6 +66,7 @@ public class UISelectionMedia : UIMedia
 
     private void OnResults(string res)
     {
+        ArduinoMnager.Instance.StopListeningLight();
         string result = data.evaluator.Choose(res);
         resultIndex = -1;
         for (int i = 0; i < data.evaluator.Options.Length; i++)

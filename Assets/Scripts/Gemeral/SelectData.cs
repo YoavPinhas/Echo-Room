@@ -13,6 +13,7 @@ public class SelectData : Data
     public float fadeOutSeconds;
     public AnimationCurve fadeOutCurve;
     public AudioClip audio;
+    public AudioClip listeningAudio;
     public AudioClip selectionAudio;
     public Color SelectionColor;
     public TextData[] textsBeforeSelection;

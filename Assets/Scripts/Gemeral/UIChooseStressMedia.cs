@@ -27,6 +27,8 @@ public class UIChooseStressMedia : UIMedia
         Text[] options = DisplayOptions(numbers);
         wait = new WaitUntil(() => textDisplayEnded && audioPlayEnded);
         yield return wait;
+        ArduinoMnager.Instance.StartListeningLight();
+        UIContainer.Instance.PlayAudio(data.listeningAudio, false);
         SpeechToText.Instance.StartListening(OnResult, data.maxRecordingSeconds);
         endChoosing = false;
         wait = new WaitUntil(() => endChoosing);
@@ -153,6 +155,7 @@ public class UIChooseStressMedia : UIMedia
 
     private void OnResult(string text)
     {
+        ArduinoMnager.Instance.StopListeningLight();
         string res = data.evaluator.Choose(text);
         if (res != null)
         {
