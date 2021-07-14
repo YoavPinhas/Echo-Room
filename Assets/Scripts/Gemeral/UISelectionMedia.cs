@@ -28,7 +28,7 @@ public class UISelectionMedia : UIMedia
         WaitUntil waitForResults = new WaitUntil(() => hasResults);
         yield return waitForResults;
         if (resultIndex == -1)
-            resultIndex = options.Length-1;
+            resultIndex = data.evaluator.Options.Length-1;
         
         if(resultIndex < options.Length)
             DisplayResult(options[resultIndex]);
