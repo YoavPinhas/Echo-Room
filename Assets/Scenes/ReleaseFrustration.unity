@@ -130,6 +130,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3376084641267637796, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376084641267637798, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1916
+      objectReference: {fileID: 0}
     - target: {fileID: 3376084641267637798, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -149,6 +157,14 @@ PrefabInstance:
     - target: {fileID: 3376084641267637798, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376084641426195040, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1922
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376084641426195046, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4172934284416586558, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
       propertyPath: m_RootOrder
@@ -627,8 +643,8 @@ MonoBehaviour:
   - shapePrefab: {fileID: 2673646329392078657, guid: 5e8f0a86975497d4c9ebc43c88645a09, type: 3}
     numberOfCircles: 6
     elementsInCircle: 40
-    minRadius: 24.61
-    maxRadius: 39.9
+    minRadius: 67.5
+    maxRadius: 86.64
     ringRotation: 1
     secondsForCycle: 7
     secondsFromCloseToOpen: 1
@@ -673,7 +689,7 @@ Transform:
   m_GameObject: {fileID: 1319502594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 34.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1103,7 +1119,7 @@ Transform:
   m_GameObject: {fileID: 2061519310}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.1861, y: 2.1861, z: 2.1861}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
