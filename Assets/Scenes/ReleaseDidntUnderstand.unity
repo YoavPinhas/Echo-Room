@@ -5604,6 +5604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataToPlay:
+  - {fileID: 11400000, guid: 6c7424de1eaf50a4785765e58347d06b, type: 2}
   - {fileID: 11400000, guid: 32f689043a571c54086d9c00d326647c, type: 2}
   - {fileID: 11400000, guid: 185c791e13723c74aa4eb5af942032c9, type: 2}
   - {fileID: 11400000, guid: 3431a40768162564fba79a78e17421b6, type: 2}

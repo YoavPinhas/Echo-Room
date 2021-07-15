@@ -19,5 +19,7 @@ MonoBehaviour:
     option: {fileID: 11400000, guid: da98c3ad02f208f48b9e25bca9ecaa94, type: 2}
   - optionName: ReleaseFrustration
     option: {fileID: 11400000, guid: f3488c2e3fdce204e84c4259427777e9, type: 2}
-  - optionName: ChooseOneOption
+  - optionName: ReleaseDontKnow
+    option: {fileID: 11400000, guid: 5cbac07c5b77e3c499623fc20bebec65, type: 2}
+  - optionName: ReleaseDidntUnderstand
     option: {fileID: 11400000, guid: 5cbac07c5b77e3c499623fc20bebec65, type: 2}

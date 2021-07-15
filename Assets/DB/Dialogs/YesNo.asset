@@ -72,7 +72,7 @@ MonoBehaviour:
     sceenX: 0.5
     sceenY: 0.5
     fontSize: 25
-    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    font: {fileID: 11400000, guid: 23e5961713c9c3b4facb86d94359255d, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   selectionOptions:
   - text: Yes
@@ -80,14 +80,14 @@ MonoBehaviour:
     sceenX: 0.4
     sceenY: 0.4
     fontSize: 25
-    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    font: {fileID: 11400000, guid: 23e5961713c9c3b4facb86d94359255d, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   - text: No
     duration: 0.1
     sceenX: 0.6
     sceenY: 0.4
     fontSize: 25
-    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    font: {fileID: 11400000, guid: 23e5961713c9c3b4facb86d94359255d, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   evaluator: {fileID: 11400000, guid: 6528051a225285147be851d66924c62b, type: 2}
   secondsBeforePlayingAudio: 0

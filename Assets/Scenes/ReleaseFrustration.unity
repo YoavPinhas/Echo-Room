@@ -130,6 +130,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3376084641267637798, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376084641267637798, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376084641267637798, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376084641267637798, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376084641267637798, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4172934284416586558, guid: 98b613f308e364144bf8e3044585a9d4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -216,20 +236,38 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1
-      outSlope: 1
+      inSlope: 3.2687585
+      outSlope: 3.2687585
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
-      outWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.045774907
+      value: 0.14962712
+      inSlope: 2.0012364
+      outSlope: 2.0012364
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.80527467
+      value: 0.706883
+      inSlope: 1.1194993
+      outSlope: 1.1194993
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 1
-      outSlope: 1
+      inSlope: 1.5052843
+      outSlope: 1.5052843
       tangentMode: 34
       weightedMode: 0
-      inWeight: 0
+      inWeight: 0.33333334
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -1040,7 +1078,6 @@ MonoBehaviour:
   slowingSpeed: 5
   secondsForYouCanDoBetter: 5
   secondsOfSilenceBeforNextScene: 5
-  maxLoudnessThreshold: 5
   OnMicrophoneLevelCalculated:
     m_PersistentCalls:
       m_Calls:

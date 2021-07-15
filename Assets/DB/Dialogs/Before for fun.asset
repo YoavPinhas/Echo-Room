@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5056c66320a920c4e8270ae71a1ed693, type: 3}
-  m_Name: ChooseStressLevelData
+  m_Script: {fileID: 11500000, guid: 3813fd5bb0b946e4b9319616b1fded49, type: 3}
+  m_Name: Before for fun
   m_EditorClassIdentifier: 
   fadeInSeconds: 1
   fadeInCurve:
@@ -62,63 +62,49 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  option1SceneName: ChooseOneOption
-  options2To10SceneName: ChooseRelease
-  audio: {fileID: 8300000, guid: 621142f08c7d86b449d31eb67c43478f, type: 3}
-  listeningAudio: {fileID: 8300000, guid: 66a402fdfd95f9744b7ffb21380b691c, type: 3}
-  selectionAudio: {fileID: 8300000, guid: 95d43b282eb49ce45afdc64154d736b3, type: 3}
-  textsBeforeOptionsDisplayed:
-  - text: What is your currant stress level?
-    duration: 2
-    sceenX: 0.5
-    sceenY: 0.5
-    fontSize: 25
-    font: {fileID: 11400000, guid: 23e5961713c9c3b4facb86d94359255d, type: 2}
-    color: {r: 1, g: 1, b: 1, a: 0}
-  - text: Please speak in English
-    duration: 0
-    sceenX: 0.5
-    sceenY: 0.43
-    fontSize: 20
-    font: {fileID: 11400000, guid: 23e5961713c9c3b4facb86d94359255d, type: 2}
-    color: {r: 1, g: 1, b: 1, a: 0}
-  numbersFormat:
-    text: 
-    duration: 5
-    sceenX: 0
-    sceenY: 0.25
-    fontSize: 25
-    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
-    color: {r: 1, g: 1, b: 1, a: 1}
-  numbersDecorator: {fileID: 2800000, guid: 6f2600e2a66205c4face1f2fa12c434d, type: 3}
-  selectedColor: {r: 0, g: 0.614023, b: 1, a: 1}
-  evaluator: {fileID: 11400000, guid: 098a6a92dd9ab164d84bc0fa8343948b, type: 2}
-  secondsBeforePlayingAudio: 0
-  secondsBeforeDisplayingText: 1
-  secondsAfterSelection: 0
-  maxRecordingSeconds: 10
-  displayResultPrefab: {fileID: 970958914387681806, guid: c8f4447635a65fa4a812cd63d9aa4bde, type: 3}
-  unrecognizedAudio: {fileID: 8300000, guid: 14c8f98cd04d8a14eb797b79da0e4098, type: 3}
-  unrecognizedText:
-  - text: It seems I can't understand you
-    duration: 2
+  audio: {fileID: 8300000, guid: 52b3e2513fa7ffd4e8e1961906883923, type: 3}
+  texts:
+  - text: Choose something you wish to release
+    duration: 3
     sceenX: 0.5
     sceenY: 0.5
     fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
-  - text: Maybe it's the stress
-    duration: 2
+  - text: an emotion or behavior that doesn't serve you any more
+    duration: 4
     sceenX: 0.5
     sceenY: 0.45
     fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
-  - text: Let me choose for you
+  - text: Take three deep breaths
     duration: 3
     sceenX: 0.5
-    sceenY: 0.4
+    sceenY: 0.35
     fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
-  defaultSelection: 7
+  - text: 1
+    duration: 5.5
+    sceenX: 0.44
+    sceenY: 0.3
+    fontSize: 25
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
+  - text: 2
+    duration: 5.5
+    sceenX: 0.5
+    sceenY: 0.3
+    fontSize: 25
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
+  - text: 3
+    duration: 4
+    sceenX: 0.56
+    sceenY: 0.3
+    fontSize: 25
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
+  secondsBeforePlayingAudio: 0
+  secondsBeforeDisplayingText: 3
