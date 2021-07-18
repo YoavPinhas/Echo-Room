@@ -6,42 +6,30 @@ using static MandalaParticle;
 public class RleaseFrusration : MonoBehaviour
 {
     [SerializeField, Range(0, 1)] private float screemLoudness;
-    [SerializeField] private RingData[] Rings;
-    private MandalaRing[] rings;
-    private int currentIndex = 0;
-    [System.Serializable]
-    private struct RingData
-    {
-        public float smallRadius;
-        public float bigRadius;
-        public float secondsForCycle;
-        public float secondsForExpension;
-        public float secondsForShrink;
 
-        public int numberOfCircles;
-        public int particlesInCircle;
-        public RotationType ringRotation;
-    }
+    [SerializeField] private MandalaRing[] rings;
+    private int currentIndex = 0;
+
     
     void Start()
     {
-        rings = new MandalaRing[Rings.Length];
-        for (int i = 0; i < Rings.Length; i++)
-        {
-            GameObject obj = new GameObject($"Ring {i}");
-            rings[i] = obj.AddComponent<MandalaRing>();
-            rings[i].smallRadius = Rings[i].smallRadius;
-            rings[i].bigRadius = Rings[i].bigRadius;
-            rings[i].secondsForCycle = Rings[i].secondsForCycle;
-            rings[i].secondsForExpension = Rings[i].secondsForExpension;
-            rings[i].numberOfCircles = Rings[i].numberOfCircles;
-            rings[i].particlesInCircle = Rings[i].particlesInCircle;
-            rings[i].ringRotation = Rings[i].ringRotation;
-        }
-        for (int i = 0; i < rings.Length - 1; i++)
-        {
-            rings[i].next = rings[i + 1];
-        }
+        //rings = new MandalaRing[Rings.Length];
+        //for (int i = 0; i < Rings.Length; i++)
+        //{
+        //    GameObject obj = new GameObject($"Ring {i}");
+        //    rings[i] = obj.AddComponent<MandalaRing>();
+        //    rings[i].smallRadius = Rings[i].smallRadius;
+        //    rings[i].bigRadius = Rings[i].bigRadius;
+        //    rings[i].secondsForCycle = Rings[i].secondsForCycle;
+        //    rings[i].secondsForExpension = Rings[i].secondsForExpension;
+        //    rings[i].numberOfCircles = Rings[i].numberOfCircles;
+        //    rings[i].particlesInCircle = Rings[i].particlesInCircle;
+        //    rings[i].ringRotation = Rings[i].ringRotation;
+        //}
+        //for (int i = 0; i < rings.Length - 1; i++)
+        //{
+        //    rings[i].next = rings[i + 1];
+        //}
         foreach (MandalaRing ring in rings)
         {
             ring.Init();

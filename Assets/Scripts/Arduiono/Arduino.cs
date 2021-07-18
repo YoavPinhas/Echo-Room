@@ -22,34 +22,20 @@ public class Arduino : MonoBehaviour
     public static Arduino Instance => instance;
     void Awake()
     {
-        if (!SerialPort.GetPortNames().Contains(serialPort.PortName))
-        {
-            arduinoExists = false;
-        }
         if(instance != null && instance != this)
         {
             Destroy(this.gameObject);
         }
         else
         {
-            instance = null;
-            if (arduinoExists)
-            {
-                instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
     private void Start()
     {
         startSceneName = SceneManager.GetActiveScene().name;
-        if (SerialPort.GetPortNames().Contains(serialPort.PortName))
-            StartCoroutine(StartArduino());
-        else
-        {
-            arduinoExists = false;
-            OnProximityDetected.Invoke();
-        }
+        StartCoroutine(StartArduino());
     }
 
     void OnLevelWasLoaded()
