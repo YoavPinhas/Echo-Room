@@ -57,7 +57,7 @@ public class TalkingSphere : MonoBehaviour
         StartCoroutine(FadeInCoroutine(fc));
     }
 
-        public void FadeOut()
+    public void FadeOut()
     {
         Color bc = background.material.color;
         bc.a = 0;

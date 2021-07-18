@@ -6,10 +6,11 @@ public class SpeakToSphere : MonoBehaviour
 {
     
     private AudioClip recording;
-    public TalkingSphere talkingSphere;
+    public TalkingSphereFromMicrophone[] talkingSpheres;
+    
     public void StartTalking()
     {
-        recording = Microphone.Start(null, false, 120, 44000);
+        recording = Microphone.Start(null, true, 120, 44000);
         StartCoroutine(VisualizeAudio());
     }
     private void Update()
@@ -28,7 +29,7 @@ public class SpeakToSphere : MonoBehaviour
 
     private void Start()
     {
-        StartTalking();
+        StartCoroutine(Talk());
     }
 
 
@@ -48,22 +49,24 @@ public class SpeakToSphere : MonoBehaviour
         {
             //float rms = GetRMS();
             float t = Mathf.InverseLerp(min, max, GetRMS());
-            talkingSphere.SetHeight(t);
+            Debug.Log($"t = {t}");
+            foreach(TalkingSphereFromMicrophone sphere in talkingSpheres)
+                sphere.SetHeight(t);
             yield return waitFrame;
         }
     }
 
     private float GetRMS()
     {
-        return GetRMSFromChannel(0) + GetRMSFromChannel(1);
+        return GetRMSFromChannel(0);// + GetRMSFromChannel(1);
     }
 
     private float GetRMSFromChannel(int channel)
     {
-        if (recording.length <= 4096)
+        if (Microphone.GetPosition(null) <= 4096)
             return 0;
         float[] samples = new float[4096];
-        recording.GetData(samples, channel);
+        recording.GetData(samples, Microphone.GetPosition(null) - 4096);
         float sum = 0;
         foreach (float f in samples)
         {
