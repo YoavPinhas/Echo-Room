@@ -18,6 +18,8 @@ public class SelectData : Data
     public Color SelectionColor;
     public TextData[] textsBeforeSelection;
     public TextData[] selectionOptions;
+    public Texture2D optionDecorator;
+
     public DataEvaluator evaluator;
     public float secondsBeforePlayingAudio;
     public float secondsBeforeDisplayingText;

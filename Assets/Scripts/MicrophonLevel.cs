@@ -101,9 +101,9 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     }
     void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
             StartMicrophone();  
-        float min = 0f;
+        /*float min = 0f;
         float max = 10f;
         float level = Mathf.InverseLerp(min, max, GetRMS());
         if (level < threshold)

@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpeakToSphere : MonoBehaviour
 {
     
     private AudioClip recording;
     public TalkingSphereFromMicrophone[] talkingSpheres;
-    
+    public string NextSceneName;
     public void StartTalking()
     {
         recording = Microphone.Start(null, true, 120, 44000);
@@ -15,7 +16,23 @@ public class SpeakToSphere : MonoBehaviour
     }
     private void Update()
     {
-      
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(StartNextScene());
+        }
+    }
+
+    private IEnumerator StartNextScene()
+    {
+        WaitUntil wait = new WaitUntil(() => talkingSpheres[0].IsFadeOut && talkingSpheres[1].IsFadeOut && talkingSpheres[2].IsFadeOut);
+        WaitForSeconds delay = new WaitForSeconds(2);
+        foreach (TalkingSphereFromMicrophone sphere in talkingSpheres)
+        {
+            sphere.FadeOut();
+        }
+        yield return wait;
+        yield return delay;
+        SceneManager.LoadScene(NextSceneName);
     }
     public void StopTalking()
     {
@@ -30,8 +47,7 @@ public class SpeakToSphere : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Talk());
-    }
-
+    } 
 
     private IEnumerator Talk()
     {
@@ -74,4 +90,6 @@ public class SpeakToSphere : MonoBehaviour
         }
         return Mathf.Sqrt(sum);
     }
+
+    
 }

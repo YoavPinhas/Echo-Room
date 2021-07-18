@@ -6,6 +6,7 @@ using System.Threading;
  using System.IO.Ports;
  using System.Collections;
 using UnityEngine.SceneManagement;
+using System.Linq;
 
 [System.Serializable]
 public class ProximityEvent : UnityEngine.Events.UnityEvent{}
@@ -16,23 +17,39 @@ public class Arduino : MonoBehaviour
     public float secondsBeforeStartArduino = 30;
     private string startSceneName;
     private static Arduino instance;
+    [HideInInspector]
+    public bool arduinoExists = true;
     public static Arduino Instance => instance;
     void Awake()
     {
+        if (!SerialPort.GetPortNames().Contains(serialPort.PortName))
+        {
+            arduinoExists = false;
+        }
         if(instance != null && instance != this)
         {
             Destroy(this.gameObject);
         }
         else
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            instance = null;
+            if (arduinoExists)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
         }
     }
     private void Start()
     {
         startSceneName = SceneManager.GetActiveScene().name;
-        StartCoroutine(StartArduino());
+        if (SerialPort.GetPortNames().Contains(serialPort.PortName))
+            StartCoroutine(StartArduino());
+        else
+        {
+            arduinoExists = false;
+            OnProximityDetected.Invoke();
+        }
     }
 
     void OnLevelWasLoaded()
@@ -40,8 +57,10 @@ public class Arduino : MonoBehaviour
         if(SceneManager.GetActiveScene().name ==startSceneName)
         {
             LightOff();
-            serialPort.Close();
-            StartCoroutine(StartArduino());
+            if(SerialPort.GetPortNames().Contains(serialPort.PortName))
+                StartCoroutine(StartArduino());
+            else
+                OnProximityDetected.Invoke();
         }
     }
 

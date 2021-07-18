@@ -209,7 +209,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ea85e037d4f0e49ad3e6ef881ac3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sphere: {fileID: 0}
   targetPosition: {x: 0, y: 5, z: 9}
   goToPlaceSeconds: 2
-  lowestBump: 0.1
-  highestBymp: 0.5
+  lowestBump: 0.3
+  highestBymp: 1
+  fadeSeconds: 1
+  fadeinCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  fadeoutCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  background: {fileID: 0}
+  foreground: {fileID: 0}

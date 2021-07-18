@@ -44,4 +44,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ChooseOneOption.unity
     guid: 046340c69d3fee648bdc45933e09290b
+  - enabled: 1
+    path: Assets/Scenes/ReleaseDidntUnderstand.unity
+    guid: a63b0db0c56151545ba1ba07dcacc060
   m_configObjects: {}

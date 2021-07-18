@@ -25,7 +25,13 @@ public class ArduinoMnager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
         }
     }
-
+    private void Start()
+    {
+        if(Arduino.Instance == null || Arduino.Instance.arduinoExists)
+        {
+            instance = null;
+        }
+    }
     public void StartListeningLight()
     {
         listening = true;

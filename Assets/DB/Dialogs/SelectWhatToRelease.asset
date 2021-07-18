@@ -96,6 +96,7 @@ MonoBehaviour:
     fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
+  optionDecorator: {fileID: 2800000, guid: 6f2600e2a66205c4face1f2fa12c434d, type: 3}
   evaluator: {fileID: 11400000, guid: 385a95a903c34f84bafc4539a007ccc5, type: 2}
   secondsBeforePlayingAudio: 2
   secondsBeforeDisplayingText: 2

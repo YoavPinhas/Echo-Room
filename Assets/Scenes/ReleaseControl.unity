@@ -831,12 +831,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 1
   sampleRate: 44100
-  threshold: 0
+  threshold: 0.369
   sensitivity: 1
   slowingSpeed: 0.45
   secondsForYouCanDoBetter: 5
   secondsOfSilenceBeforNextScene: 5
-  maxLoudnessThreshold: 5
   OnMicrophoneLevelCalculated:
     m_PersistentCalls:
       m_Calls:

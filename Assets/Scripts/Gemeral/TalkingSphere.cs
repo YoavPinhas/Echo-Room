@@ -34,7 +34,7 @@ public class TalkingSphere : MonoBehaviour
     void Start()
     {
         meshRenderer = sphere.gameObject.GetComponent<MeshRenderer>();
-        
+        SetHeight(0);
     }
 
     public void SetHeight(float t)

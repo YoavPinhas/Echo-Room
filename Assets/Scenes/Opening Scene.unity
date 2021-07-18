@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400392ed5562cc341af1fa5bc3fa5bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathToApiKey: C:\Users\user\Downloads\NotSecretKey.json
+  pathToApiKey: D:\Downloads\NotSecretKey.json
   maxRecordTimeInSeconds: 10
   timeGapBetweenWords: 0.7
   debug: 1
@@ -825,8 +825,16 @@ PrefabInstance:
       value: Talking Sphere
       objectReference: {fileID: 0}
     - target: {fileID: 7812881234253100563, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: lowestBump
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100563, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
       propertyPath: fadeSeconds
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100563, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: highestBymp
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7812881235896955923, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
       propertyPath: m_LocalPosition.y

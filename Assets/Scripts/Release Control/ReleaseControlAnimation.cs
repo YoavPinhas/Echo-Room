@@ -68,7 +68,7 @@ public class ReleaseControlAnimation : MonoBehaviour
     private float maxRotationSpeed;
     private float rawDelta = 0;
     private float delta = 0;
-   
+    private float InitSizeMultiplier = 0;
     #endregion
 
     #region State Machine parameters
@@ -267,7 +267,7 @@ public class ReleaseControlAnimation : MonoBehaviour
             {
                 shapes[i][j].transform.localPosition = func.Invoke(i, j) + GetPointOnCurve(i, j);
                 float dt = prefabShapes[i].scaleMultiplier * prefabShapes[i].scaleCurve.Evaluate(time) * globalScaleMultipier;
-                shapes[i][j].transform.localScale =  Vector3.one * ((1-delta)* prefabShapes[i].scaleMultiplier + dt*delta);
+                shapes[i][j].transform.localScale = Vector3.one * Mathf.Lerp(prefabShapes[i].scaleMultiplier * InitSizeMultiplier, dt, delta);
             }
         }
     }
@@ -429,7 +429,8 @@ public class ReleaseControlAnimation : MonoBehaviour
     public void OnMicrophonChangedLevel(float level)
     {
         screamLoudness = Mathf.Lerp(screamLoudness, level, Time.deltaTime);
-
+        if (screamLoudness > 0.8f)
+            InitSizeMultiplier = 1;
     }
 #endregion
 }
