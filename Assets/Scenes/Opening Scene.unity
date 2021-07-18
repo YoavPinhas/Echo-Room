@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 400392ed5562cc341af1fa5bc3fa5bdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pathToApiKey: D:\Downloads\NotSecretKey.json
+  pathToApiKey: C:\Users\user\Downloads\NotSecretKey.json
   maxRecordTimeInSeconds: 10
   timeGapBetweenWords: 0.7
   debug: 1
