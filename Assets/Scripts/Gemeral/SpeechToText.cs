@@ -22,6 +22,9 @@ public class SpeechToText : MonoBehaviour
     [SerializeField] private OnFinalResultEvent OnFinalResult;
     #endregion
 
+    private float timeCounter = 0;
+    private float silenceTime = 0;
+
     private static SpeechToText instance;
     public static SpeechToText Instance => instance;
     void Awake()
@@ -73,10 +76,11 @@ public class SpeechToText : MonoBehaviour
     {
         bool userHasTalked = false;
         bool isLoud = false;
-        float silenceTime = 0;
+        silenceTime = 0;
         int start = 0;
         int end = 0;
-        float timeCounter = 0;
+        timeCounter = 0;
+       
         if (debug)
             Debug.Log($"Start Recording. max recording seconds = {maxRecordTimeInSeconds}");
         while (Microphone.IsRecording(null))
@@ -108,6 +112,7 @@ public class SpeechToText : MonoBehaviour
                     {
                         userHasTalked = true;
                         timeCounter = 0;
+                        silenceTime = 0;
                         start = Mathf.Clamp(Microphone.GetPosition(null) - 9000, 0, 99999999);
                         if (debug)
                             Debug.Log("User start talking.");
@@ -262,6 +267,15 @@ public class SpeechToText : MonoBehaviour
         }
         result.SetData(data, 0);
         return result;
+    }
+
+    private void Update()
+    {
+        if (Microphone.IsRecording(null))
+        {
+            timeCounter += Time.deltaTime;
+            silenceTime += Time.deltaTime;
+        }
     }
     #endregion
 }
