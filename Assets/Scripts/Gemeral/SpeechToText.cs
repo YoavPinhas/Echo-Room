@@ -103,7 +103,7 @@ public class SpeechToText : MonoBehaviour
                 isLoud = IsLoudPeack();
                 if (!userHasTalked)
                 {
-                    timeCounter += Time.deltaTime;
+                    timeCounter += Time.fixedDeltaTime;
                     if (isLoud)
                     {
                         userHasTalked = true;
@@ -115,9 +115,9 @@ public class SpeechToText : MonoBehaviour
                 }
                 else
                 {
-                    timeCounter += Time.deltaTime;
+                    timeCounter += Time.fixedDeltaTime;
                     if (!isLoud)
-                        silenceTime += Time.deltaTime;
+                        silenceTime += Time.fixedDeltaTime;
                     else
                         silenceTime = 0;
                     end = Microphone.GetPosition(microphoneDeviceName);// - (int)(timeGapBetweenWords);
@@ -129,7 +129,7 @@ public class SpeechToText : MonoBehaviour
             }
                 Debug.Log($"Counter = {timeCounter}");
 
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForFixedUpdate();
         }
     }
     private bool IsLoudPeack()
