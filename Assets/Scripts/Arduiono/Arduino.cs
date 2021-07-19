@@ -43,10 +43,8 @@ public class Arduino : MonoBehaviour
         if(SceneManager.GetActiveScene().name ==startSceneName)
         {
             LightOff();
-            if(SerialPort.GetPortNames().Contains(serialPort.PortName))
-                StartCoroutine(StartArduino());
-            else
-                OnProximityDetected.Invoke();
+            serialPort.Close();
+            StartCoroutine(StartArduino());
         }
     }
 
