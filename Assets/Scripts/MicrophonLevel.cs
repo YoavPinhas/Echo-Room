@@ -104,6 +104,7 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
             return;
         recordedClip.GetData(samples, Microphone.GetPosition(null)-128);
         maxLevel = Mathf.Max(Mathf.Abs(Mathf.Min(samples)), Mathf.Max(samples));
+        Debug.Log($"MaxLevel = {maxLevel}");
         OnMicrophoneLevelCalculated.Invoke(maxLevel);
         //if (debug)
         //    Debug.Log(maxLevel);
