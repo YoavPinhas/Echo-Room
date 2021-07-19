@@ -64,7 +64,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   audio: {fileID: 0}
   texts:
-  - text: What is your currant stress level?
+  - text: What is your current stress level?
     duration: 0
     sceenX: 0.5
     sceenY: 0.5

@@ -67,7 +67,7 @@ MonoBehaviour:
   selectionAudio: {fileID: 8300000, guid: 2be652a82ef58dd498eb20c0fb11ff1a, type: 3}
   SelectionColor: {r: 0, g: 0.5882353, b: 1, a: 1}
   textsBeforeSelection:
-  - text: What is your currant stress level?
+  - text: Would you like to scream just for fun?
     duration: 1
     sceenX: 0.5
     sceenY: 0.5
@@ -89,6 +89,7 @@ MonoBehaviour:
     fontSize: 25
     font: {fileID: 11400000, guid: 23e5961713c9c3b4facb86d94359255d, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
+  optionDecorator: {fileID: 0}
   evaluator: {fileID: 11400000, guid: 6528051a225285147be851d66924c62b, type: 2}
   secondsBeforePlayingAudio: 0
   secondsBeforeDisplayingText: 0

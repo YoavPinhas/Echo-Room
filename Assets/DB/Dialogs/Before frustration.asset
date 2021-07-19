@@ -71,7 +71,7 @@ MonoBehaviour:
     fontSize: 25
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
-  - text: Where you felt frustrated
+  - text: where you felt frustrated
     duration: 3
     sceenX: 0.5
     sceenY: 0.45

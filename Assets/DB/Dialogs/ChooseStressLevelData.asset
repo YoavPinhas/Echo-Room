@@ -68,7 +68,7 @@ MonoBehaviour:
   listeningAudio: {fileID: 8300000, guid: 66a402fdfd95f9744b7ffb21380b691c, type: 3}
   selectionAudio: {fileID: 8300000, guid: 95d43b282eb49ce45afdc64154d736b3, type: 3}
   textsBeforeOptionsDisplayed:
-  - text: What is your currant stress level?
+  - text: What is your current stress level?
     duration: 2
     sceenX: 0.5
     sceenY: 0.5

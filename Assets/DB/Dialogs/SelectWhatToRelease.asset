@@ -100,4 +100,4 @@ MonoBehaviour:
   evaluator: {fileID: 11400000, guid: 385a95a903c34f84bafc4539a007ccc5, type: 2}
   secondsBeforePlayingAudio: 2
   secondsBeforeDisplayingText: 2
-  secondsBeforeFadeOut: 5
+  secondsBeforeFadeOut: 2.11
