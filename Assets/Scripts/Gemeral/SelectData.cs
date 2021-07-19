@@ -24,6 +24,7 @@ public class SelectData : Data
     public float secondsBeforePlayingAudio;
     public float secondsBeforeDisplayingText;
     public float secondsBeforeFadeOut;
+    public int maxRecordingSeconds;
 
     public override DataType GetDataType()
     {

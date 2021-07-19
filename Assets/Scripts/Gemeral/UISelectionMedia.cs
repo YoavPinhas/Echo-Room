@@ -26,7 +26,7 @@ public class UISelectionMedia : UIMedia
         hasResults = false;
         ArduinoMnager.Instance?.StartListeningLight();
         UIContainer.Instance.PlayAudio(data.listeningAudio, false);
-        SpeechToText.Instance.StartListening(OnResults);
+        SpeechToText.Instance.StartListening(OnResults, data.maxRecordingSeconds);
         WaitUntil waitForResults = new WaitUntil(() => hasResults);
         yield return waitForResults;
         if (resultIndex == -1)
