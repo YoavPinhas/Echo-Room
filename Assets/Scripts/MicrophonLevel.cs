@@ -14,9 +14,8 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     #region InspectorParameters
     [SerializeField] private bool debug = false;
     [SerializeField] private int sampleRate = 44100;
-    [SerializeField, Range(0, 1)] private float threshold = 0;
-    [SerializeField, Range(1, 3)] private float sensitivity = 0;
-    [SerializeField, Range(0, 5)] private float slowingSpeed = 1;
+    [SerializeField, Range(0, 1)] private float consideredSilence = 0.6f;
+    [SerializeField, Range(0,1)] private float consideredLoud = 0.03f;
     [SerializeField] private float secondsForYouCanDoBetter = 5;
     [SerializeField] private float secondsOfSilenceBeforNextScene = 5;
     [SerializeField] private float secondsBeforLoadingNextScene = 5;
@@ -103,7 +102,7 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
         if(Microphone.GetPosition(null) <= 128)
             return;
         recordedClip.GetData(samples, Microphone.GetPosition(null)-128);
-        maxLevel = Mathf.Max(Mathf.Abs(Mathf.Min(samples)), Mathf.Max(samples));
+        maxLevel = Mathf.InverseLerp(consideredSilence, consideredLoud, Mathf.Max(Mathf.Abs(Mathf.Min(samples)), Mathf.Max(samples)));
         Debug.Log($"MaxLevel = {maxLevel}");
         OnMicrophoneLevelCalculated.Invoke(maxLevel);
         //if (debug)
