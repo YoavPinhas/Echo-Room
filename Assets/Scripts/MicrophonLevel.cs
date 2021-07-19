@@ -36,25 +36,16 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     #endregion
 
     #region Microphon Methods
-    private void InitMicrophone()
-    {
-        if (device == null)
-            device = Microphone.devices[0];
-        if (device == null && debug)
-            Debug.LogError("Can't fine a connected microphone :(");
-        if (debug)
-            Debug.Log(device);
-
-    }
+   
     public void StartMicrophone()
     {
-        recordedClip = Microphone.Start(device, true, 5, sampleRate);
+        recordedClip = Microphone.Start(null, true, 5, sampleRate);
         ArduinoMnager.Instance?.StartScreamLight();
         screamWasMade = false;
     }
     public void StopMicrophone()
     {
-        Microphone.End(device);
+        Microphone.End(null);
         ArduinoMnager.Instance?.StopScreamLight();
         if(firstScream)
             firstScream = false;
@@ -82,22 +73,13 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     #endregion
 
     #region MonoBehavior
-    private void OnEnable()
-    {
-        InitMicrophone();
-    }
     private void OnDisable()
     {
         StopMicrophone();
     }
     private void OnApplicationFocus(bool focus)
     {
-        if (focus)
-        {
-            InitMicrophone();
-        }
-        else
-            StopMicrophone();
+       StopMicrophone();
     }
     void Update()
     {
