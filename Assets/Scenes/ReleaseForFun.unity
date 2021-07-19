@@ -5884,11 +5884,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 1
   sampleRate: 44100
-  threshold: 0.064
-  sensitivity: 3
-  slowingSpeed: 0
+  consideredSilence: 0.03
+  consideredLoud: 0.6
   secondsForYouCanDoBetter: 5
   secondsOfSilenceBeforNextScene: 5
+  secondsBeforLoadingNextScene: 5
   OnMicrophoneLevelCalculated:
     m_PersistentCalls:
       m_Calls:
@@ -26046,6 +26046,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3376084641267637797, guid: aeafc203720b7124b8dfab31c689d80e, type: 3}
+      propertyPath: m_TargetDisplay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376084641426195047, guid: aeafc203720b7124b8dfab31c689d80e, type: 3}
+      propertyPath: m_TargetDisplay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3376084642759087489, guid: aeafc203720b7124b8dfab31c689d80e, type: 3}
       propertyPath: m_OcclusionCulling
       value: 1

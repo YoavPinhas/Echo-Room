@@ -809,6 +809,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3376084641267637797, guid: aeafc203720b7124b8dfab31c689d80e, type: 3}
+      propertyPath: m_TargetDisplay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3376084641426195047, guid: aeafc203720b7124b8dfab31c689d80e, type: 3}
+      propertyPath: m_TargetDisplay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4172934284416586558, guid: aeafc203720b7124b8dfab31c689d80e, type: 3}
       propertyPath: m_RootOrder
       value: 1
