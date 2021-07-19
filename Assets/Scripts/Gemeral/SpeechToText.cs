@@ -78,7 +78,7 @@ public class SpeechToText : MonoBehaviour
         int end = 0;
         float timeCounter = 0;
         if (debug)
-            Debug.Log("Start Recording.");
+            Debug.Log($"Start Recording. max recording seconds = {maxRecordTimeInSeconds}");
         while (Microphone.IsRecording(microphoneDeviceName))
         {
             if (timeCounter > maxRecordTimeInSeconds)
