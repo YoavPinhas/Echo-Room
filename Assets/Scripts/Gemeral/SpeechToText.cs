@@ -127,7 +127,6 @@ public class SpeechToText : MonoBehaviour
                     }
                 }
             }
-                Debug.Log($"Counter = {timeCounter}");
 
             yield return new WaitForEndOfFrame();
         }
