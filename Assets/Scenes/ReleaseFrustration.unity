@@ -782,7 +782,7 @@ MonoBehaviour:
     elementsRotation: 2
     elementsRotationSpeed: 10
     minElementSize: 2
-    maxElementSize: 2
+    maxElementSize: 5.35
     WhenOpenNext: 0
   debug: 1
 --- !u!4 &1319502596
@@ -793,7 +793,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319502594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 34.2}
+  m_LocalPosition: {x: 0, y: 2.9, z: 34.2}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1428,7 +1428,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1811101329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1575,7 +1575,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2061519311
 MonoBehaviour:
   m_ObjectHideFlags: 0
