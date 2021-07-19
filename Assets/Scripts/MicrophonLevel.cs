@@ -19,6 +19,7 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     [SerializeField, Range(0, 5)] private float slowingSpeed = 1;
     [SerializeField] private float secondsForYouCanDoBetter = 5;
     [SerializeField] private float secondsOfSilenceBeforNextScene = 5;
+    [SerializeField] private float secondsBeforLoadingNextScene = 5;
     private float maxLoudnessThreshold = 0.7f;
     public MicrophonLevelEvent OnMicrophoneLevelCalculated;
     [SerializeField] private string lastSceneName = "EndScene";
@@ -118,12 +119,14 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
                 counter += Time.deltaTime;
 
             if(counter >= secondsOfSilenceBeforNextScene)
-                GoToLastScene();
+                StartCoroutine(GoToLastScene());
         }
     }
 
-    private void GoToLastScene()
+    private IEnumerator GoToLastScene()
     {
+        StopMicrophone();
+        yield return new WaitForSeconds(secondsBeforLoadingNextScene);
         SceneManager.LoadScene(lastSceneName);
     }
     #endregion
