@@ -107,7 +107,6 @@ public class SpeechToText : MonoBehaviour
                 isLoud = IsLoudPeack();
                 if (!userHasTalked)
                 {
-                    timeCounter += Time.deltaTime;
                     if (isLoud)
                     {
                         userHasTalked = true;
@@ -120,10 +119,8 @@ public class SpeechToText : MonoBehaviour
                 }
                 else
                 {
-                    timeCounter += Time.deltaTime;
-                    if (!isLoud)
-                        silenceTime += Time.deltaTime;
-                    else
+                    
+                    if (isLoud)
                         silenceTime = 0;
                     end = Microphone.GetPosition(null);// - (int)(timeGapBetweenWords);
                     if (silenceTime > timeGapBetweenWords)
