@@ -34,9 +34,9 @@ public class UISelectionMedia : UIMedia
         
         if(resultIndex < options.Length)
             DisplayResult(options[resultIndex], decorators[resultIndex]);
-        StartCoroutine(DestroyUIText(texts, data.fadeInSeconds, data.fadeInCurve));
         WaitForSeconds waitForSeconds = new WaitForSeconds(data.secondsBeforeFadeOut);
         yield return waitForSeconds;
+        StartCoroutine(DestroyUIText(texts, data.fadeInSeconds, data.fadeInCurve));
         StartCoroutine(DestroyDecorators(decorators));
         StartCoroutine(DestroyUIText(options, data.fadeInSeconds, data.fadeInCurve));
         wait = new WaitUntil(() => textDestroyEnded);
