@@ -54,7 +54,7 @@ public class SpeechToText : MonoBehaviour
             Debug.Log("Initialize Microphone.");
 
 
-        recordedAudio = Microphone.Start(microphoneDeviceName, false, maxRecordTimeInSeconds + 1, SAMPLE_RATE);
+        recordedAudio = Microphone.Start(null, false, maxRecordTimeInSeconds + 1, SAMPLE_RATE);
 
         //Wait for microphone initialization
         float timesStartTime = Time.realtimeSinceStartup;
@@ -79,7 +79,7 @@ public class SpeechToText : MonoBehaviour
         float timeCounter = 0;
         if (debug)
             Debug.Log($"Start Recording. max recording seconds = {maxRecordTimeInSeconds}");
-        while (Microphone.IsRecording(microphoneDeviceName))
+        while (Microphone.IsRecording(null))
         {
             if (timeCounter > maxRecordTimeInSeconds)
             {
@@ -103,24 +103,24 @@ public class SpeechToText : MonoBehaviour
                 isLoud = IsLoudPeack();
                 if (!userHasTalked)
                 {
-                    timeCounter += Time.deltaTime * 3 / 10;
+                    timeCounter += Time.deltaTime;
                     if (isLoud)
                     {
                         userHasTalked = true;
                         timeCounter = 0;
-                        start = Mathf.Clamp(Microphone.GetPosition(microphoneDeviceName) - 9000, 0, 99999999);
+                        start = Mathf.Clamp(Microphone.GetPosition(null) - 9000, 0, 99999999);
                         if (debug)
                             Debug.Log("User start talking.");
                     }
                 }
                 else
                 {
-                    timeCounter += Time.deltaTime * 3 / 10;
+                    timeCounter += Time.deltaTime;
                     if (!isLoud)
-                        silenceTime += Time.deltaTime * 3 / 10;
+                        silenceTime += Time.deltaTime;
                     else
                         silenceTime = 0;
-                    end = Microphone.GetPosition(microphoneDeviceName);// - (int)(timeGapBetweenWords);
+                    end = Microphone.GetPosition(null);// - (int)(timeGapBetweenWords);
                     if (silenceTime > timeGapBetweenWords)
                     {
                         OnAudioRecorded(start, end);
@@ -135,7 +135,7 @@ public class SpeechToText : MonoBehaviour
     private bool IsLoudPeack()
     {
         float[] waveData = new float[128];
-        int micPosition = Microphone.GetPosition(microphoneDeviceName) - (128 + 1);
+        int micPosition = Microphone.GetPosition(null) - (128 + 1);
         if (micPosition < 0)
             return false;
         recordedAudio.GetData(waveData, micPosition);
