@@ -14,8 +14,8 @@ public class MicrophonLevel : SingletonMonoBehavior<MicrophonLevel>
     #region InspectorParameters
     [SerializeField] private bool debug = false;
     [SerializeField] private int sampleRate = 44100;
-    [SerializeField, Range(0, 1)] private float consideredSilence = 0.6f;
-    [SerializeField, Range(0,1)] private float consideredLoud = 0.03f;
+    [SerializeField, Range(0, 1)] private float consideredSilence = 0.03f;
+    [SerializeField, Range(0,1)] private float consideredLoud = 0.6f;
     [SerializeField] private float secondsForYouCanDoBetter = 5;
     [SerializeField] private float secondsOfSilenceBeforNextScene = 5;
     [SerializeField] private float secondsBeforLoadingNextScene = 5;
