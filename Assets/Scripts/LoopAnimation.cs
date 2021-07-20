@@ -40,7 +40,7 @@ public class LoopAnimation : MonoBehaviour
                 effect = FindObjectOfType<Scene2Animation>();
                 break;
         }
-        effect = FindObjectOfType<EffectScene>();
+        
         state = LoopState.Close;
         SetCurrentSeconds();
     }
