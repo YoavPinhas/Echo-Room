@@ -4,7 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class ReleaseControlAnimation : MonoBehaviour
+public interface EffectScene
+{
+    public void OnMicrophonChangedLevel(float level);
+}
+public class ReleaseControlAnimation : MonoBehaviour, EffectScene
 {
     #region Shape Structue
     [System.Serializable]

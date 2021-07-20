@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Scene2Animation : MonoBehaviour
+public class Scene2Animation : MonoBehaviour, EffectScene
 {
     #region Inspector Parameters
     [SerializeField, Range(0, 1)] private float screamLoudness;
@@ -56,9 +56,11 @@ public class Scene2Animation : MonoBehaviour
         UpdateParticles();
         UpdateDelta();
     }
-    public void OnMicrophoneLevelChanged(float level)
+    public void OnMicrophonChangedLevel(float level)
     {
         screamLoudness = Mathf.Lerp(screamLoudness, level, Time.deltaTime);
     }
+
+ 
     #endregion
 }
