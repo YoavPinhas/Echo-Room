@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LoopAnimation : MonoBehaviour
 {
+    private enum EffectType { Frustration, Controll, Fear}
     private enum LoopState { Opening, Closing, Open, Close }
 
     [SerializeField] private float secondsToOpen = 3;
@@ -17,7 +18,8 @@ public class LoopAnimation : MonoBehaviour
     [SerializeField] private AnimationCurve closeCurve;
     [SerializeField] private string nextScene;
 
-    public EffectScene effect;
+    [SerializeField] private EffectType effectType;
+    private EffectScene effect;
 
     private float counter = 0;
     private float curentSeconds;    
@@ -26,6 +28,19 @@ public class LoopAnimation : MonoBehaviour
 
     void Start()
     {
+        switch (effectType)
+        {
+            case EffectType.Frustration:
+                effect = FindObjectOfType<MandalaScene>();
+                break;
+            case EffectType.Controll:
+                effect = FindObjectOfType<ReleaseControlAnimation>();
+                break;
+            case EffectType.Fear:
+                effect = FindObjectOfType<Scene2Animation>();
+                break;
+        }
+        effect = FindObjectOfType<EffectScene>();
         state = LoopState.Close;
         SetCurrentSeconds();
     }
