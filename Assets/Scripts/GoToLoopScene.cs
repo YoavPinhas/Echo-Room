@@ -32,6 +32,7 @@ public class GoToLoopScene : MonoBehaviour
         if (Input.GetKeyDown(keyToLoop))
         {
             SceneManager.LoadScene(loopSceneName);
+            UIContainer.Instance.Terminate();
         }
         if (Input.GetKeyDown(keyToStart))
         {

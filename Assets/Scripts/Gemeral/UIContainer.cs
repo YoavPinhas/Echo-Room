@@ -112,4 +112,12 @@ public class UIContainer : MonoBehaviour
     void Update()
     {
     }
+
+    public void Terminate()
+    {
+        foreach(Transform child in mainCanvasRenderer.transform)
+        {
+            Destroy(child);
+        }
+    }
 }
