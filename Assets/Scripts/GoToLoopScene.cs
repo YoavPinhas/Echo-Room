@@ -7,8 +7,12 @@ public class GoToLoopScene : MonoBehaviour
 {
     private static GameObject instance;
 
-    public string sceneName;
-    public KeyCode key;
+    public string loopSceneName;
+    public string startSceneName;
+
+    public KeyCode keyToLoop;
+    public KeyCode keyToStart;
+
 
     private void Awake()
     {
@@ -25,9 +29,13 @@ public class GoToLoopScene : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(key))
+        if (Input.GetKeyDown(keyToLoop))
         {
-            SceneManager.LoadScene(sceneName);
+            SceneManager.LoadScene(loopSceneName);
+        }
+        if (Input.GetKeyDown(keyToStart))
+        {
+            SceneManager.LoadScene(startSceneName);
         }
     }
 }
