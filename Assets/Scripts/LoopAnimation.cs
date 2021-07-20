@@ -62,7 +62,7 @@ public class LoopAnimation : MonoBehaviour
 
         UpdateVisuals();
 
-        counter += Time.deltaTime / curentSeconds;
+        counter = Mathf.Clamp01(counter + Time.deltaTime / curentSeconds);
     }
 
     private void UpdateVisuals()
