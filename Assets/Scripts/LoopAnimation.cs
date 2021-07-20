@@ -17,7 +17,7 @@ public class LoopAnimation : MonoBehaviour
     [SerializeField] private AnimationCurve closeCurve;
     [SerializeField] private string nextScene;
 
-    [SerializeField] private EffectScene effect;
+    public EffectScene effect;
 
     private float counter = 0;
     private float curentSeconds;    

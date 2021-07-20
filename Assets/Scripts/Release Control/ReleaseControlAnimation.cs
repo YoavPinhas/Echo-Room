@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+
 public interface EffectScene
 {
     public void OnMicrophonChangedLevel(float level);
