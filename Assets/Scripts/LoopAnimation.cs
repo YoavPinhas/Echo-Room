@@ -48,6 +48,7 @@ public class LoopAnimation : MonoBehaviour
         SetActive(VisualState.Frustration, false);
         SetActive(VisualState.Controll, false);
         SetActive(VisualState.Fear, false);
+        visualState = startLoopWith;
         state = LoopState.Close;
         SetCurrentSeconds();
     }
