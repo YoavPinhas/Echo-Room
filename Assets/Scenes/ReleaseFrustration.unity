@@ -357,17 +357,17 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 3.2687585
-      outSlope: 3.2687585
+      inSlope: 0.7461301
+      outSlope: 0.7461301
       tangentMode: 34
       weightedMode: 0
       inWeight: 0
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.045774907
-      value: 0.14962712
-      inSlope: 2.0012364
-      outSlope: 2.0012364
+      time: 0.14994285
+      value: 0.111876875
+      inSlope: 0.82703817
+      outSlope: 0.82703817
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -375,8 +375,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0.80527467
       value: 0.706883
-      inSlope: 1.1194993
-      outSlope: 1.1194993
+      inSlope: 1.2066153
+      outSlope: 1.2066153
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -751,7 +751,7 @@ MonoBehaviour:
     minRadius: 25.9
     maxRadius: 38.8
     ringRotation: 1
-    secondsForCycle: 7
+    secondsForCycle: 3.04
     secondsFromCloseToOpen: 1
     openCurve:
       serializedVersion: 2
@@ -777,12 +777,51 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    lookAxis: 2
+    lookAxis: 1
     rotationAxis: 1
     elementsRotation: 2
     elementsRotationSpeed: 10
-    minElementSize: 2
-    maxElementSize: 5.35
+    minElementSize: 4.1
+    maxElementSize: 6.06
+    WhenOpenNext: 0
+  - shapePrefab: {fileID: 530981871561184267, guid: 1db0fe158d1c1e6499c60051fa608827, type: 3}
+    numberOfCircles: 6
+    elementsInCircle: 57
+    minRadius: 39.61
+    maxRadius: 54.8
+    ringRotation: 2
+    secondsForCycle: 4.64
+    secondsFromCloseToOpen: 1
+    openCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    lookAxis: 1
+    rotationAxis: 1
+    elementsRotation: 2
+    elementsRotationSpeed: 10
+    minElementSize: 2.35
+    maxElementSize: 3.83
     WhenOpenNext: 0
   debug: 1
 --- !u!4 &1319502596
@@ -793,7 +832,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319502594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.9, z: 34.2}
+  m_LocalPosition: {x: 0, y: 4.33, z: 34.2}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1428,7 +1467,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1811101329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1442,6 +1481,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataToPlay:
+  - {fileID: 11400000, guid: 185f5f03647c6864480534efe99afb44, type: 2}
   - {fileID: 11400000, guid: 6c4c9401ea8a9d349878445c8dc1249f, type: 2}
   - {fileID: 11400000, guid: 185c791e13723c74aa4eb5af942032c9, type: 2}
   - {fileID: 11400000, guid: 3431a40768162564fba79a78e17421b6, type: 2}
@@ -1575,7 +1615,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2061519311
 MonoBehaviour:
   m_ObjectHideFlags: 0

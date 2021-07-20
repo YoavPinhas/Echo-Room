@@ -5604,12 +5604,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dataToPlay:
+  - {fileID: 11400000, guid: 185f5f03647c6864480534efe99afb44, type: 2}
   - {fileID: 11400000, guid: 1bf82d6377830874ba4349ae5ed190bd, type: 2}
   - {fileID: 11400000, guid: 185c791e13723c74aa4eb5af942032c9, type: 2}
   - {fileID: 11400000, guid: 3431a40768162564fba79a78e17421b6, type: 2}
   - {fileID: 11400000, guid: 9c53a55c8a066ba44bb9f90d5937ffde, type: 2}
   - {fileID: 11400000, guid: aa1f27f34f66f8e4b86f299582106f23, type: 2}
   - {fileID: 11400000, guid: 6080a0012210ff34c9d5a95734229cdd, type: 2}
+  - {fileID: 11400000, guid: 29f06ebd57199754bb2bcf47ddaf9f68, type: 2}
   - {fileID: 11400000, guid: 1b307fa410ec2164298b2357460baf72, type: 2}
 --- !u!82 &705245808
 AudioSource:
@@ -5904,7 +5906,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  lastSceneName: EndScene
+  lastSceneName: ReleaseFrustration
 --- !u!4 &942468435
 Transform:
   m_ObjectHideFlags: 0
@@ -6716,7 +6718,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.1
+      scalar: -0.33
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -21206,6 +21208,7 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: eeb62198b3f64844593b534c3367e445, type: 2}
+  - {fileID: 2100000, guid: 3bf5e5c2aa84c0546aa64200777b67d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21825,7 +21828,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.1
+      scalar: -0.33
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -25211,13 +25214,13 @@ ParticleSystem:
         m_RotationOrder: 4
     maxLights: 20
   TrailModule:
-    enabled: 0
+    enabled: 1
     mode: 0
-    ratio: 1
+    ratio: 0.52
     lifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.05
+      scalar: 0.04
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -25268,7 +25271,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minVertexDistance: 0.32
-    textureMode: 0
+    textureMode: 1
     ribbonCount: 8
     shadowBias: 0
     worldSpace: 1
@@ -25344,8 +25347,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     widthOverTrail:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 0.12
+      minMaxState: 1
+      scalar: 0.06
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -25360,8 +25363,8 @@ ParticleSystem:
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
-          value: 1
+          time: 0.9881592
+          value: 0
           inSlope: 0
           outSlope: 0
           tangentMode: 0

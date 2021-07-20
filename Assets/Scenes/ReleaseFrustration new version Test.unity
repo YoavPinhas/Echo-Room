@@ -342,7 +342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screemLoudness: 0
-  Rings: []
+  rings: []
 --- !u!4 &709990139
 Transform:
   m_ObjectHideFlags: 0
@@ -357,6 +357,95 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &886654374
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6328453220229939683, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100560, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100560, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.8911376
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100560, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 16.747416
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100560, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15.98712
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100560, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100560, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100560, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100560, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100560, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100560, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100560, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100561, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_Name
+      value: Talking Sphere
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100563, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: lowestBump
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100563, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: fadeSeconds
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100563, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: highestBymp
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881235896955923, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881235896955923, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 23.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881235896955926, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881235896955927, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
 --- !u!1 &1319502594
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,12 +501,12 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   particles:
-  - shapePrefab: {fileID: 970958914387681806, guid: 48bbd8b886af972409bd63da49092135, type: 3}
+  - shapePrefab: {fileID: 2673646329392078657, guid: 97dcbc1f72dcd5447a71cc7ab01f1604, type: 3}
     numberOfCircles: 1
     elementsInCircle: 1
     minRadius: 0
     maxRadius: 1.46
-    ringRotation: 1
+    ringRotation: 0
     secondsForCycle: 10
     secondsFromCloseToOpen: 0.7
     openCurve:
@@ -444,12 +533,12 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    lookAxis: 0
-    rotationAxis: 0
+    lookAxis: 2
+    rotationAxis: 2
     elementsRotation: 0
     elementsRotationSpeed: 10
-    minElementSize: 2
-    maxElementSize: 2
+    minElementSize: 22.3
+    maxElementSize: 54.26
     WhenOpenNext: 0
   - shapePrefab: {fileID: 5382806136878481484, guid: e0928b7b137607e44bee08790bdf684a, type: 3}
     numberOfCircles: 3
@@ -795,7 +884,7 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 0
-    lookAxis: 2
+    lookAxis: 1
     rotationAxis: 1
     elementsRotation: 2
     elementsRotationSpeed: 10
@@ -811,7 +900,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1319502594}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 34.2}
+  m_LocalPosition: {x: 0, y: 2.3, z: 34.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1210,9 +1299,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   debug: 1
   sampleRate: 44100
-  threshold: 0
-  sensitivity: 1
-  slowingSpeed: 5
+  consideredSilence: 0.03
+  consideredLoud: 0.6
+  secondsForYouCanDoBetter: 5
+  secondsOfSilenceBeforNextScene: 5
+  secondsBeforLoadingNextScene: 5
   OnMicrophoneLevelCalculated:
     m_PersistentCalls:
       m_Calls:
@@ -1228,6 +1319,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  lastSceneName: EndScene
 --- !u!4 &2061519312
 Transform:
   m_ObjectHideFlags: 0

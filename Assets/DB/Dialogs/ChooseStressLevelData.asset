@@ -96,7 +96,7 @@ MonoBehaviour:
   secondsBeforePlayingAudio: 0
   secondsBeforeDisplayingText: 1
   secondsAfterSelection: 0
-  maxRecordingSeconds: 10
+  maxRecordingSeconds: 15
   displayResultPrefab: {fileID: 970958914387681806, guid: c8f4447635a65fa4a812cd63d9aa4bde, type: 3}
   unrecognizedAudio: {fileID: 8300000, guid: 14c8f98cd04d8a14eb797b79da0e4098, type: 3}
   unrecognizedText:
