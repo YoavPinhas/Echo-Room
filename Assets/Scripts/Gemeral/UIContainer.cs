@@ -115,11 +115,15 @@ public class UIContainer : MonoBehaviour
 
     public void Terminate()
     {
-        for (int i = 0; i < mainCanvas.transform.childCount; i++)
+        //for (int i = 0; i < mainCanvas.transform.childCount; i++)
+        //{
+        //    Destroy(mainCanvas.transform.GetChild())
+        //}
+        foreach(Transform child in mainCanvas.transform)
         {
-            Destroy(mainCanvas.transform.GetChild(i));
+            if(child != mainCanvas.transform)
+            Destroy(child.gameObject);
         }
-        
         talkingSphere.FadeOut();
     }
 }
