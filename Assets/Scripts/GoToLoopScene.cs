@@ -19,6 +19,7 @@ public class GoToLoopScene : MonoBehaviour
         else
         {
             instance = gameObject;
+            DontDestroyOnLoad(gameObject);
         }
     }
 
