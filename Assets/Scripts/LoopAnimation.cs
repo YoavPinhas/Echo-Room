@@ -26,14 +26,25 @@ public class LoopAnimation : MonoBehaviour
     [SerializeField] private AnimationCurve openCurve;
     [SerializeField] private AnimationCurve closeCurve;
 
+    [SerializeField] private Camera frontCamera;
+    [SerializeField] private Camera leftCamera;
+    [SerializeField] private Camera rightCamera;
+
     private float counter = 0;
     private float curentSeconds;    
     private LoopState state;
     private VisualState visualState;
-
+    private Vector3 leftCameraManadlaPosition;
+    private Vector3 rightCameraManadlaPosition;
+    private Quaternion leftCameraManadlaRotation;
+    private Quaternion rightCameraManadlaRotation;
 
     void Start()
     {
+        leftCameraManadlaPosition = leftCamera.transform.position;
+        leftCameraManadlaRotation = leftCamera.transform.rotation;
+        rightCameraManadlaPosition = rightCamera.transform.position;
+        rightCameraManadlaRotation = rightCamera.transform.rotation;
         SetActive(VisualState.Frustration, false);
         SetActive(VisualState.Controll, false);
         SetActive(VisualState.Fear, false);
@@ -79,6 +90,20 @@ public class LoopAnimation : MonoBehaviour
         if (state == LoopState.Opening)
         {
             visualState = GetNextState();
+            if(visualState == VisualState.Frustration)
+            {
+                rightCamera.transform.position = rightCameraManadlaPosition;
+                leftCamera.transform.position = leftCameraManadlaPosition;
+                rightCamera.transform.rotation = rightCameraManadlaRotation;
+                leftCamera.transform.rotation = leftCameraManadlaRotation;
+            }
+            else
+            {
+                rightCamera.transform.position = frontCamera.transform.position;
+                leftCamera.transform.position = frontCamera.transform.position;
+                rightCamera.transform.rotation = frontCamera.transform.rotation * Quaternion.Euler(0,90,0);
+                leftCamera.transform.rotation = frontCamera.transform.rotation * Quaternion.Euler(0, -90, 0);
+            }
             SetActive(visualState, true);
             return;
         }
