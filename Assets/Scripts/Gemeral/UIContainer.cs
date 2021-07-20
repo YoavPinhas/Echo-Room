@@ -115,8 +115,9 @@ public class UIContainer : MonoBehaviour
 
     public void Terminate()
     {
-        foreach(Transform child in mainCanvasRenderer.transform)
+        foreach(Transform child in mainCanvas.transform)
         {
+            if(child != mainCanvas.transform)
             Destroy(child);
         }
     }
