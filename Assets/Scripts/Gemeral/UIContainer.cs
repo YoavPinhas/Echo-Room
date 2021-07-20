@@ -120,5 +120,6 @@ public class UIContainer : MonoBehaviour
             if(child != mainCanvas.transform)
             Destroy(child);
         }
+        talkingSphere.FadeOut();
     }
 }
