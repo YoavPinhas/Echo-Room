@@ -41,7 +41,7 @@ public class LoopAnimation : MonoBehaviour
                 break;
         }
         
-        state = LoopState.Close;
+        state = LoopState.Opening;
         SetCurrentSeconds();
     }
 
