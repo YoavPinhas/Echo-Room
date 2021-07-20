@@ -8,6 +8,7 @@ using Random = UnityEngine.Random;
 public interface EffectScene
 {
     public void OnMicrophonChangedLevel(float level);
+    public void SetLoudness(float t);
 }
 public class ReleaseControlAnimation : MonoBehaviour, EffectScene
 {
@@ -437,5 +438,10 @@ public class ReleaseControlAnimation : MonoBehaviour, EffectScene
         if (screamLoudness > 0.8f)
             InitSizeMultiplier = 1;
     }
-#endregion
+
+    public void SetLoudness(float t)
+    {
+        screamLoudness = t;
+    }
+    #endregion
 }

@@ -70,10 +70,10 @@ public class LoopAnimation : MonoBehaviour
         switch (state)
         {
             case LoopState.Opening:
-                effect.OnMicrophonChangedLevel(openCurve.Evaluate(counter));
+                effect.SetLoudness(openCurve.Evaluate(counter));
                 break;
             case LoopState.Closing:
-                effect.OnMicrophonChangedLevel(openCurve.Evaluate(1-counter));
+                effect.SetLoudness(openCurve.Evaluate(1-counter));
                 break;
         }
     }

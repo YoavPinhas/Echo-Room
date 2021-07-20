@@ -61,6 +61,9 @@ public class Scene2Animation : MonoBehaviour, EffectScene
         screamLoudness = Mathf.Lerp(screamLoudness, level, Time.deltaTime);
     }
 
- 
+    public void SetLoudness(float t)
+    {
+        screamLoudness = t;
+    }
     #endregion
 }
