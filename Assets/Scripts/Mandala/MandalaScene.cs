@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MandalaScene : MonoBehaviour
+public class MandalaScene : MonoBehaviour, EffectScene
 {
     #region Inspector Parameters
     [SerializeField, Range(0, 1)] private float screamLoudness;
@@ -110,6 +110,10 @@ public class MandalaScene : MonoBehaviour
     public void OnMicrophonChangedLevel(float level)
     {
         screamLoudness = Mathf.Lerp(screamLoudness, level, Time.deltaTime);
+    }
+    public void SetLoudness(float t)
+    {
+        screamLoudness = t;
     }
     #endregion
 }

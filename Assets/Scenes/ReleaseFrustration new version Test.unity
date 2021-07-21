@@ -446,466 +446,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
---- !u!1 &1319502594
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1319502596}
-  - component: {fileID: 1319502595}
-  m_Layer: 0
-  m_Name: Mandala Effect
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1319502595
+--- !u!114 &1319502595 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3599805881473529706, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}
+  m_PrefabInstance: {fileID: 3599805880359548009}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319502594}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e395793e987589846959f4e725f9147b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screamLoudness: 1
-  screamLoudnessCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 1
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  particles:
-  - shapePrefab: {fileID: 2673646329392078657, guid: 97dcbc1f72dcd5447a71cc7ab01f1604, type: 3}
-    numberOfCircles: 1
-    elementsInCircle: 1
-    minRadius: 0
-    maxRadius: 1.46
-    ringRotation: 0
-    secondsForCycle: 10
-    secondsFromCloseToOpen: 0.7
-    openCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    lookAxis: 2
-    rotationAxis: 2
-    elementsRotation: 0
-    elementsRotationSpeed: 10
-    minElementSize: 22.3
-    maxElementSize: 54.26
-    WhenOpenNext: 0
-  - shapePrefab: {fileID: 5382806136878481484, guid: e0928b7b137607e44bee08790bdf684a, type: 3}
-    numberOfCircles: 3
-    elementsInCircle: 20
-    minRadius: 2.26
-    maxRadius: 2.78
-    ringRotation: 1
-    secondsForCycle: 10
-    secondsFromCloseToOpen: 0.6
-    openCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    lookAxis: 2
-    rotationAxis: 2
-    elementsRotation: 1
-    elementsRotationSpeed: 10
-    minElementSize: 5
-    maxElementSize: 5
-    WhenOpenNext: 0
-  - shapePrefab: {fileID: 5382806136878481484, guid: 86ae2b956362bbb48ba321fa53ac1c69, type: 3}
-    numberOfCircles: 1
-    elementsInCircle: 17
-    minRadius: 3.82
-    maxRadius: 4.69
-    ringRotation: 2
-    secondsForCycle: 10
-    secondsFromCloseToOpen: 0.5
-    openCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    lookAxis: 2
-    rotationAxis: 1
-    elementsRotation: 0
-    elementsRotationSpeed: 10
-    minElementSize: 15
-    maxElementSize: 15
-    WhenOpenNext: 0
-  - shapePrefab: {fileID: 2673646329392078657, guid: f3ce05c57e33ede489657c19a091f586, type: 3}
-    numberOfCircles: 1
-    elementsInCircle: 30
-    minRadius: 5.12
-    maxRadius: 5.67
-    ringRotation: 1
-    secondsForCycle: 10
-    secondsFromCloseToOpen: 0.4
-    openCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    lookAxis: 2
-    rotationAxis: 1
-    elementsRotation: 0
-    elementsRotationSpeed: 10
-    minElementSize: 5
-    maxElementSize: 5
-    WhenOpenNext: 0
-  - shapePrefab: {fileID: 970958914387681806, guid: f0e45b9b4e9fe9146aa076762fccd2bb, type: 3}
-    numberOfCircles: 1
-    elementsInCircle: 15
-    minRadius: 6.22
-    maxRadius: 6.89
-    ringRotation: 2
-    secondsForCycle: 10
-    secondsFromCloseToOpen: 0.4
-    openCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    lookAxis: 2
-    rotationAxis: 2
-    elementsRotation: 1
-    elementsRotationSpeed: 15.87
-    minElementSize: 0.5
-    maxElementSize: 0.5
-    WhenOpenNext: 0
-  - shapePrefab: {fileID: 530981871561184267, guid: e6964b6720e04004b8b9b2ba4b858808, type: 3}
-    numberOfCircles: 2
-    elementsInCircle: 40
-    minRadius: 8.01
-    maxRadius: 8.94
-    ringRotation: 1
-    secondsForCycle: 10
-    secondsFromCloseToOpen: 0.4
-    openCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    lookAxis: 0
-    rotationAxis: 0
-    elementsRotation: 0
-    elementsRotationSpeed: 10
-    minElementSize: 20
-    maxElementSize: 25
-    WhenOpenNext: 0
-  - shapePrefab: {fileID: 530981871561184267, guid: 1db0fe158d1c1e6499c60051fa608827, type: 3}
-    numberOfCircles: 5
-    elementsInCircle: 40
-    minRadius: 10.16
-    maxRadius: 10.83
-    ringRotation: 2
-    secondsForCycle: 7
-    secondsFromCloseToOpen: 0.4
-    openCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    lookAxis: 0
-    rotationAxis: 0
-    elementsRotation: 0
-    elementsRotationSpeed: 10
-    minElementSize: 5
-    maxElementSize: 5
-    WhenOpenNext: 0
-  - shapePrefab: {fileID: 7287706316997988168, guid: 293899c7b9e66fb4d942b2b5958b3cea, type: 3}
-    numberOfCircles: 2
-    elementsInCircle: 5
-    minRadius: 12.15
-    maxRadius: 13
-    ringRotation: 1
-    secondsForCycle: 7
-    secondsFromCloseToOpen: 0.4
-    openCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    lookAxis: 2
-    rotationAxis: 2
-    elementsRotation: 1
-    elementsRotationSpeed: 20
-    minElementSize: 1
-    maxElementSize: 1
-    WhenOpenNext: 0
-  - shapePrefab: {fileID: 970958914387681806, guid: 8f21d4aeee8f3524dabde3c224115af2, type: 3}
-    numberOfCircles: 6
-    elementsInCircle: 40
-    minRadius: 12.08
-    maxRadius: 24.1
-    ringRotation: 2
-    secondsForCycle: 7
-    secondsFromCloseToOpen: 1
-    openCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    lookAxis: 2
-    rotationAxis: 1
-    elementsRotation: 1
-    elementsRotationSpeed: 10
-    minElementSize: 0.5
-    maxElementSize: 0.5
-    WhenOpenNext: 0
-  - shapePrefab: {fileID: 2673646329392078657, guid: 5e8f0a86975497d4c9ebc43c88645a09, type: 3}
-    numberOfCircles: 6
-    elementsInCircle: 40
-    minRadius: 24.61
-    maxRadius: 39.9
-    ringRotation: 1
-    secondsForCycle: 7
-    secondsFromCloseToOpen: 1
-    openCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 1
-        outSlope: 1
-        tangentMode: 34
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 0
-    lookAxis: 1
-    rotationAxis: 1
-    elementsRotation: 2
-    elementsRotationSpeed: 10
-    minElementSize: 2
-    maxElementSize: 2
-    WhenOpenNext: 0
-  debug: 1
---- !u!4 &1319502596
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1319502594}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.3, z: 34.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1697185909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1334,3 +885,60 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &3599805880359548009
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3599805881473529707, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}
+      propertyPath: m_Name
+      value: Mandala Effect
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599805881473529709, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599805881473529709, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599805881473529709, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599805881473529709, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 34.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599805881473529709, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599805881473529709, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599805881473529709, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599805881473529709, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599805881473529709, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599805881473529709, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3599805881473529709, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d06169ffd7a6a69498ec02bdc1af9042, type: 3}

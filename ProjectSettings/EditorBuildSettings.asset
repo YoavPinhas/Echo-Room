@@ -5,6 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/SpeechScene.unity
+    guid: 46573bfed2085684e85a04cac8ac68ed
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 3db1837cc97a95e4c98610966fac2b0b
@@ -45,6 +48,15 @@ EditorBuildSettings:
     path: Assets/Scenes/ChooseOneOption.unity
     guid: 046340c69d3fee648bdc45933e09290b
   - enabled: 1
+    path: Assets/Scenes/LoopReleaseFrustration.unity
+    guid: 472c64fb3dd46224686f1a4e88e65d9d
+  - enabled: 1
+    path: Assets/Scenes/LoopReleaseFear.unity
+    guid: 52f3c7f9d8c6f3145abf8b801788cb78
+  - enabled: 1
     path: Assets/Scenes/ReleaseDidntUnderstand.unity
     guid: a63b0db0c56151545ba1ba07dcacc060
+  - enabled: 1
+    path: Assets/Scenes/LoopReleaseControl.unity
+    guid: 291f1d2bcfc2ef54d8d86ee7c9b26313
   m_configObjects: {}
