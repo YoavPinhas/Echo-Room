@@ -9,9 +9,11 @@ public class TalkingSphere : MonoBehaviour
     [SerializeField] private float goToPlaceSeconds = 2;
     [SerializeField] private float lowestBump = 0.5f;
     [SerializeField] private float highestBymp = 2;
-    [SerializeField] private float fadeSeconds = 1;
+    [SerializeField] private float fadeInSeconds = 1;
+    [SerializeField] private float fadeOutSeconds = 1;
     [SerializeField] private AnimationCurve fadeinCurve;
     [SerializeField] private AnimationCurve fadeoutCurve;
+    [SerializeField] bool fadeoutBackground;
     private MeshRenderer meshRenderer;
     [SerializeField]private MeshRenderer background;
     [SerializeField]private MeshRenderer foreground;
@@ -77,7 +79,7 @@ public class TalkingSphere : MonoBehaviour
         while(color.a != 0)
         {
             color.a = fadeinCurve.Evaluate(t);
-            t = Mathf.Clamp01(t - Time.deltaTime / fadeSeconds);
+            t = Mathf.Clamp01(t - Time.deltaTime / fadeInSeconds);
             foreground.material.color = color;
             yield return waitFrame;
         }
@@ -92,18 +94,20 @@ public class TalkingSphere : MonoBehaviour
         while(foregroundColor.a != 1)
         {
             foregroundColor.a = fadeoutCurve.Evaluate(t);
-            t = Mathf.Clamp01(t + Time.deltaTime / fadeSeconds);
+            t = Mathf.Clamp01(t + Time.deltaTime / fadeOutSeconds);
             foreground.material.color = foregroundColor;
             yield return waitFrame;
         }
-        //meshRenderer.material.color
         meshRenderer.enabled = false;
         foreground.enabled = false;
-        while(backgroundColor.a != 0)
+        if (fadeoutBackground)
         {
-            backgroundColor.a = Mathf.Clamp01(backgroundColor.a - Time.deltaTime / fadeSeconds);
-            background.material.color = backgroundColor;
-            yield return waitFrame;
+            while (backgroundColor.a != 0)
+            {
+                backgroundColor.a = Mathf.Clamp01(backgroundColor.a - Time.deltaTime / fadeOutSeconds);
+                background.material.color = backgroundColor;
+                yield return waitFrame;
+            }
         }
         background.enabled = false;
         yield return new WaitForSeconds(0.2f);        
