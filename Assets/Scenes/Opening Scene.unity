@@ -860,6 +860,14 @@ PrefabInstance:
       propertyPath: highestBymp
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100563, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: fadeInSeconds
+      value: 2.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 7812881234253100563, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
+      propertyPath: fadeOutSeconds
+      value: 1.52
+      objectReference: {fileID: 0}
     - target: {fileID: 7812881235896955923, guid: ebf281298e5a66a4cb851c3e15a197b1, type: 3}
       propertyPath: m_LocalPosition.y
       value: -11

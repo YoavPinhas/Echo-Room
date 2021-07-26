@@ -786,7 +786,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 1
-  lastSceneName: ReleaseFear
+  lastSceneName: EndScene
 --- !u!4 &942468435
 Transform:
   m_ObjectHideFlags: 0

@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e8a4fc3d390c2041b91f8f6297cf1c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToOpen: 5
+  secondsToOpen: 7.15
   secondsBeforeClose: 3
   secondsToClose: 5
   secondsBeforeOpen: 3

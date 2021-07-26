@@ -533,7 +533,7 @@ MonoBehaviour:
   consideredSilence: 0.034
   consideredLoud: 0.607
   secondsForYouCanDoBetter: 5
-  secondsOfSilenceBeforNextScene: 5
+  secondsOfSilenceBeforNextScene: 7.55
   secondsBeforLoadingNextScene: 2.15
   OnMicrophoneLevelCalculated:
     m_PersistentCalls:
