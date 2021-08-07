@@ -26,7 +26,7 @@ public class MandalaParticles
     [SerializeField] private float elementsRotationSpeed;
     [SerializeField, Min(0.5f)] private float minElementSize = 1;
     [SerializeField, Min(0.5f)] private float maxElementSize = 1;
-    [SerializeField, Range(0,1)] private float WhenOpenNext;
+    [SerializeField, Range(0, 1)] public float WhenOpenNext;
     #endregion
 
     #region Private Parameters
@@ -39,6 +39,7 @@ public class MandalaParticles
     private Vector3 particlesRotationDirection;
     private Vector3 rotationDirection;
     private GameObject circle;
+    public bool hasWhereToOpen { get; private set; } = false;
     #endregion
 
     #region Particles Update Methods
@@ -125,6 +126,7 @@ public class MandalaParticles
         {
             SetPosition(i, t);
         }
+        hasWhereToOpen = t == 1;
     }
     private void SetPosition(int i, float t)
     {

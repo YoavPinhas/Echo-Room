@@ -5,6 +5,7 @@ using static MandalaParticle;
 
 public class MandalaRing : MonoBehaviour
 {
+
     public float smallRadius;
     public float bigRadius;
     public float secondsForCycle;
@@ -14,7 +15,7 @@ public class MandalaRing : MonoBehaviour
     public int numberOfCircles;
     public int particlesInCircle;
     public RotationType ringRotation;
-    public MandalaParticle prefab;
+    public GameObject prefab;
     [Range(0, 1)] public float whenSignalToNext;
     public MandalaRing next;
     public bool canOpenNext;
@@ -96,19 +97,21 @@ public class MandalaRing : MonoBehaviour
         particles = new MandalaParticle[numberOfCircles * particlesInCircle];
         
         float angleBetweenParticles = 2 * Mathf.PI / particlesInCircle;
-        var axis = (prefab.lookAxis == Direction.X) ? Vector3.right :
-                    (prefab.lookAxis == Direction.Y) ? Vector3.up :
+        var axis = (prefab.GetComponent<MandalaParticle>().lookAxis == Direction.X) ? Vector3.right :
+                    (prefab.GetComponent<MandalaParticle>().lookAxis == Direction.Y) ? Vector3.up :
                     Vector3.forward;
 
         for (int i = 0; i < numberOfCircles * particlesInCircle; i++)
         {
-            GameObject obj = new GameObject($"particle{i}");
+            GameObject obj = Instantiate(prefab);// new GameObject($"particle{i}");
+            obj.name = $"particle{i}";
             obj.transform.SetParent(transform);
-            particles[i] = obj.AddComponent<MandalaParticle>();
-            particles[i].rotationAxis = prefab.rotationAxis;
-            particles[i].lookAxis = prefab.lookAxis;
-            particles[i].elementsRotationSpeed = prefab.elementsRotationSpeed;
-            particles[i].elementsRotation = prefab.elementsRotation;
+
+            particles[i] = obj.GetComponent<MandalaParticle>();
+            //particles[i].rotationAxis = prefab.rotationAxis;
+            //particles[i].lookAxis = prefab.lookAxis;
+            //particles[i].elementsRotationSpeed = prefab.elementsRotationSpeed;
+            //particles[i].elementsRotation = prefab.elementsRotation;
             particles[i].ring = this;
             float angle = (i % particlesInCircle) * angleBetweenParticles;
             if ((i / particlesInCircle) % 2 == 1)
@@ -121,6 +124,7 @@ public class MandalaRing : MonoBehaviour
             Vector3 startPos = smallRadius * (new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0));
             particles[i].startPosition = startPos;
             particles[i].targetPosition = targetPos;
+            particles[i].SetTargetSize(Mathf.Lerp(particles[i].minElementSize, particles[i].minElementSize, Mathf.InverseLerp(0, numberOfCircles, row)));
             Vector3 dir = (transform.position - new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0)).normalized;
             particles[i].transform.LookAt(particles[i].transform.position + dir, axis);
         }
