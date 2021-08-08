@@ -17,15 +17,12 @@ public class ShowScreen : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else
+        else if(instance == null)
         {
             instance = this;
+            ShowRoomIsFreeVideo();
             DontDestroyOnLoad(gameObject);
         }
-    }
-    void Start()
-    {
-        ShowRoomIsFreeVideo();
     }
 
     private void Update()

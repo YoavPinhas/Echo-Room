@@ -22,6 +22,7 @@ public class BackroundMusic : MonoBehaviour
     void Start()
     {
         AudioSource audioSource = gameObject.AddComponent<AudioSource>();
+        audioSource.loop = true;
         audioSource.clip = music;
         audioSource.Play();
     }
