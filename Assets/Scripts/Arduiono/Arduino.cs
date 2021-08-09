@@ -75,6 +75,7 @@ public class Arduino : MonoBehaviour
                 if(msg == "PROXIMITY_DETECTED")
                 {
                     detected = true;
+                    ShowScreen.Instance.ShowRoomIsOccupiedVideo();
                     OnProximityDetected.Invoke();
                     yield break;
                 }

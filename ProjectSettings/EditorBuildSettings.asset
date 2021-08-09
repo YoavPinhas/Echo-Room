@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SpeechScene.unity
     guid: 46573bfed2085684e85a04cac8ac68ed
   - enabled: 0

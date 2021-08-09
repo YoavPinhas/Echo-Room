@@ -741,13 +741,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: VideoPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 1086903220193200665, guid: 659c19a973febc54aabfa5b1f95cc8ff, type: 3}
+      propertyPath: RoomIsFreeVideo
+      value: 
+      objectReference: {fileID: 32900000, guid: 05d33d38a275538428c83c6da726dfb4, type: 3}
+    - target: {fileID: 1086903220193200665, guid: 659c19a973febc54aabfa5b1f95cc8ff, type: 3}
+      propertyPath: RoomIsOccupiedVideo
+      value: 
+      objectReference: {fileID: 32900000, guid: 341d62ea5f18d9341aa19839d996bcf4, type: 3}
     - target: {fileID: 1086903220193200667, guid: 659c19a973febc54aabfa5b1f95cc8ff, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1086903220193200667, guid: 659c19a973febc54aabfa5b1f95cc8ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -2712
       objectReference: {fileID: 0}
     - target: {fileID: 1086903220193200667, guid: 659c19a973febc54aabfa5b1f95cc8ff, type: 3}
       propertyPath: m_LocalPosition.y
