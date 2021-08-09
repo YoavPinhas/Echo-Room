@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Wait for arduino.unity
+    guid: ddcf6c91fb85d114dae8976479d83c40
+  - enabled: 0
     path: Assets/Scenes/SpeechScene.unity
     guid: 46573bfed2085684e85a04cac8ac68ed
   - enabled: 0
@@ -14,9 +17,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Scenes UI/ChoseOneOption.unity
     guid: e1d48d3a876278e49ad214bf373c6996
-  - enabled: 1
-    path: Assets/Scenes/Wait for arduino.unity
-    guid: ddcf6c91fb85d114dae8976479d83c40
   - enabled: 1
     path: Assets/Scenes/Opening Scene.unity
     guid: 4ea0803435d974143a9b5e44e237e96c

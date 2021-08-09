@@ -65,10 +65,17 @@ MonoBehaviour:
   audio: {fileID: 0}
   texts:
   - text: Void
-    duration: 10
+    duration: 5
     sceenX: 0.5
     sceenY: 0.5
     fontSize: 32
+    font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
+    color: {r: 1, g: 1, b: 1, a: 0}
+  - text: Thank yoiu
+    duration: 5
+    sceenX: 0.5
+    sceenY: 0.4
+    fontSize: 20
     font: {fileID: 11400000, guid: d0ac6f75a1873f74eac14385f3dbd6ab, type: 2}
     color: {r: 1, g: 1, b: 1, a: 0}
   secondsBeforePlayingAudio: 0
