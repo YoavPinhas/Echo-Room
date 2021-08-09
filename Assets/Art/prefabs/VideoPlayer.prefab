@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1086903218869158505}
   - component: {fileID: 1086903218869158504}
   - component: {fileID: 1086903218869158511}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: ScreenCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 1086903219905315564}
   - component: {fileID: 1086903219905315566}
   - component: {fileID: 1086903219905315565}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Video Screen Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 32
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 3
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 1086903220193200667}
   - component: {fileID: 1086903220193200666}
   - component: {fileID: 1086903220193200665}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: VideoPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -394,7 +394,7 @@ GameObject:
   - component: {fileID: 1086903220753427106}
   - component: {fileID: 1086903220753427132}
   - component: {fileID: 1086903220753427107}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Video Frame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 2870068442298783641}
   - component: {fileID: 6083250062025459811}
   - component: {fileID: 8174537920216227973}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: RawImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
